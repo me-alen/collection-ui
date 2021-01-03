@@ -1,0 +1,30 @@
+.navBarCustom-wrapper {
+    position: relative;
+    /* top: -61px; */
+  }
+  
+  .navBarElementsCustom-wrapper {
+    padding-top: 28px;
+    position: fixed;
+    z-index: 1;
+    width: 214px;
+    float: left;
+    height: 60%;
+    /* background-color: #fcfcfc; */
+    background-color: red;
+    padding-left: 49px;
+  }
+  
+  .customHeader {
+    font-family: "SFProText", serif;
+    font-style: normal;
+    color: #322b5e;
+    font-size: 20px;
+    font-weight: bolder;
+    line-height: 17px;
+  }
+  
+  .custom-elements-wrapper {
+    padding-top: 82.33px;
+  }
+  
