@@ -1,0 +1,19 @@
+
+
+@import "./scss/_variable";
+@import "./scss/theme";
+@import "./scss/icomoon";
+@import "./scss/mixins";
+@import "./scss/common";
+
+
+
+body,
+html {
+  /* overflow: hidden; */
+  margin: 0;
+  padding: 0;
+}
+.main-body-wrapper {
+  margin: 30px 30px 30px 265px;
+}

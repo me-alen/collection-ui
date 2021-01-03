@@ -1,0 +1,20 @@
+
+
+
+@mixin card($width, $height, $radius) {
+    width: $width;
+    height: $height;
+    border-radius: $radius;
+}
+
+@mixin max($res) {
+    @media (max-width: $res+px) {
+        @content;
+    }
+}
+
+@mixin min($res) {
+    @media (min-width: $res+px) {
+        @content;
+    }
+}

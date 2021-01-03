@@ -1,0 +1,64 @@
+{
+    "name": "collection-recommendations",
+    "control": 
+    [
+        {
+            "title": "Probability to Default",
+            "type": "",
+            "selected": ["true","false"],
+            "position": [{"row": "", "column": ""}]
+        },
+        {
+            "title": "Recommended Action Count",
+            "type": "",
+            "selected": ["true","false"],
+            "position": [{"row": "", "column": ""}]
+        },
+        {
+            "title": "Branch Distribution",
+            "type": "",
+            "selected": ["true","false"],
+            "position": [{"row": "", "column": ""}]
+        },
+        {
+            "title": "Collection Status by LANs",
+            "type": "",
+            "selected": ["true","false"],
+            "position": [{"row": "", "column": ""}],
+            "label": "No. of Accounts"
+        },
+        {
+            "title": "Collection Status by Amount Collectable",
+            "type": "",
+            "selected": ["true","false"],
+            "position": [{"row": "", "column": ""}],
+            "label": "Collectable Amount"
+        },
+        {
+            "title": "Payment Behaviour Distribution",
+            "type": "",
+            "selected": ["true","false"],
+            "position": [{"row": "", "column": ""}]
+        },
+        {
+            "title": "Customer Type Distribution",
+            "type": "",
+            "selected": ["true","false"],
+            "position": [{"row": "", "column": ""}]
+        },
+        {
+            "title": "Finance Category Distribution",
+            "type": "",
+            "selected": ["true","false"],
+            "position": [{"row": "", "column": ""}]
+        },
+        {
+            "title": "Employment Sector Distribution",
+            "type": "",
+            "selected": ["true","false"],
+            "position": [{"row": "", "column": ""}]
+        }
+    ]
+}
+
+ 

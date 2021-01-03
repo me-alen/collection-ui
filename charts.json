@@ -1,0 +1,353 @@
+{
+    "name": "collection-recommendations",
+    "control": 
+    [
+        {
+            "title": "Probability to Default",
+            "type": "",
+            "selected": ["true","false"],
+            "position": [{"row": "", "column": ""}],
+                "dataPoints": 
+                [
+                    { "item": "EXTREMELY HIGH", "value": "", "toolTipContent": {"RISK_CATEGORY": "EXTREMELY HIGH", "Number of Records": ""} },
+                    { "item": "VERY HIGH", "value": "", "toolTipContent": {"RISK_CATEGORY": "VERY HIGH", "Number of Records": ""} },
+                    { "item": "HIGH", "value": "", "toolTipContent": {"RISK_CATEGORY": "HIGH", "Number of Records": ""} },
+                    { "item": "MEDIUM", "value": "", "toolTipContent": {"RISK_CATEGORY": "MEDIUM", "Number of Records": ""} },
+                    { "item": "LOW", "value": "", "toolTipContent": {"RISK_CATEGORY": "LOW", "Number of Records": ""} },
+                    { "item": "VERY LOW", "value": "", "toolTipContent": {"RISK_CATEGORY": "VERY LOW", "Number of Records": ""} }
+                ]
+        },
+        {
+            "title": "Recommended Action Count",
+            "type": "",
+            "selected": ["true","false"],
+            "position": [{"row": "", "column": ""}],
+            "dataPoints": 
+            [
+                { "item": "MS", "colour": "", "data": 
+                    [
+                        {"item1": "Non-Payer", "value": "", "toolTipContent": {"ACTIONS": "MS", "RISK_STATUS{group)": "Non-Payer", "Number of Records": ""}}, 
+                        {"item2": "Payer", "value": "", "toolTipContent": {"ACTIONS": "MS", "RISK_STATUS{group)": "Payer", "Number of Records": ""}}
+                    ] 
+                },
+                { "item": "TB", "colour": "", "data": 
+                    [
+                        {"item1": "Non-Payer", "value": "", "toolTipContent": {"ACTIONS": "TB", "RISK_STATUS{group)": "Non-Payer", "Number of Records": ""}}, 
+                        {"item2": "Payer", "value": "", "toolTipContent": {"ACTIONS": "TB", "RISK_STATUS{group)": "Payer", "Number of Records": ""}}
+                    ] 
+                },
+                { "item": "VB", "colour": "", "data": 
+                    [
+                        {"item1": "Non-Payer", "value": "", "toolTipContent": {"ACTIONS": "VB", "RISK_STATUS{group)": "Non-Payer", "Number of Records": ""}}, 
+                        {"item2": "Payer", "value": "", "toolTipContent": {"ACTIONS": "VB", "RISK_STATUS{group)": "Payer", "Number of Records": ""}}
+                    ] 
+                },
+                { "item": "WA", "colour": "", "data": 
+                    [
+                        {"item1": "Non-Payer", "value": "", "toolTipContent": {"ACTIONS": "WA", "RISK_STATUS{group)": "Non-Payer", "Number of Records": ""}}, 
+                        {"item2": "Payer", "value": "", "toolTipContent": {"ACTIONS": "WA", "RISK_STATUS{group)": "Payer", "Number of Records": ""}}
+                    ] 
+                }
+            ]
+        },
+        {
+            "title": "Branch Distribution",
+            "type": "",
+            "selected": ["true","false"],
+            "position": [{"row": "", "column": ""}],
+            "dataPoints": 
+                [
+                    { "item": "CINCINNATI", "value": "", "colour": "", "toolTipContent": {"BRANCH": "CINCINNATI", "Number of Records": ""} },
+                    { "item": "BATON ROUGE", "value": "", "colour": "", "toolTipContent": {"BRANCH": "BATON ROUGE", "Number of Records": ""} },
+                    { "item": "MADISON", "value": "", "colour": "", "toolTipContent": {"BRANCH": "MADISON", "Number of Records": ""} },
+                    { "item": "KNOXVILLE", "value": "", "colour": "", "toolTipContent": {"BRANCH": "KNOXVILLE", "Number of Records": ""} },
+                    { "item": "BELLINGHAM", "value": "", "colour": "", "toolTipContent": {"BRANCH": "BELLINGHAM", "Number of Records": ""} },
+                    { "item": "ARLINGTON", "value": "", "colour": "", "toolTipContent": {"BRANCH": "ARLINGTON", "Number of Records": ""} }
+                ]
+        },
+        {
+            "title": "Collection Status by LANs",
+            "type": "",
+            "selected": ["true","false"],
+            "position": [{"row": "", "column": ""}],
+            "label": "No. of Accounts",
+            "dataPoints": 
+            [
+                { "item": "Non-Payer", "value": "", "colour": "", "toolTipContent": {"RISK_STATUS{group)": "Non-Payer", "Number of Records": ""} },
+                { "item": "Payer", "value": "", "colour": "", "toolTipContent": {"RISK_STATUS{group)": "Payer", "Number of Records": ""} }
+            ]
+        },
+        {
+            "title": "Collection Status by Amount Collectable",
+            "type": "",
+            "selected": ["true","false"],
+            "position": [{"row": "", "column": ""}],
+            "label": "Collectable Amount",
+            "dataPoints": 
+            [
+                { "item": "Non-Payer", "value": "", "colour": "", "toolTipContent": {"RISK_STATUS{group)": "Non-Payer", "Outstanding Amount": ""} },
+                { "item": "Payer", "value": "", "colour": "", "toolTipContent": {"RISK_STATUS{group)": "Payer", "Outstanding Amount": ""} }
+            ]
+        },
+        {
+            "title": "Payment Behaviour Distribution",
+            "type": "",
+            "selected": ["true","false"],
+            "position": [{"row": "", "column": ""}],
+            "label": 
+            [
+                {
+                    "name": "TOTAL LANs", "value": "8142"
+                },
+                {
+                    "toolTipContent": 
+                        {
+                            "Avg. Number of Records": "1.000",  "Number of Records": ""
+                        }
+                } 
+            ],
+            "dataPoints": 
+                [
+                    { 
+                        "item": "VARIED", 
+                        "value": "", 
+                        "colour": "green",
+                        "toolTipContent": 
+                        {
+                            "PAYMENT_FLAG_TYPE": "VARIED", 
+                            "Avg. Number of Records": "1.000", 
+                            "% of Total Number of Records along Table (Across)": "", 
+                            "Number of Records": ""
+                        } 
+                    },
+                    { 
+                        "item": "CYCLE_70", 
+                        "value": "", 
+                        "colour": "violet",
+                        "toolTipContent": 
+                        {
+                            "PAYMENT_FLAG_TYPE": "CYCLE_70", 
+                            "Avg. Number of Records": "1.000", 
+                            "% of Total Number of Records along Table (Across)": "", 
+                            "Number of Records": ""
+                        } 
+                    },
+                    { 
+                        "item": "NORMX_70", 
+                        "value": "", 
+                        "colour": "orange",
+                        "toolTipContent": 
+                        {
+                            "PAYMENT_FLAG_TYPE": "NORMX_70", 
+                            "Avg. Number of Records": "1.000", 
+                            "% of Total Number of Records along Table (Across)": "", 
+                            "Number of Records": ""
+                        }
+                    },
+                    { 
+                        "item": "ONLY_NORMX", 
+                        "value": "", 
+                        "colour": "red",
+                        "toolTipContent": 
+                        {
+                            "PAYMENT_FLAG_TYPE": "ONLY_NORMX", 
+                            "Avg. Number of Records": "1.000", 
+                            "% of Total Number of Records along Table (Across)": "", 
+                            "Number of Records": ""
+                        } 
+                    }
+                ]
+        },
+        {
+            "title": "Customer Type Distribution",
+            "type": "",
+            "selected": ["true","false"],
+            "position": [{"row": "", "column": ""}],
+            "dataPoints": 
+            [
+                { 
+                    "item": "RETAIL", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CUSTOMER_PROFILE": "RETAIL", "Number of Records": ""} 
+                },
+                { 
+                    "item": "Not Available", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CUSTOMER_PROFILE": "Not Available", "Number of Records": ""} 
+                },
+                { 
+                    "item": "FTU", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CUSTOMER_PROFILE": "FTU", "Number of Records": ""} 
+                },
+                { 
+                    "item": "FLEET > 4", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CUSTOMER_PROFILE": "FLEET > 4", "Number of Records": ""} 
+                },
+                { 
+                    "item": "COMMERCIAL", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CUSTOMER_PROFILE": "COMMERCIAL", "Number of Records": ""} 
+                },
+                { 
+                    "item": "CERTIFIED", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CUSTOMER_PROFILE": "CERTIFIED", "Number of Records": ""} 
+                },
+                { 
+                    "item": "NON CERTIFIED", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CUSTOMER_PROFILE": "NON CERTIFIED", "Number of Records": ""} 
+                },
+                { 
+                    "item": "DEMO CAR", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CUSTOMER_PROFILE": "DEMO CAR", "Number of Records": ""} 
+                }
+            ]
+        },
+        {
+            "title": "Finance Category Distribution",
+            "type": "",
+            "selected": ["true","false"],
+            "position": [{"row": "", "column": ""}],
+            "dataPoints": 
+            [
+                { 
+                    "item": "Classic Finance", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CUSTOMER_CATEGORY": "Classic Finance", "Number of Records": ""} 
+                },
+                { 
+                    "item": "NA", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CUSTOMER_CATEGORY": "NA", "Number of Records": ""} 
+                },
+                { 
+                    "item": "TFS Smart", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CUSTOMER_CATEGORY": "TFS Smart", "Number of Records": ""} 
+                },
+                { 
+                    "item": "Balloon", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CUSTOMER_CATEGORY": "Balloon", "Number of Records": ""} 
+                },
+                { 
+                    "item": "Flexi Finance", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CUSTOMER_CATEGORY": "Flexi Finance", "Number of Records": ""} 
+                },
+                { 
+                    "item": "Step Down", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CUSTOMER_CATEGORY": "Step Down", "Number of Records": ""} 
+                }
+            ]
+        },
+        {
+            "title": "Employment Sector Distribution",
+            "type": "",
+            "selected": ["true","false"],
+            "position": [{"row": "", "column": ""}],
+            "dataPoints": 
+            [
+                { 
+                    "item": "SELF EMPLOYED", 
+                    "value": "", 
+                    "colour": "", 
+                    "toolTipContent": {"CONSTITUTION": "SELF EMPLOYED", "Number of Records": ""}  
+                },
+                { 
+                    "item": "PRIVATE LIMITED", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CONSTITUTION": "PRIVATE LIMITED", "Number of Records": ""} 
+                },
+                { 
+                    "item": "AGRICULTURIST", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CONSTITUTION": "AGRICULTURIST", "Number of Records": ""}
+                },
+                { 
+                    "item": "PARTNERSHIP FIRM", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CONSTITUTION": "PARTNERSHIP FIRM", "Number of Records": ""} 
+                },
+                { 
+                    "item": "SALARIED WITH PVT LTD", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CONSTITUTION": "SALARIED WITH PVT LTD", "Number of Records": ""} 
+                },
+                { 
+                    "item": "HOUSE WIFE", 
+                    "value": "", 
+                    "colour": "" , 
+                    "toolTipContent": {"CONSTITUTION": "HOUSE WIFE", "Number of Records": ""}
+                },
+                { 
+                    "item": "PROPRIETORSHIP FIRM", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CONSTITUTION": "PROPRIETORSHIP FIRM", "Number of Records": ""} 
+                },
+                { 
+                    "item": "GOVERNMENT EMPLOYEE", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CONSTITUTION": "GOVERNMENT EMPLOYEE", "Number of Records": ""} 
+                },
+                { 
+                    "item": "SALARIED WITH PUBLIC LTD", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CONSTITUTION": "SALARIED WITH PUBLIC LTD", "Number of Records": ""} 
+                },
+                { 
+                    "item": "SELF-EMPLOYED PROFESSIONAL", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CONSTITUTION": "SELF-EMPLOYED PROFESSIONAL", "Number of Records": ""} 
+                },
+                { 
+                    "item": "RETIRED", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CONSTITUTION": "RETIRED", "Number of Records": ""} 
+                },
+                { 
+                    "item": "STUDENT", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CONSTITUTION": "STUDENT", "Number of Records": ""} 
+                },
+                { 
+                    "item": "NRI CITIZEN", 
+                    "value": "", 
+                    "colour": "",
+                    "toolTipContent": {"CONSTITUTION": "NRI CITIZEN", "Number of Records": ""} 
+                }
+            ]
+        }
+    ]
+}
+
+ 
