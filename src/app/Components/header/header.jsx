@@ -12,10 +12,11 @@ class Header extends Component {
       // </div>
       <div className="header-section">
         <div className="header-primary d-flex align-items-center justify-content-between">
-          <div className="burger-icon">
-            <a href="">
-              <i className="fa fa-bars" aria-hidden="true"></i>
-            </a>
+          <div
+            className="burger-icon"
+            onClick={this.props.onChangeSidePanelClass}
+          >
+            <i className="fa fa-bars" aria-hidden="true"></i>
           </div>
           <div className="avatar-wrapper">
             <div className="dropdown">
