@@ -5,6 +5,7 @@ import Home from "./Components/mainApp/homePortal";
 import "./App.scss";
 import DisplayChartsAndGraphs from "./Components/mainApp/Common/graphs/displayChartsAndGraph";
 import Drag from './Components/mainApp/draggable';
+import Trial from './Components/mainApp/trial/trial';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/graphs" component={DisplayChartsAndGraphs}></Route>
         {/* <Route path="/dragging" component={Drag}></Route> */}
         <Route path="/login" component={LoginForm} />
+        <Route path="/trial" component={Trial} />
         <Route path="/home" component={Home} />
         <Route path="/" render={() => <Redirect to="/login" />} />
       </Switch>

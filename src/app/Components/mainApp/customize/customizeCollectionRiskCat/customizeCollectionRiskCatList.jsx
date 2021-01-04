@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { CheckBox } from '../../Common/checkBox';
-import "./customizeFilterList.css";
+import "./customizeCollectionRiskCatList.scss";
 
-class CustomizeFilterList extends Component {
+class CustomizeCollectionRiskCategoryList extends Component {
     state = {  }
 
     constructor(props) {
@@ -43,7 +43,7 @@ class CustomizeFilterList extends Component {
                 <ul>
                 {
                     this.state.items.map((item) => {
-                    return (<CheckBox handleCheckChildElement={this.handleCheckChildElement} {...item} />)
+                    return (<div className='listitem'><CheckBox handleCheckChildElement={this.handleCheckChildElement} {...item} /></div>)
                 })
                 }
         </ul>
@@ -52,4 +52,4 @@ class CustomizeFilterList extends Component {
     }
 }
  
-export default CustomizeFilterList;
+export default CustomizeCollectionRiskCategoryList;

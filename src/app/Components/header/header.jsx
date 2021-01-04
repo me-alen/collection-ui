@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 class Header extends Component {
   state = {};
@@ -27,7 +29,7 @@ class Header extends Component {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Dropdown button
+                Dropdown button 1
               </button>
               <div
                 className="dropdown-menu"
@@ -46,6 +48,12 @@ class Header extends Component {
             </div>
           </div>
         </div>
+
+        <DropdownButton id="dropdown-basic-button" title="Dropdown button">
+        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+        <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+        <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+        </DropdownButton>
         <div className="header-secondary d-flex align-items-center justify-content-between">
           <span className="title-text">ML Decision Engine</span>
 
