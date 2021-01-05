@@ -1,15 +1,17 @@
 import React from "react";
 
-const ButtonFilter = ({ data, onClickButton }) => {
+const ButtonFilter = ({ id, data, onClickButton }) => {
   const handleBtnClick = (btn) => {
-    btn.selected = true;
-    onClickButton(btn.btnLabel);
+    data.data.map((element) => {
+      element.active =
+        element.btnLabel !== btn.btnLabel ? "list-item" : "list-item active";
+    });
+    onClickButton(data.id, btn.btnLabel);
   };
-  const activeClass = "list-item active";
   return (
     <div className="filter-btn-section">
       <div className="heading-wrapper d-flex align-items-center justify-content-between">
-        <h2 className="sub-heading">Collection Recommendations</h2>
+        <h2 className="sub-heading">{data.title}</h2>
         <span className="icon-layout-switch cp"></span>
       </div>
       <div className="btn-container">
@@ -17,7 +19,7 @@ const ButtonFilter = ({ data, onClickButton }) => {
           {data.data.map((btn) => (
             <li
               key={btn.btnLabel}
-              className={activeClass}
+              className={btn.active}
               onClick={() => {
                 handleBtnClick(btn);
               }}

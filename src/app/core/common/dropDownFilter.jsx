@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import Form from "react-bootstrap/Form";
 
-const DropDownFilter = ({ data }) => {
-  console.log(data);
+const DropDownFilter = ({ data, onClickButton }) => {
   return (
     <div className="decision-engine-filter">
       <div className="title-wrapper">
@@ -17,13 +16,18 @@ const DropDownFilter = ({ data }) => {
       <Form>
         <div className="row filter-row">
           {data.data.map((select) => (
-            <div className="col-lg-2 filter-col">
+            <div className="col-lg-2 filter-col" key={select.id}>
               <div className="filter-item">
-                <Form.Group controlId="bucket">
+                <Form.Group controlId={select.id}>
                   <Form.Label>{select.label}</Form.Label>
-                  <Form.Control as="select">
+                  <Form.Control
+                    as="select"
+                    onChange={(e) => onClickButton(e.target.id, e.target.value)}
+                  >
                     {select.value.map((value) => (
-                      <option>{value.optLbl}</option>
+                      <option key={value.value} value={value.value}>
+                        {value.optLbl}
+                      </option>
                     ))}
                   </Form.Control>
                 </Form.Group>

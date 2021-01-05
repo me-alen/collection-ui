@@ -6,6 +6,7 @@ import DisplayChartsAndGraphs from "../Common/graphs/displayChartsAndGraph";
 
 import filterService from "../../../Services/filterServices";
 
+let filterData = {};
 class MLDecisionEngine extends Component {
   //Button-Filter
 
@@ -15,7 +16,7 @@ class MLDecisionEngine extends Component {
       data.data = Object.entries(resolve).map((e) => ({
         btnLabel: e[0],
         value: e[1],
-        selected: false,
+        active: "list-item",
       }));
       data.data.unshift({
         btnLabel: "All",
@@ -26,18 +27,23 @@ class MLDecisionEngine extends Component {
           .reduce((accumulator, currentValue) => {
             return accumulator + currentValue;
           }),
-        selected: true,
+        active: "list-item active",
       });
       this.setState({ collectionRiskFilter: data });
     });
   };
 
   //ML-Filterr
+  setFilterData = (param, value) => {
+    filterData[param] = value;
+    console.log(filterData);
+    this.getMLDataTableFilterData(filterData);
+  };
+
   // Data-Table
 
-  getMLDataTableFilterData = (e) => {
-    const params = { collectionCategory: e !== "All" ? e : null };
-    filterService.mlFilteringDataTable(params).then((resolve) => {
+  getMLDataTableFilterData = (filterData) => {
+    filterService.mlFilteringDataTable(filterData).then((resolve) => {
       let data = { ...this.state.dataTable };
       data.data = resolve.content;
       data.totalElements = resolve.totalElements;
@@ -69,6 +75,11 @@ class MLDecisionEngine extends Component {
           sortable: true,
         },
         {
+          name: "Deliquency",
+          selector: "bucket",
+          sortable: true,
+        },
+        {
           name: "Collection Category",
           selector: "collectionCategory",
           sortable: true,
@@ -78,17 +89,26 @@ class MLDecisionEngine extends Component {
           selector: "branch",
           sortable: true,
         },
+        {
+          name: "Action",
+          selector: "action",
+          sortable: true,
+        },
       ],
       data: [],
       totalElements: 0,
+      pageCount: 10,
       title: "Recommended Actions",
     },
     collectionRiskFilter: {
+      id: "collectionCategory",
+      title: "Collection Risk Categories",
       data: [],
     },
     MLFilter: {
       data: [
         {
+          id: "bucket",
           label: "Deliquency",
           value: [
             { optLbl: "All", value: "null" },
@@ -98,6 +118,7 @@ class MLDecisionEngine extends Component {
           ],
         },
         {
+          id: "cycle",
           label: "Cycle",
           value: [
             { optLbl: "All", value: null },
@@ -107,6 +128,7 @@ class MLDecisionEngine extends Component {
           ],
         },
         {
+          id: "customerType",
           label: "Customer Type",
           value: [
             { optLbl: "All", value: null },
@@ -115,6 +137,7 @@ class MLDecisionEngine extends Component {
           ],
         },
         {
+          id: "branch",
           label: "Branch",
           value: [
             { optLbl: "All", value: null },
@@ -134,7 +157,10 @@ class MLDecisionEngine extends Component {
   render() {
     return (
       <React.Fragment>
-        <DropDownFilter data={this.state.MLFilter} />
+        <DropDownFilter
+          data={this.state.MLFilter}
+          onClickButton={this.setFilterData}
+        />
         <div className="graph-wrapper">
           <div className="heading-wrapper d-flex align-items-center justify-content-between">
             <h2 className="sub-heading">Collection Recommendations</h2>
@@ -144,10 +170,13 @@ class MLDecisionEngine extends Component {
         </div>
         <ButtonFilter
           data={this.state.collectionRiskFilter}
-          onClickButton={this.getMLDataTableFilterData}
+          onClickButton={this.setFilterData}
         />
         <div className="table-wrapper">
-          <DisplayDataTable data={this.state.dataTable} />
+          <DisplayDataTable
+            data={this.state.dataTable}
+            onPageChange={this.setFilterData}
+          />
         </div>
       </React.Fragment>
     );
