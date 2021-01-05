@@ -42,7 +42,7 @@ class DisplayBarGraph extends Component {
     render() {
         return (
             <div className="bar-chart graph">
-                <h3 className='graph-title'>Probability to Default</h3>
+                <h3 className='graph-title'>Case Action</h3>
                 <div className="mb-5">
                 <BarChart
                     className="bar-chart-graph"
