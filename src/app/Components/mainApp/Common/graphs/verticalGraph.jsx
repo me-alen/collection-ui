@@ -81,12 +81,6 @@ class DisplayVerticalGraph extends Component {
         }));
         this.setState({ dataPoints: info });
         console.log("checking", this.state.dataPoints);
-        // const info = response.data.items[0].data_points;
-        // this.setState({ dataPoints: info });
-        // console.log('column datapoints', this.state.dataPoints)
-        // const chartType = response.data.items[0].graph_type;
-        // this.setState({ chartType });
-        // console.log(this.state.chartType);
       })
       .catch((error) => {
         console.log(error);

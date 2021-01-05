@@ -29,11 +29,12 @@ class DisplayChartsAndGraphs extends Component {
             //     </div>
             // </div>
 
-           <div className="wrapper ">
-  <div className=" item item1"> <DisplayVerticalGraph /></div>
-  <div className="item item2"> <DisplayBarGraph /></div>
-  <div className="item item3"><DisplayDonutChart /></div>
-</div>
+            <div className="wrapper ">
+            <div className="item item1"> <DisplayVerticalGraph /></div>
+            {/* <div className="item item2"> <DisplayBarGraph /></div> */}
+            <div className="item item2"> <DisplayPieChart /></div>
+            <div className="item item3"><DisplayDonutChart /></div>
+            </div>
 
 
 
