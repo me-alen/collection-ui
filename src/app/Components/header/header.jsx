@@ -63,38 +63,22 @@ class Header extends Component {
 
           <div className="header-filter-wrapper d-flex">
             <div className="filter-main">
-              {/* <button
-                className="btn btn-secondary dropdown-toggle"
-                type="button"
-                id="dropdownMenuButton"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Dropdown button
-              </button> */}
-              <DropdownButton id="dropdown-basic-button" title="Dropdown button" variant="secondary">
+            
+              <DropdownButton id="dropdown-basic-button" title="Export" variant="secondary">
               <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
               <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
               <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
               </DropdownButton>
             </div>
+
+
             <div className="filter-sec">
-              {/* <button
-                className="btn btn-secondary dropdown-toggle"
-                type="button"
-                id="dropdownMenuButton"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Dropdown button
-              </button> */}
-              <DropdownButton id="dropdown-basic-button" title="Dropdown button" variant="secondary">
+              <img src="../../../assets/images/window-plus.svg" alt=""/>
+              {/* <DropdownButton id="dropdown-basic-button" title="Dropdown button" variant="secondary">
               <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
               <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
               <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-              </DropdownButton>
+              </DropdownButton> */}
             </div>
           </div>
         </div>
