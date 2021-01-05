@@ -3,8 +3,9 @@ import { NavLink } from "react-router-dom";
 import "./navBar.css";
 
 class NavBar extends Component {
-  state = {};
-
+  changeHeaderTitle = (title) => {
+    this.props.changeHeaderTitle(title);
+  };
   render() {
     return (
       // <div className="navBar-wrapper">
@@ -23,21 +24,33 @@ class NavBar extends Component {
         </div>
         <div className="list-section">
           <ul className="list-wrapper pl-0">
-            <li className="list-item">
-              <span className=" icon icon-alarm"></span>
-              <span className="text"> Early Warning System</span>
-            </li>
-            <li className="list-item">
-              {" "}
-              <span className="icon icon-decision-engine"></span>
-              <NavLink className="text" to="/home/ml-decision-engine">
-                ML Decision Engine
-              </NavLink>
-            </li>
-            <li className="list-item">
-              <span className=" icon icon-alarm"></span>
-              <span className="text">Robo Collection</span>
-            </li>
+            <NavLink
+              to="/home/early-warning-system"
+              onClick={() => this.changeHeaderTitle("Early Warning System")}
+            >
+              <li className="list-item">
+                <span className=" icon icon-alarm"></span>
+                <span className="text">Early Warning System</span>
+              </li>
+            </NavLink>{" "}
+            <NavLink
+              to="/home/ml-decision-engine"
+              onClick={() => this.changeHeaderTitle("ML Decision Engine")}
+            >
+              <li className="list-item">
+                <span className="icon icon-decision-engine"></span>
+                <span className="text">ML Decision Engine</span>
+              </li>
+            </NavLink>
+            <NavLink
+              to="/home/robo-collection"
+              onClick={() => this.changeHeaderTitle("Robo Collection")}
+            >
+              <li className="list-item">
+                <span className=" icon icon-alarm"></span>
+                <span className="text">Robo Collection</span>
+              </li>
+            </NavLink>
           </ul>
         </div>
       </div>

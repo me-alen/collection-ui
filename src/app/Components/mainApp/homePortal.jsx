@@ -5,26 +5,37 @@ import NavBar from "../navBar/navBar";
 import MLDecisionEngine from "./mlDecisionEngine/mlDecisionEngine";
 import "./homePortal.module.scss";
 
-const Home = () => {
-  const [isActive, setActive] = useState(false);
-  const handleChangeSidepanelClass = () => {
-    setActive(!isActive);
-  };
-  return (
-    <React.Fragment>
-      <div className={isActive ? "landing-container min" : "landing-container"}>
-        <NavBar />
-        <div className="content-container">
-          <Header onChangeSidePanelClass={handleChangeSidepanelClass} />
-          <div className="scroll-box">
-            <div className="main-content-wrapper">
-              <Switch>
-                <Route
-                  path="/home/ml-decision-engine"
-                  component={MLDecisionEngine}
-                />
-              </Switch>
-              {/* <div className="alert alert-success" role="alert">
+class Home extends Component {
+  state = { isActive: false, headerTitle: "Home" };
+  render() {
+    const handleChangeSidepanelClass = () => {
+      this.setState({ isActive: !this.state.isActive });
+    };
+    const handleChangeHeaderTitle = (title) => {
+      this.setState({ headerTitle: title });
+    };
+    return (
+      <React.Fragment>
+        <div
+          className={
+            this.state.isActive ? "landing-container min" : "landing-container"
+          }
+        >
+          <NavBar changeHeaderTitle={handleChangeHeaderTitle} />
+          <div className="content-container">
+            <Header
+              onChangeSidePanelClass={handleChangeSidepanelClass}
+              headerTitle={this.state.headerTitle}
+            />
+            <div className="scroll-box">
+              <div className="main-content-wrapper">
+                <Switch>
+                  <Route
+                    path="/home/ml-decision-engine"
+                    component={MLDecisionEngine}
+                  />
+                </Switch>
+                {/* <div className="alert alert-success" role="alert">
                 <h4 className="alert-heading">asdasd</h4>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -39,14 +50,15 @@ const Home = () => {
                   itaque autem magnam iure quo pariatur delectus.
                 </p>
               </div> */}
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div></div>
-    </React.Fragment>
-  );
-};
+        <div></div>
+      </React.Fragment>
+    );
+  }
+}
 
 export default Home;
