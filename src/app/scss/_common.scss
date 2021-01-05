@@ -114,6 +114,44 @@ body {
         .header-filter-wrapper {
           .filter-main {
             margin-right: 20px;
+            .dropdown{
+              button{
+                background: transparent;
+                color: var(--text-medium);
+                font-size: 12px;
+                font-weight: $font-semibold;
+                font-family: $poppins;
+                border-radius: 50px;
+                border: 1px solid var(--border);
+                position: relative;
+                padding: 8px 40px 8px 40px;
+                &::before,&::after{
+                   position: absolute;
+                  top: 50%;
+                   transform: translateY(-50%);
+                   font-family: 'icomoon' !important;
+                }
+                &::before{
+                   content: "\e907";
+                   left: 20px;
+                   
+                }
+                &::after{
+                  content: "\e904";
+                  position: absolute;
+                  right: 10px;
+                  top: 50%;
+                  border: none;
+                  font-size: 6px;
+                  transform: translateY(-50%);
+                  
+                }
+                &:focus{
+                  outline: none;
+                  box-shadow: none;
+                }
+              }
+            }
           }
         }
       }
@@ -262,6 +300,8 @@ body {
 
 
 
+
+
 // filter button section
 
 .filter-btn-section{
@@ -272,37 +312,61 @@ body {
   .heading-wrapper{
     padding: 10px 15px 10px 15px;
     border-bottom: 1px solid var(--light-border);
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
   }
   .btn-container{
-    padding: 0 15px;
-    // background: yellow;
     .btn-list-wrapper{
-      padding: 0;
+      padding-left: 0;
       list-style: none;
       display: flex;
       align-items: center;
+      padding: 0 20px;
       .list-item{
-        border-right: 1px solid;
+        padding: 10px 20px;
+        border-right: 1px solid var(--light-border);
+        position: relative;
+        cursor: pointer;
+        &::before{
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 0;
+          height: 2px;
+          background: var(--bg-blue);
+          border-radius: 2px;
+          transition: all 0.3s ease-in;
+        }
         .list-link{
-          padding: 0 15px;
-          border-bottom: 1px solid transparent;
+          font-size: 12px;
+          font-family: $roboto;
+          font-weight: 500;
+          color: var(--gray-text);
+          margin-right: 5px;
           text-decoration: none;
-          position: relative;
+
+        }
+        .badge{
+          font-size: 12px;
+          font-weight: $font-bold;
+          font-family: $roboto;
+          color: var(--gray-text);
+          padding: 3px 5px;
+          background: var(--of-white);
+        }
+        &.active, &:hover{
           &::before{
-            content: '';
-            position: absolute;
-            left: 2px;
-            bottom: 0;
-            width: calc(100% - 2px);
-            height: 2px;
-            background: red;
-            display: block;
-            margin: auto;
-            border-radius: 4px;
+            width: 100%;
+          }
+          .list-link{
+            color: var(--panel-bg-color);
+            font-weight: $font-bold;
+          }
+          .badge{
+            background: var(--bg-blue);
+            color: var(--primary-color);
           }
         }
-      
       }
     }
   }
