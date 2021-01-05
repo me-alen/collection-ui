@@ -10,13 +10,15 @@ const DisplayDataTable = ({ data }) => {
   };
   return (
     <React.Fragment>
-      <DataTableHeader paginationData={paginationData} />
+     <div className="data-table-container">
+        <DataTableHeader paginationData={paginationData} />
       <DataTable
         columns={data.columns}
         data={data.data}
         defaultSortField="title"
         selectableRows
       />
+     </div>
     </React.Fragment>
   );
 };

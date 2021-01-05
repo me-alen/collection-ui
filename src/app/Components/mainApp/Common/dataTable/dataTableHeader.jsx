@@ -1,5 +1,5 @@
 import React from "react";
-// import ReactPaginate from "react-paginate";
+import Pagination from "@material-ui/lab/Pagination";
 
 const DataTableHeader = (props) => {
   const { title, totalElements, pageCount } = props.paginationData;
@@ -8,20 +8,28 @@ const DataTableHeader = (props) => {
   };
 
   return (
-    <div>
-      <span>{title}</span>
-      <span>Total : {totalElements}</span>
-      <input type="text" name="search" placeholder="Search" />
-      <span>Showing of 1-10</span>
-      {/* <ReactPaginate
-        previousLabel={"<"}
-        nextLabel={">"}
-        pageCount={pageCount}
-        onPageChange={handlePageClick}
-        containerClassName={"pagination"}
-        subContainerClassName={"pages pagination"}
-        activeClassName={"active"}
-      /> */}
+    <div className="table-header-container d-flex align-items-center justify-content-between">
+      <div className="left-section d-flex align-items-center">
+        <h2 className="table-heading">{title}</h2>
+        <div className="count">
+          {" "}
+          <p className="total">
+            Total : <span className="value"> {totalElements}</span>
+          </p>
+        </div>
+        <div className="search-wrapper">
+          <input type="text" name="search" placeholder="Search" />
+          <span className="icon-search"></span>
+        </div>
+      </div>
+
+      <div className="right-section d-flex align-items-center">
+        <span className="current-result">Showing of 1-10</span>
+        <div className="pagination-wrapper">
+          <Pagination count={10} />
+        </div>
+        <span className="icon-layout-switch cp"></span>
+      </div>
     </div>
   );
 };
