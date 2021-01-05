@@ -75,10 +75,11 @@ class DisplayVerticalGraph extends Component {
     services
       .getProbToDefault()
       .then((response) => {
-        const info = Object.entries(response).map((e) => ({
+        const info = Object.entries(response.data).map((e) => ({
           ["name"]: e[0],
           ["amt"]: e[1],
         }));
+        console.log("info", info);
         this.setState({ dataPoints: info });
         console.log("checking", this.state.dataPoints);
       })
