@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import CustomizeFiltersList from './customizeFiltersList';
 import StaticModalWithoutAnimation from '../../Common/modals/staticModalNoAnimation';
+import "./customizeFilters.css";
+import SearchBar from '../../Common/searchBar/searchBar';
 
 const CustomizeFilters = () => {
     const [show, setShow] = useState(false);
@@ -29,17 +31,26 @@ const CustomizeFilters = () => {
           animation={false}
           >
           <Modal.Body>
+          <div className="flex-container">
+          <div>
           <h3>Customize Filters</h3>
           <h5>Select any 5 filters you want to display</h5>
+          </div>
           <div>
-          {/* <h3>Customize Filter</h3>
-          <h5>Select collection risk category filters</h5> */}
+            <SearchBar />
+          </div>
+          <div>
           <CustomizeFiltersList />
+          </div>
+          <div>
+          <Button variant="secondary" onClick={handleClose}>Cancel</Button>
+          <Button variant="primary">Apply</Button>
+          </div>
           </div>
           </Modal.Body>
           <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>Cancel</Button>
-          <Button variant="primary">Apply</Button>
+          {/* <Button variant="secondary" onClick={handleClose}>Cancel</Button>
+          <Button variant="primary">Apply</Button> */}
           </Modal.Footer>
           </Modal>
 

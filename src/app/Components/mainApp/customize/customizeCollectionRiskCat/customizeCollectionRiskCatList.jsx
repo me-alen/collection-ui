@@ -38,8 +38,6 @@ class CustomizeCollectionRiskCategoryList extends Component {
     render() { 
         return (
             <div className="filterList-css">
-                {/* <h1> Check and Uncheck All Example </h1>
-                <input type="checkbox"  value="checkedall" /> */}
                 <ul>
                 {
                     this.state.items.map((item) => {

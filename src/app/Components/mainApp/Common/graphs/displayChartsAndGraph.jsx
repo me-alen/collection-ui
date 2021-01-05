@@ -6,11 +6,11 @@ import './displayChartsAndGraph.css';
 import DisplayBarGraph from './barGraph';
 // import Button from 'react-bootstrap/Button'
 
-class DisplayChartsAndGraphs extends Component {
-    state = {}
+// class DisplayChartsAndGraphs extends Component {
+//     state = {}
 
-    render() {
-        return (
+//     render() {
+//         return (
             // <div className='graphs-wrapper'>
             //     <div className="row">
             //         <div className="chart-section-title">Collection Recommendations</div>
@@ -29,17 +29,29 @@ class DisplayChartsAndGraphs extends Component {
             //     </div>
             // </div>
 
-           <div className="wrapper ">
-  <div className=" item item1"> <DisplayVerticalGraph /></div>
-  <div className="item item2"> <DisplayBarGraph /></div>
-  <div className="item item3"><DisplayDonutChart /></div>
-</div>
+//            <div className="wrapper ">
+//             <div className="item item1"> <DisplayVerticalGraph /></div>
+//             <div className="item item2"> <DisplayBarGraph /></div>
+//             <div className="item item3"><DisplayDonutChart /></div>
+//             </div>
 
 
 
 
-        );
-    }
+//         );
+//     }
+// }
+
+// export default DisplayChartsAndGraphs;
+
+const DisplayChartsAndGraphs = (props) => {
+    return (
+        <div className={`wrapper ${props.csstext}`}>
+        <div className="item item1"> <DisplayVerticalGraph /></div>
+        <div className="item item2"> <DisplayBarGraph /></div>
+        <div className="item item3"><DisplayDonutChart /></div>
+        </div>
+    );
 }
-
+ 
 export default DisplayChartsAndGraphs;

@@ -1,5 +1,33 @@
-.box {
+/* .flex-container {
+    display: flex;
+    flex-direction: row;
+    border: black;
+    border-style: solid;
+    border-width: 1px;
+} */
+
+.flex-container2 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
+
+
+/* .listitem {
+    border: black;
+    border-style: solid;
+    border-width: 1px;
+    width: 270px;
+    height: 30px;
+  } */
+
+/* .box1 {
+    border-right: hotpink;
+    border-style: solid;
+    border-width: 2px;
+} */
+
+/* .box2 {
+    border-left: hotpink;
+    border-style: solid;
+    border-width: 1px;
+} */
