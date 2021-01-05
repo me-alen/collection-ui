@@ -344,6 +344,7 @@ body {
           color: var(--gray-text);
           margin-right: 5px;
           text-decoration: none;
+          transition: all 0.3s ease-in;
 
         }
         .badge{
@@ -353,6 +354,7 @@ body {
           color: var(--gray-text);
           padding: 3px 5px;
           background: var(--of-white);
+         transition: all 0.3s ease-in;
         }
         &.active, &:hover{
           &::before{
