@@ -48,7 +48,7 @@ class Header extends Component {
           </div>
         </div>
         <div className="header-secondary d-flex align-items-center justify-content-between">
-          <span className="title-text">ML Decision Engine</span>
+          <span className="title-text">{this.props.headerTitle}</span>
 
           <div className="header-filter-wrapper d-flex">
             <div className="filter-main">

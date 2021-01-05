@@ -12,7 +12,7 @@ class LoginForm extends Component {
     const { username, password } = this.state.user;
     loginService.login(username, password).then((resolve) => {
       if (resolve.status === "success") {
-        this.props.history.replace("/home/ml-decision-engine");
+        this.props.history.replace("/home");
       }
     });
   };
