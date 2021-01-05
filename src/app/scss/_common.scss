@@ -357,6 +357,7 @@ a,a:hover{
       display: flex;
       align-items: center;
       padding: 0 20px;
+      margin-bottom: 10px;
       .list-item{
         padding: 10px 20px;
         border-right: 1px solid var(--light-border);
@@ -474,4 +475,99 @@ a,a:hover{
           }
     }
   }
+}
+
+
+// data table container
+
+.data-table-container{
+  padding: 15px;
+  border-radius:6px;
+  box-shadow: 0 4px 4px var(--tile-shadow);
+  margin-bottom: 10px;
+  background: var(--primary-color);
+  .table-header-container{
+    .left-section{
+      .table-heading{
+        color: var(--panel-bg-color);
+        font-size: 15px;
+        font-weight: $font-semibold;
+        font-family: $poppins;
+        margin-right: 16px;
+        margin-bottom: 0;
+      }
+      .count{
+        margin-right: 12px;
+        .total{
+          color:var(--gray-text);
+          font-size:12px;
+          font-weight:$font-semibold;
+          font-family:$poppins;
+          margin-bottom: 0;
+          .value{
+            font-size: 11px;
+            font-weight: $font-semibold;
+            color: var(--panel-bg-color);
+          }
+        }
+      }
+      .search-wrapper{
+        background:var(--select-bg);
+        border-radius: 6px;
+        border: 1px solid var(--border);
+        font-size: 11px;
+        font-weight: 400;
+        font-family: $poppins;
+        color: var(--gray-text);
+        position: relative;
+        display: flex;
+        align-items: center;
+        
+        input{
+          border: none;
+          background: transparent;
+          height: 35px;
+          padding:8px 10px 8px 15px ;
+          &:focus{
+            outline: none;
+          }
+        }
+        .icon-search{
+          margin-right: 10px;
+          font-size: 12px;
+        }
+      }
+    }
+    .right-section{
+      .current-result{
+        margin-right: 17px;
+        font-size: 12px;
+        font-weight: $font-regular;
+        color: var(--gray-text);
+        font-family: $poppins;
+      }
+      .pagination-wrapper{
+        margin-right: 35px;
+        .MuiPagination-ul{
+          li{
+            button{
+              font-size: 12px;
+              font-weight: $font-medium;
+              font-family: $poppins;
+              color: var( --icon-shade);
+              transition: all 0.3s linear;
+              &:focus{
+                outline: none;
+              }
+              &.Mui-selected{
+                background: var(--sky-blue);
+                color: var(--bg-blue);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
 }
