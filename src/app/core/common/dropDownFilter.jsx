@@ -4,8 +4,8 @@ class DropDownFilter extends Component {
   state = {};
   render() {
     return (
-      <div>
-        <span>Filter</span>
+      <div className ="filter">
+        
       </div>
     );
   }
