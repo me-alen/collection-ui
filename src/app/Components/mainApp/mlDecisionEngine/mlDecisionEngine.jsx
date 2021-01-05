@@ -7,8 +7,25 @@ import DisplayChartsAndGraphs from "../Common/graphs/displayChartsAndGraph";
 import filterService from "../../../Services/filterServices";
 
 class MLDecisionEngine extends Component {
-  getMLDataFilterData = () => {
-    filterService.mlFiltering().then((resolve) => {
+  //Button-Filter
+  getButtonFilterData = () => {
+    filterService.buttonFilterData().then((resolve) => {
+      let data = { ...this.state.collectionRiskFilter };
+      data.data = Object.entries(resolve).map((e) => ({
+        ["btnLabel"]: e[0],
+        ["value"]: e[1],
+      }));
+      // const total=(data.data.map((val) => {return val.value
+      // })).reduce(accumulator, currentValue) => accumulator + currentValue;
+      // console.log(total);
+      this.setState({ collectionRiskFilter: data });
+    });
+  };
+
+  // Data-Table
+
+  getMLDataTableFilterData = () => {
+    filterService.mlFilteringDataTable().then((resolve) => {
       let data = { ...this.state.dataTable };
       data.data = resolve.content;
       data.totalElements = resolve.totalElements;
@@ -17,7 +34,8 @@ class MLDecisionEngine extends Component {
   };
 
   componentDidMount() {
-    this.getMLDataFilterData();
+    this.getMLDataTableFilterData();
+    this.getButtonFilterData();
   }
 
   state = {
@@ -53,6 +71,7 @@ class MLDecisionEngine extends Component {
       totalElements: 0,
       title: "Recommended Actions",
     },
+    collectionRiskFilter: { data: [] },
   };
   render() {
     return (
@@ -61,11 +80,11 @@ class MLDecisionEngine extends Component {
         <div className="graph-wrapper">
           <div className="heading-wrapper d-flex align-items-center justify-content-between">
             <h2 className="sub-heading">Collection Recommendations</h2>
-            <span class="icon-layout-switch cp"></span>
+            <span className="icon-layout-switch cp"></span>
           </div>
           <DisplayChartsAndGraphs />
         </div>
-        <ButtonFilter />
+        <ButtonFilter data={this.state.collectionRiskFilter} />
         <div className="table-wrapper">
           <DisplayDataTable data={this.state.dataTable} />
         </div>

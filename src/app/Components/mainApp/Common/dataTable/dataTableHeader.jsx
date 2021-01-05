@@ -1,5 +1,5 @@
 import React from "react";
-// import ReactPaginate from "react-paginate";
+import Pagination from "@material-ui/lab/Pagination";
 
 const DataTableHeader = (props) => {
   const { title, totalElements, pageCount } = props.paginationData;
@@ -13,15 +13,7 @@ const DataTableHeader = (props) => {
       <span>Total : {totalElements}</span>
       <input type="text" name="search" placeholder="Search" />
       <span>Showing of 1-10</span>
-      {/* <ReactPaginate
-        previousLabel={"<"}
-        nextLabel={">"}
-        pageCount={pageCount}
-        onPageChange={handlePageClick}
-        containerClassName={"pagination"}
-        subContainerClassName={"pages pagination"}
-        activeClassName={"active"}
-      /> */}
+      <Pagination count={10} />
     </div>
   );
 };
