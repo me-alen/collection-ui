@@ -2,10 +2,16 @@ import httpService from "./httpService";
 import { environment } from "../../environments/environment_default";
 import { Endpoints } from "../core/constants/endpoints";
 
-async function mlFiltering() {
+async function mlFilteringDataTable() {
   const endpoint = environment.baseUrl + Endpoints.ML_FILTERING;
   const data = await httpService.get(endpoint);
   return data.data;
 }
 
-export default { mlFiltering };
+async function buttonFilterData() {
+  const endpoint = environment.baseUrl + Endpoints.COLLECTION_RISK_FILTER;
+  const data = await httpService.get(endpoint);
+  return data.data;
+}
+
+export default { mlFilteringDataTable, buttonFilterData };
