@@ -8,12 +8,28 @@ const DataTableHeader = (props) => {
   };
 
   return (
-    <div>
-      <span>{title}</span>
-      <span>Total : {totalElements}</span>
-      <input type="text" name="search" placeholder="Search" />
-      <span>Showing of 1-10</span>
-      <Pagination count={10} />
+    <div className="table-header-container d-flex align-items-center justify-content-between">
+      <div className="left-section d-flex align-items-center">
+        <h2 className="table-heading">{title}</h2>
+        <div className="count">
+          {" "}
+          <p className="total">
+            Total : <span className="value"> {totalElements}</span>
+          </p>
+        </div>
+        <div className="search-wrapper">
+          <input type="text" name="search" placeholder="Search" />
+          <span class="icon-search"></span>
+        </div>
+      </div>
+
+      <div className="right-section d-flex align-items-center">
+        <span className="current-result">Showing of 1-10</span>
+        <div className="pagination-wrapper">
+          <Pagination count={10} />
+        </div>
+        <span class="icon-layout-switch cp"></span>
+      </div>
     </div>
   );
 };
