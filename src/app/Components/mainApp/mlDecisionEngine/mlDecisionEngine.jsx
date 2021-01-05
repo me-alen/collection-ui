@@ -8,24 +8,37 @@ import filterService from "../../../Services/filterServices";
 
 class MLDecisionEngine extends Component {
   //Button-Filter
+
   getButtonFilterData = () => {
     filterService.buttonFilterData().then((resolve) => {
       let data = { ...this.state.collectionRiskFilter };
       data.data = Object.entries(resolve).map((e) => ({
-        ["btnLabel"]: e[0],
-        ["value"]: e[1],
+        btnLabel: e[0],
+        value: e[1],
       }));
-      // const total=(data.data.map((val) => {return val.value
-      // })).reduce(accumulator, currentValue) => accumulator + currentValue;
-      // console.log(total);
+      data.data.unshift({
+        btnLabel: "All",
+        value: data.data
+          .map((val) => {
+            return val.value;
+          })
+          .reduce((accumulator, currentValue) => {
+            return accumulator + currentValue;
+          }),
+      });
       this.setState({ collectionRiskFilter: data });
     });
   };
 
+  handleOnButtonClick = (e) => {
+    console.log(e);
+  };
+
   // Data-Table
 
-  getMLDataTableFilterData = () => {
-    filterService.mlFilteringDataTable().then((resolve) => {
+  getMLDataTableFilterData = (e) => {
+    const params = { collectionCategory: "ehp_to_Pay" };
+    filterService.mlFilteringDataTable(params).then((resolve) => {
       let data = { ...this.state.dataTable };
       data.data = resolve.content;
       data.totalElements = resolve.totalElements;
@@ -34,7 +47,7 @@ class MLDecisionEngine extends Component {
   };
 
   componentDidMount() {
-    this.getMLDataTableFilterData();
+    this.getMLDataTableFilterData(null);
     this.getButtonFilterData();
   }
 
@@ -71,7 +84,9 @@ class MLDecisionEngine extends Component {
       totalElements: 0,
       title: "Recommended Actions",
     },
-    collectionRiskFilter: { data: [] },
+    collectionRiskFilter: {
+      data: [],
+    },
   };
   render() {
     return (
@@ -84,7 +99,10 @@ class MLDecisionEngine extends Component {
           </div>
           <DisplayChartsAndGraphs />
         </div>
-        <ButtonFilter data={this.state.collectionRiskFilter} />
+        <ButtonFilter
+          data={this.state.collectionRiskFilter}
+          onClickButton={this.handleOnButtonClick}
+        />
         <div className="table-wrapper">
           <DisplayDataTable data={this.state.dataTable} />
         </div>

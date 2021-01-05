@@ -1,6 +1,6 @@
 import React from "react";
 
-const ButtonFilter = ({ data }) => {
+const ButtonFilter = ({ data, onClickButton }) => {
   return (
     <div className="filter-btn-section">
       <div className="heading-wrapper d-flex align-items-center justify-content-between">
@@ -10,11 +10,14 @@ const ButtonFilter = ({ data }) => {
       <div className="btn-container">
         <ul className="btn-list-wrapper">
           {data.data.map((btn) => (
-            <li className="list-item">
+            <li
+              className="list-item"
+              onClick={() => {
+                onClickButton(btn.btnLabel);
+              }}
+            >
               <span className="btn-text-wrapper">
-                <a className="list-link" href="">
-                  {btn.btnLabel}
-                </a>
+                <span className="list-link">{btn.btnLabel}</span>
                 <span className="badge">{btn.value}</span>
               </span>
             </li>
