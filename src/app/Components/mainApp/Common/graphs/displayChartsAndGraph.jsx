@@ -11,29 +11,13 @@ class DisplayChartsAndGraphs extends Component {
 
   render() {
     return (
-      // <div className='graphs-wrapper'>
-      //     <div className="row">
-      //         <div className="chart-section-title">Collection Recommendations</div>
-      //     </div>
-      //     <div className="row">
-      //         <div className="col">
-      //             <DisplayVerticalGraph />
-      //         </div>
-      //         <div className="col">
-      //             {/* <DisplayBarGraph /> */}
-      //             <DisplayPieChart />
-      //         </div>
-      //         <div className="col">
-      //             <DisplayDonutChart />
-      //         </div>
-      //     </div>
-      // </div>
 
-      <div className="wrapper ">
+
+      <div className="wrapper">
         <div className="item item1">
           <DisplayVerticalGraph />
         </div>
-        <div className="item item2">{/* <DisplayBarGraph /> */}</div>
+        
         <div className="item item2">
           <DisplayPieChart />
         </div>

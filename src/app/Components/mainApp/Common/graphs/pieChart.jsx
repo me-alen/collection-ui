@@ -67,8 +67,8 @@ class DisplayPieChart extends Component {
           <PieChart width={363} height={279}>
             <Pie
               data={this.state.dataPoints}
-              cx={177}
-              cy={177}
+              cx={130}
+              cy={100}
               label
               labelLine={false}
             //label={renderCustomizedLabel}
@@ -84,7 +84,7 @@ class DisplayPieChart extends Component {
               ))}
             </Pie>
             <Legend />
-            <Tooltip />
+            {/* <Tooltip /> */}
           </PieChart>
         </div>
       </div>

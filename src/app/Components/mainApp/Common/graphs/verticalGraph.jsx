@@ -110,8 +110,8 @@ class DisplayVerticalGraph extends Component {
               color: "#322b5e",
             }}
           />
-          <Legend />
-          <Tooltip />
+          {/* <Legend />
+          <Tooltip /> */}
           <Bar dataKey="amt" barSize={17}>
             <LabelList dataKey="amt" position="right" />
             {data.map((entry, index) => (

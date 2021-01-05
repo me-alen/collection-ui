@@ -62,11 +62,12 @@ class DisplayDonutChart extends Component {
             <PieChart width={363} height={279}>
               <Pie
               data={this.state.dataPoints}
-              cx={177}
-              cy={177}
+              cx={120}
+              cy={110}
               label
               labelLine={false}
-            //label={renderCustomizedLabel}
+              // label={renderCustomizedLabel}
+              // LabelList
               outerRadius={80}
               innerRadius={60}
               dataKey="amt"
@@ -79,9 +80,10 @@ class DisplayDonutChart extends Component {
                   fill={COLORS[index % COLORS.length]}
                 />
               ))}
-                <Label width={30} position="center">Total LANs</Label>
+                <Label width={30} position="center" value="Total LANs" />
+                {/* <LabelList dataKey="name" position="outside" /> */}
             </Pie>
-            {/* <Legend /> */}
+            <Legend />
           </PieChart>
         </div>
       </div>
