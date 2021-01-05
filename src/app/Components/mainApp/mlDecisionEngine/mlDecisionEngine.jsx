@@ -15,6 +15,7 @@ class MLDecisionEngine extends Component {
       data.data = Object.entries(resolve).map((e) => ({
         btnLabel: e[0],
         value: e[1],
+        selected: false,
       }));
       data.data.unshift({
         btnLabel: "All",
@@ -25,19 +26,17 @@ class MLDecisionEngine extends Component {
           .reduce((accumulator, currentValue) => {
             return accumulator + currentValue;
           }),
+        selected: true,
       });
       this.setState({ collectionRiskFilter: data });
     });
   };
 
-  handleOnButtonClick = (e) => {
-    console.log(e);
-  };
-
+  //ML-Filterr
   // Data-Table
 
   getMLDataTableFilterData = (e) => {
-    const params = { collectionCategory: "ehp_to_Pay" };
+    const params = { collectionCategory: e !== "All" ? e : null };
     filterService.mlFilteringDataTable(params).then((resolve) => {
       let data = { ...this.state.dataTable };
       data.data = resolve.content;
@@ -87,11 +86,55 @@ class MLDecisionEngine extends Component {
     collectionRiskFilter: {
       data: [],
     },
+    MLFilter: {
+      data: [
+        {
+          label: "Deliquency",
+          value: [
+            { optLbl: "All", value: "null" },
+            { optLbl: "Bucket One", value: 1 },
+            { optLbl: "Bucket Two", value: 2 },
+            { optLbl: "Bucket Three", value: 3 },
+          ],
+        },
+        {
+          label: "Cycle",
+          value: [
+            { optLbl: "All", value: null },
+            { optLbl: "Cycle One", value: 2 },
+            { optLbl: "Cycle Two", value: 10 },
+            { optLbl: "Cycle Three", value: 20 },
+          ],
+        },
+        {
+          label: "Customer Type",
+          value: [
+            { optLbl: "All", value: null },
+            { optLbl: "Retail", value: "RETAIL" },
+            { optLbl: "FTU", value: "FTU" },
+          ],
+        },
+        {
+          label: "Branch",
+          value: [
+            { optLbl: "All", value: null },
+            { optLbl: "Agra", value: "AGRA" },
+            { optLbl: "Ahmedabad", value: "AHMEDABAD" },
+            { optLbl: "Ahmednagar", value: "AHMEDNAGAR" },
+            { optLbl: "Ajmer", value: "AJMER" },
+            { optLbl: "Ambala", value: "AMBALA" },
+            { optLbl: "Amritsar", value: "AMRITSAR" },
+            { optLbl: "Aurangabad", value: "AURANGABAD" },
+            { optLbl: "Mumbai", value: "MUMBAI" },
+          ],
+        },
+      ],
+    },
   };
   render() {
     return (
       <React.Fragment>
-        <DropDownFilter />
+        <DropDownFilter data={this.state.MLFilter} />
         <div className="graph-wrapper">
           <div className="heading-wrapper d-flex align-items-center justify-content-between">
             <h2 className="sub-heading">Collection Recommendations</h2>
@@ -101,7 +144,7 @@ class MLDecisionEngine extends Component {
         </div>
         <ButtonFilter
           data={this.state.collectionRiskFilter}
-          onClickButton={this.handleOnButtonClick}
+          onClickButton={this.getMLDataTableFilterData}
         />
         <div className="table-wrapper">
           <DisplayDataTable data={this.state.dataTable} />

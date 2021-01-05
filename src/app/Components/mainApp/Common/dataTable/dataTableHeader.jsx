@@ -19,7 +19,7 @@ const DataTableHeader = (props) => {
         </div>
         <div className="search-wrapper">
           <input type="text" name="search" placeholder="Search" />
-          <span class="icon-search"></span>
+          <span className="icon-search"></span>
         </div>
       </div>
 
@@ -28,7 +28,7 @@ const DataTableHeader = (props) => {
         <div className="pagination-wrapper">
           <Pagination count={10} />
         </div>
-        <span class="icon-layout-switch cp"></span>
+        <span className="icon-layout-switch cp"></span>
       </div>
     </div>
   );

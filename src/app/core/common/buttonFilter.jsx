@@ -1,6 +1,11 @@
 import React from "react";
 
 const ButtonFilter = ({ data, onClickButton }) => {
+  const handleBtnClick = (btn) => {
+    btn.selected = true;
+    onClickButton(btn.btnLabel);
+  };
+  const activeClass = "list-item active";
   return (
     <div className="filter-btn-section">
       <div className="heading-wrapper d-flex align-items-center justify-content-between">
@@ -11,9 +16,10 @@ const ButtonFilter = ({ data, onClickButton }) => {
         <ul className="btn-list-wrapper">
           {data.data.map((btn) => (
             <li
-              className="list-item"
+              key={btn.btnLabel}
+              className={activeClass}
               onClick={() => {
-                onClickButton(btn.btnLabel);
+                handleBtnClick(btn);
               }}
             >
               <span className="btn-text-wrapper">
