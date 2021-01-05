@@ -51,6 +51,7 @@ class MLDecisionEngine extends Component {
       ],
       data: [],
       totalElements: 0,
+      title: "Recommended Actions",
     },
   };
   render() {
@@ -60,7 +61,7 @@ class MLDecisionEngine extends Component {
         <div className="graph-wrapper">
           <div className="heading-wrapper d-flex align-items-center justify-content-between">
             <h2 className="sub-heading">Collection Recommendations</h2>
-           <span class="icon-layout-switch cp"></span>
+            <span class="icon-layout-switch cp"></span>
           </div>
           <DisplayChartsAndGraphs />
         </div>
