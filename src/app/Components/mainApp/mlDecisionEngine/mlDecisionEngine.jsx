@@ -13,6 +13,7 @@ import CustomizeGrid from '../customize/customizeGrid/customizeGrid';
 import CustomizeFilters from '../customize/customizeFilters/customizeFilters';
 import CustomizeCollectionRecommendations from "../customize/customizeCollectionRecommendations/customizeCollectionRecommendations";
 import CustomizeMLDecisionEngine2 from '../customize/customizeMLDecisionEngine/customizeMLDecisionEngine2';
+import DisplayFilters from "../Common/filters/filters";
 
 class MLDecisionEngine extends Component {
   state = {};
@@ -24,14 +25,18 @@ class MLDecisionEngine extends Component {
   render() {
     return (
       <React.Fragment>
+        <CustomizeMLDecisionEngine2 />
+        <div className="filter-wrapper">
+          <h2 className="sub-heading">Filters</h2>
+          <CustomizeFilters />
+          <DisplayFilters />
+        </div>
         <div className="graph-wrapper">
           <h2 className="sub-heading">Collection Recommendations</h2>
-          <CustomizeMLDecisionEngine2 />
-          <CustomizeFilters />
           <CustomizeCollectionRecommendations />
+          <DisplayChartsAndGraphs csstext={this.props.text} />
           <CustomizeCollectionRiskCategory />
           <CustomizeGrid />
-          <DisplayChartsAndGraphs csstext={this.props.text} />
         </div>
         <DropDownFilter />
         <div className="table-wrapper">
