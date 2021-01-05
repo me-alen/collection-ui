@@ -1,3 +1,4 @@
+import { styled } from "@material-ui/core";
 import React, { Component } from "react";
 import { PieChart, Pie, Cell, LabelList, Label, Legend } from "recharts";
 import services from "../../../../Services/apiService";
@@ -55,6 +56,11 @@ class DisplayDonutChart extends Component {
   }
 
   render() {
+    const legStyle = {
+      color: "#636372",
+      fontSize: "10px",
+      fontFamily: 'Roboto',
+    }
     return (
       <div className="graph">
         <h3 className="graph-title">Payment Flag Type</h3>
@@ -82,10 +88,10 @@ class DisplayDonutChart extends Component {
                   fill={COLORS[index % COLORS.length]}
                 />
               ))}
-                <Label width={60} fontSize={14} color="#C2C2C2" position="center" value="Total LANs" />
+                <Label width={80} fontFamily="Roboto" fontSize={14} color="#C2C2C2" position="center" value="Total LANs" />
                 <LabelList nameKey="name" position="outside" />
             </Pie>
-            <Legend height={80} />
+            <Legend wrapperStyle={legStyle} height={80} />
           </PieChart>
         </div>
       </div>

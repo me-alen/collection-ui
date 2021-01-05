@@ -60,6 +60,11 @@ class DisplayPieChart extends Component {
   }
 
   render() {
+    const legStyle = {
+      color: "#636372",
+      fontSize: "10px",
+      fontFamily: 'Roboto',
+    }
     return (
       <div className="graph">
         <h3 className="graph-title">Case Action</h3>
@@ -86,7 +91,7 @@ class DisplayPieChart extends Component {
                 />
               ))}
             </Pie>
-            <Legend height={80} />
+            <Legend wrapperStyle={legStyle} height={80} />
             {/* <Tooltip /> */}
           </PieChart>
         </div>
