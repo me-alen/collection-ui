@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 class Header extends Component {
   state = {};
@@ -19,7 +21,7 @@ class Header extends Component {
             <i className="fa fa-bars" aria-hidden="true"></i>
           </div>
           <div className="avatar-wrapper">
-            <div className="dropdown">
+            {/* <div className="dropdown">
               <button
                 className="btn btn-secondary dropdown-toggle"
                 type="button"
@@ -44,7 +46,12 @@ class Header extends Component {
                   Something else here
                 </a>
               </div>
-            </div>
+            </div> */}
+            <DropdownButton id="dropdown-basic-button" title="Dropdown button" variant="secondary">
+            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+            </DropdownButton>
           </div>
         </div>
         <div className="header-secondary d-flex align-items-center justify-content-between">
@@ -52,7 +59,7 @@ class Header extends Component {
 
           <div className="header-filter-wrapper d-flex">
             <div className="filter-main">
-              <button
+              {/* <button
                 className="btn btn-secondary dropdown-toggle"
                 type="button"
                 id="dropdownMenuButton"
@@ -61,10 +68,15 @@ class Header extends Component {
                 aria-expanded="false"
               >
                 Dropdown button
-              </button>
+              </button> */}
+              <DropdownButton id="dropdown-basic-button" title="Dropdown button" variant="secondary">
+              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+              </DropdownButton>
             </div>
             <div className="filter-sec">
-              <button
+              {/* <button
                 className="btn btn-secondary dropdown-toggle"
                 type="button"
                 id="dropdownMenuButton"
@@ -73,7 +85,12 @@ class Header extends Component {
                 aria-expanded="false"
               >
                 Dropdown button
-              </button>
+              </button> */}
+              <DropdownButton id="dropdown-basic-button" title="Dropdown button" variant="secondary">
+              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+              </DropdownButton>
             </div>
           </div>
         </div>
