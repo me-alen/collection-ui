@@ -59,15 +59,17 @@ class DisplayDonutChart extends Component {
       <div className="graph">
         <h3 className="graph-title">Payment Flag Type</h3>
         <div>
-            <PieChart width={363} height={279}>
+            {/* <PieChart width={363} height={279}> */}
+            <PieChart width={363} height={270}>
               <Pie
               data={this.state.dataPoints}
               cx={120}
-              cy={110}
+              // cy={110}
+              cy={105}
               label
               labelLine={false}
               // label={renderCustomizedLabel}
-              // LabelList
+              LabelList
               outerRadius={80}
               innerRadius={60}
               dataKey="amt"
@@ -80,10 +82,10 @@ class DisplayDonutChart extends Component {
                   fill={COLORS[index % COLORS.length]}
                 />
               ))}
-                <Label width={30} position="center" value="Total LANs" />
-                {/* <LabelList dataKey="name" position="outside" /> */}
+                <Label width={60} fontSize={14} color="#C2C2C2" position="center" value="Total LANs" />
+                <LabelList nameKey="name" position="outside" />
             </Pie>
-            <Legend />
+            <Legend height={80} />
           </PieChart>
         </div>
       </div>

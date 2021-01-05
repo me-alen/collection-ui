@@ -64,11 +64,14 @@ class DisplayPieChart extends Component {
       <div className="graph">
         <h3 className="graph-title">Case Action</h3>
         <div>
-          <PieChart width={363} height={279}>
+          {/* <PieChart width={363} height={279}> */}
+          <PieChart width={363} height={270}>
             <Pie
               data={this.state.dataPoints}
               cx={130}
               cy={100}
+              // cx={177}
+              // cy={177}
               label
               labelLine={false}
             //label={renderCustomizedLabel}
@@ -83,7 +86,7 @@ class DisplayPieChart extends Component {
                 />
               ))}
             </Pie>
-            <Legend />
+            <Legend height={80} />
             {/* <Tooltip /> */}
           </PieChart>
         </div>
