@@ -20,65 +20,43 @@ class Header extends Component {
           >
             <i className="fa fa-bars" aria-hidden="true"></i>
           </div>
-     
-
-
 
           <div className="avatar-wrapper">
-            {/* <div className="dropdown">
-              <button
-                className="btn btn-secondary dropdown-toggle"
-                type="button"
-                id="dropdownMenuButton"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Dropdown button
-              </button>
-              <div
-                className="dropdown-menu"
-                aria-labelledby="dropdownMenuButton"
-              >
-                <a className="dropdown-item" href="#">
-                  Action
-                </a>
-                <a className="dropdown-item" href="#">
-                  Another action
-                </a>
-                <a className="dropdown-item" href="#">
-                  Something else here
-                </a>
-              </div>
-            </div> */}
-            <DropdownButton id="dropdown-basic-button" title="Dropdown button" variant="secondary">
-            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+            <div className="avatar-icon">
+              <img
+                src="https://cdn4.iconfinder.com/data/icons/man-user-human-person-business-profile-avatar/100/20A-1User-512.png"
+                alt=""
+              />
+            </div>
+            <DropdownButton
+              id="dropdown-basic-button"
+              title="Victor Hansen "
+              variant="secondary"
+            >
+              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
             </DropdownButton>
           </div>
         </div>
         <div className="header-secondary d-flex align-items-center justify-content-between">
           <span className="title-text">{this.props.headerTitle}</span>
 
-          <div className="header-filter-wrapper d-flex">
+          <div className="header-filter-wrapper d-flex align-items-center">
             <div className="filter-main">
-            
-              <DropdownButton id="dropdown-basic-button" title="Export" variant="secondary">
-              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+              <DropdownButton
+                id="dropdown-basic-button"
+                title="Export"
+                variant="secondary"
+              >
+                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
               </DropdownButton>
             </div>
 
-
-            <div className="filter-sec">
-              <img src="../../../assets/images/window-plus.svg" alt=""/>
-              {/* <DropdownButton id="dropdown-basic-button" title="Dropdown button" variant="secondary">
-              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-              </DropdownButton> */}
+            <div className="filter-sec cp">
+              <span class="icon-window-plus"></span>
             </div>
           </div>
         </div>

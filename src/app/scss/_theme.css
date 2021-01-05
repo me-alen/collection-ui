@@ -16,4 +16,8 @@ html {
   --bg-blue:#523AE3;
   --text-medium:#6D6D6D;
   --border:#DCDCDC;
+  --icon-shade-medium:#636372;
+  --select-text:#ABABAB;
+  --select-border:#E2E2E2;
+  --select-bg:#FCFCFC;
 }
