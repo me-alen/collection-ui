@@ -1,14 +1,13 @@
 import React, { Component } from "react";
-import { PieChart, Pie, Cell, LabelList } from "recharts";
-import "./pieChart.css";
+import { PieChart, Pie, Cell, LabelList, Legend, Tooltip } from "recharts";
 import services from "../../../../Services/apiService";
 
 const data = [
-  { name: "Group A", value: 300 },
-  { name: "Group B", value: 400 },
-  { name: "Group C", value: 200 },
-  { name: "Group D", value: 300 },
-];
+      { name: "", value: "" },
+      { name: "", value: "" },
+      { name: "", value: "" },
+      { name: "", value: "" },
+    ];
 
 const COLORS = [
   "#46C27C",
@@ -20,15 +19,18 @@ const COLORS = [
 ];
 
 const RADIAN = Math.PI / 180;
+
+//to add percentages
+
 // const renderCustomizedLabel = ({
-//     cx, cy, midAngle, innerRadius, outerRadius, index,
+//     cx, cy, midAngle, innerRadius, outerRadius, index, percent
 // }) => {
 //     const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
 //     const x = cx + radius * Math.cos(-midAngle * RADIAN);
 //     const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
 //     return (
-//         <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+//         <text x={x} y={y} fill="black" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
 //             {`${(percent * 100).toFixed(0)}%`}
 //         </text>
 //     );
@@ -39,40 +41,38 @@ class DisplayPieChart extends Component {
     dataPoints: [],
   };
 
-  componentDidMount() {
-    this.PieChart();
-  }
+  async componentDidMount() {
+    await this.PieChart();
+  }  
 
-  PieChart() {
-    services
-      .getCaseAction()
-      .then((response) => {
-        const info = Object.entries(response.data).map((e) => ({
-          ["name"]: e[0],
-          ["amt"]: e[1],
-        }));
-        this.setState({ dataPoints: info });
-        console.log("checking pie", this.state.dataPoints);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  async PieChart() {
+    try {
+      const { data } = await services.getCaseAction();
+      const info = Object.entries(data).map((e) => ({
+        ["name"]: e[0],
+        ["amt"]: e[1],
+      }));
+      this.setState({ dataPoints: info });
+    } catch (ex) {
+      if (ex.response && ex.response.status === 404)
+        console.log("oops. error.");
+    }
   }
 
   render() {
     return (
-      <div className="pie-chart graph">
+      <div className="graph">
         <h3 className="graph-title">Case Action</h3>
-        <div className="pichart">
-          <PieChart className="pie-chart-graph" width={363} height={279}>
+        <div>
+          <PieChart width={363} height={279}>
             <Pie
               data={this.state.dataPoints}
               cx={177}
               cy={177}
+              label
               labelLine={false}
-              // label={renderCustomizedLabel}
+            //label={renderCustomizedLabel}
               outerRadius={80}
-              // innerRadius={60}
               fill="#8884d8"
               dataKey="amt"
             >
@@ -83,6 +83,8 @@ class DisplayPieChart extends Component {
                 />
               ))}
             </Pie>
+            <Legend />
+            <Tooltip />
           </PieChart>
         </div>
       </div>

@@ -2,24 +2,7 @@ import axios from "axios";
 import { apiUrl } from "../../config.json";
 import http from "./httpService";
 
-// const apiEndpoint = apiUrl;
-
 //vertical chart
-
-// const getProbToDefault = async () => {
-//     return await axios
-//       .get(`${apiUrl}/ml-category-count`)
-//       .then(response => {
-//         console.log(response);
-//         return response.data;
-//       })
-//       .catch(error => {
-//         console.log(error);
-//       });
-//   };
-
-//   export { getProbToDefault };
-
 
 export function getProbToDefault() {
   return http.get(`${apiUrl}/ml-category-count`);
@@ -28,20 +11,6 @@ export function getProbToDefault() {
 
 //pie chart
 
-// const getCaseAction = async () => {
-//   return await axios
-//   .get(`${apiUrl}/ml-case-action`)
-//   .then(response => {
-//     console.log(response);
-//     return response.data;
-//   }).catch(error => {
-//     console.log(error);
-//   });
-// }
- 
-// export { getCaseAction };
-
-
 export function getCaseAction() {
   return http.get(`${apiUrl}/ml-case-action`);
 }
@@ -49,25 +18,25 @@ export function getCaseAction() {
 
 //donut chart
 
-const getPaymentFlagType = async () => {
-  return await axios
-  .get(`${apiUrl}/ml-payment-flag-type`)
-  .then(response => {
-    console.log('donut res on api page', response);
-    // return response.data;
-    return response;
-  }).catch(error => {
-    console.log(error);
-  });
+export function getPaymentFlagType() {
+  return http.get(`${apiUrl}/ml-payment-flag-type`);
 }
- 
-export { getPaymentFlagType };
 
+// diff way to write the fn
 
-// export function getPaymentFlagType() {
-//   return http.get(`${apiUrl}/ml-payment-flag-type`);
+// const getPaymentFlagType = async () => {
+//   return await axios
+//   .get(`${apiUrl}/ml-payment-flag-type`)
+//   .then(response => {
+//     console.log('donut res on api page', response);
+//     // return response.data;
+//     return response;
+//   }).catch(error => {
+//     console.log(error);
+//   });
 // }
-
+ 
+// export { getPaymentFlagType };
 
 export default {
   getProbToDefault,
