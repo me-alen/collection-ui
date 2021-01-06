@@ -4,9 +4,9 @@ const ButtonFilter = ({ id, data, onClickButton }) => {
   const handleBtnClick = (btn) => {
     data.data.map((element) => {
       element.active =
-        element.btnLabel !== btn.btnLabel ? "list-item" : "list-item active";
+        element.name !== btn.name ? "list-item" : "list-item active";
     });
-    onClickButton(data.id, btn.btnLabel);
+    onClickButton(data.id, btn.value);
   };
   return (
     <div className="filter-btn-section">
@@ -18,15 +18,15 @@ const ButtonFilter = ({ id, data, onClickButton }) => {
         <ul className="btn-list-wrapper">
           {data.data.map((btn) => (
             <li
-              key={btn.btnLabel}
+              key={btn.name}
               className={btn.active}
               onClick={() => {
                 handleBtnClick(btn);
               }}
             >
               <span className="btn-text-wrapper">
-                <span className="list-link">{btn.btnLabel}</span>
-                <span className="badge">{btn.value}</span>
+                <span className="list-link">{btn.name}</span>
+                <span className="badge">{btn.amt}</span>
               </span>
             </li>
           ))}
