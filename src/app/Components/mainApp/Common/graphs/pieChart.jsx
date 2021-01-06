@@ -60,23 +60,23 @@ class DisplayPieChart extends Component {
   }
 
   render() {
-    const legStyle = {
-      color: "#636372",
-      fontSize: "10px",
-      fontFamily: 'Roboto',
-    }
+    // const legStyle = {
+    //   color: "#636372",
+    //   fontSize: "10px",
+    //   fontFamily: 'Roboto',
+    // }
     return (
       <div className="graph">
         <h3 className="graph-title">Case Action</h3>
         <div>
-          {/* <PieChart width={363} height={279}> */}
-          <PieChart width={363} height={270}>
+          <PieChart width={363} height={279}>
+          {/* <PieChart width={363} height={270}> */}
             <Pie
               data={this.state.dataPoints}
-              cx={130}
-              cy={100}
-              // cx={177}
-              // cy={177}
+              // cx={130}
+              // cy={100}
+              cx={177}
+              cy={177}
               label
               labelLine={false}
             //label={renderCustomizedLabel}
@@ -91,8 +91,8 @@ class DisplayPieChart extends Component {
                 />
               ))}
             </Pie>
-            <Legend wrapperStyle={legStyle} height={80} />
-            {/* <Tooltip /> */}
+            {/* <Legend wrapperStyle={legStyle} height={80} /> */}
+            <Legend />
           </PieChart>
         </div>
       </div>
