@@ -154,6 +154,11 @@ class MLDecisionEngine extends Component {
       ],
     },
   };
+
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -167,7 +172,7 @@ class MLDecisionEngine extends Component {
             {/* <span className="icon-layout-switch cp"></span> */}
             <CustomizeCollectionRecommendations />
           </div>
-          <DisplayChartsAndGraphs />
+          <DisplayChartsAndGraphs csstext={this.props.text} />
         </div>
         <ButtonFilter
           data={this.state.collectionRiskFilter}

@@ -8,11 +8,15 @@ import "./displayChartsAndGraph.css";
 class DisplayChartsAndGraphs extends Component {
   state = {};
 
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
 
 
-      <div className="wrapper">
+      <div className='wrapper ${this.props.csstext}'>
         <div className="item item1">
           <DisplayVerticalGraph />
         </div>
