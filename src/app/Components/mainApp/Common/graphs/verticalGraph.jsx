@@ -74,13 +74,35 @@ class DisplayVerticalGraph extends Component {
     await this.VerticalChart();
   }
 
+  // async VerticalChart() {
+  //   try {
+  //     const { data } = await services.getProbToDefault();
+  //     const info = Object.entries(data).map((e) => ({
+  //       name: this.RewritingNames(e[0]),
+  //       amt: e[1],
+  //     }));
+  //     this.setState({ dataPoints: info });
+  //   } catch (ex) {
+  //     if (ex.response && ex.response.status === 404)
+  //       console.log("oops. error.");
+  //   }
+  // }
+
   async VerticalChart() {
     try {
       const { data } = await services.getProbToDefault();
       const info = Object.entries(data).map((e) => ({
-        name: this.RewritingNames(e[0]),
-        amt: e[1],
+        ["name"]: e[0],
+        ["amt"]: e[1],
       }));
+      // console.log('array from bar', info);
+      // const newInfo = [...info];
+      // console.log('copied array', newInfo);
+      // const newInfo2 = newInfo.map((obj, index) => {
+      //   return this.RewritingNames(obj.name);
+      // });
+      // console.log("just checking", newInfo[0].name);
+      // console.log('modified array hopefully', newInfo2);
       this.setState({ dataPoints: info });
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
