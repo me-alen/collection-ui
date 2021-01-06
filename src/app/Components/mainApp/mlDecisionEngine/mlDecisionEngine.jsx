@@ -13,7 +13,6 @@ import CustomizeCollectionRiskCategoryList from '../customize/customizeCollectio
 import MainCustomization from '../customize/mainCustomization';
 import CustomizeGrid from '../customize/customizeGrid/customizeGrid';
 import CustomizeFilters from '../customize/customizeFilters/customizeFilters';
-import CustomizeCollectionRecommendations from "../customize/customizeCollectionRecommendations/customizeCollectionRecommendations";
 import CustomizeMLDecisionEngine2 from '../customize/customizeMLDecisionEngine/customizeMLDecisionEngine2';
 // import DisplayFilters from "../Common/filters/filters";
 
@@ -29,6 +28,7 @@ class MLDecisionEngine extends Component {
         value: e[1],
         active: "list-item",
       }));
+      console.log(data.data);
       data.data.unshift({
         btnLabel: "All",
         value: data.data

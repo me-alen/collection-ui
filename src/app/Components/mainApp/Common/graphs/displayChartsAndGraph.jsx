@@ -3,7 +3,6 @@ import DisplayVerticalGraph from "./verticalGraph";
 import DisplayPieChart from "./pieChart";
 import DisplayDonutChart from "./donutChart";
 import "./displayChartsAndGraph.css";
-import DisplayBarGraph from "./barGraph";
 // import Button from 'react-bootstrap/Button'
 
 class DisplayChartsAndGraphs extends Component {
