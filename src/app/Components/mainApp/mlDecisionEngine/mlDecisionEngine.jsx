@@ -3,8 +3,8 @@ import ButtonFilter from "../../../core/common/buttonFilter";
 import DropDownFilter from "../../../core/common/dropDownFilter";
 import DisplayDataTable from "../Common/dataTable/dataTable";
 import DisplayChartsAndGraphs from "../Common/graphs/displayChartsAndGraph";
-
 import filterService from "../../../Services/filterServices";
+import CustomizeFilters from '../customize/customizeFilters/customizeFilters';
 
 let filterData = {};
 class MLDecisionEngine extends Component {
@@ -160,6 +160,13 @@ class MLDecisionEngine extends Component {
           data={this.state.MLFilter}
           onClickButton={this.setFilterData}
         />
+
+        <div className="filter-wrapper">
+          <h2 className="sub-heading">Filters</h2>
+          <CustomizeFilters />
+          {/* <DisplayFilters /> */}
+        </div>
+
         <div className="graph-wrapper">
           <div className="heading-wrapper d-flex align-items-center justify-content-between">
             <h2 className="sub-heading">Collection Recommendations</h2>
