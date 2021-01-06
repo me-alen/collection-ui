@@ -1,6 +1,9 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import CustomizeFilters from '../../Components/mainApp/customize/customizeFilters/customizeFilters';
+import Button from 'react-bootstrap/Button';
+import CustomizeFiltersFinal from '../../Components/mainApp/customize/customizeFilters/customizeFiltersFinal';
+
 
 const DropDownFilter = ({ data, onClickButton }) => {
   return (
@@ -10,10 +13,10 @@ const DropDownFilter = ({ data, onClickButton }) => {
           <span className="icon-filter"></span>
           <p className="text mb-0">Filters</p>
         </div>
-        <div className="icon-area">
+        {/* <div className="icon-area">
           <span className="icon-layout-switch cp"></span>
-          <CustomizeFilters />
-        </div>
+        </div> */}
+        <CustomizeFiltersFinal />
       </div>
       <Form>
         <div className="row filter-row">

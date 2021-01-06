@@ -1,4 +1,5 @@
 import React from "react";
+import CustomizeCollectionRiskCategory from '../../Components/mainApp/customize/customizeCollectionRiskCat/customizeCollectionRiskCat';
 
 const ButtonFilter = ({ id, data, onClickButton }) => {
   const handleBtnClick = (btn) => {
@@ -12,7 +13,8 @@ const ButtonFilter = ({ id, data, onClickButton }) => {
     <div className="filter-btn-section">
       <div className="heading-wrapper d-flex align-items-center justify-content-between">
         <h2 className="sub-heading">{data.title}</h2>
-        <span className="icon-layout-switch cp"></span>
+        {/* <span className="icon-layout-switch cp"></span> */}
+        <CustomizeCollectionRiskCategory />
       </div>
       <div className="btn-container">
         <ul className="btn-list-wrapper">

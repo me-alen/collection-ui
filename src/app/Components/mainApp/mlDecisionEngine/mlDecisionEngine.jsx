@@ -8,13 +8,10 @@ import Button from 'react-bootstrap/Button';
 import customizationIcon from "../../../Images/Icon1.svg";
 import StaticModalWithoutAnimation from "../Common/modals/staticModalNoAnimation";
 import CustomizeMLDecisionEngine from '../customize/customizeMLDecisionEngine/customizeMLDecisionEngine';
-import CustomizeCollectionRiskCategory from '../customize/customizeCollectionRiskCat/customizeCollectionRiskCat';
-import CustomizeCollectionRiskCategoryList from '../customize/customizeCollectionRiskCat/customizeCollectionRiskCatList';
 import MainCustomization from '../customize/mainCustomization';
-import CustomizeGrid from '../customize/customizeGrid/customizeGrid';
-import CustomizeFilters from '../customize/customizeFilters/customizeFilters';
 import CustomizeMLDecisionEngine2 from '../customize/customizeMLDecisionEngine/customizeMLDecisionEngine2';
 // import DisplayFilters from "../Common/filters/filters";
+import CustomizeCollectionRecommendations from '../customize/customizeCollectionRecommendations/customizeCollectionRecommendations';
 
 let filterData = {};
 class MLDecisionEngine extends Component {
@@ -171,16 +168,11 @@ class MLDecisionEngine extends Component {
           data={this.state.MLFilter}
           onClickButton={this.setFilterData}
         />
-
-        {/* <div className="filter-wrapper">
-          <h2 className="sub-heading">Filters</h2>
-          <CustomizeFilters />
-        </div> */}
-
         <div className="graph-wrapper">
           <div className="heading-wrapper d-flex align-items-center justify-content-between">
             <h2 className="sub-heading">Collection Recommendations</h2>
-            <span className="icon-layout-switch cp"></span>
+            {/* <span className="icon-layout-switch cp"></span> */}
+            <CustomizeCollectionRecommendations />
           </div>
           <DisplayChartsAndGraphs />
         </div>

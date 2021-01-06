@@ -40,7 +40,8 @@ const CustomizeCollectionRiskCategory = () => {
           aria-haspopup="true" 
           type="button" 
           onClick={handleShow}>
-          <img id="customize-icon" src={customizeIcon} alt="custom"></img>
+          {/* <img id="customize-icon" src={customizeIcon} alt="custom"></img> */}
+          <span className="icon-layout-switch cp"></span>
           </Button>
           <Modal
           show={show}
