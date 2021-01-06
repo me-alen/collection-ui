@@ -4,13 +4,6 @@ import DropDownFilter from "../../../core/common/dropDownFilter";
 import DisplayDataTable from "../Common/dataTable/dataTable";
 import DisplayChartsAndGraphs from "../Common/graphs/displayChartsAndGraph";
 import filterService from "../../../Services/filterServices";
-import Button from 'react-bootstrap/Button';
-import customizationIcon from "../../../Images/Icon1.svg";
-import StaticModalWithoutAnimation from "../Common/modals/staticModalNoAnimation";
-import CustomizeMLDecisionEngine from '../customize/customizeMLDecisionEngine/customizeMLDecisionEngine';
-import MainCustomization from '../customize/mainCustomization';
-import CustomizeMLDecisionEngine2 from '../customize/customizeMLDecisionEngine/customizeMLDecisionEngine2';
-// import DisplayFilters from "../Common/filters/filters";
 import CustomizeCollectionRecommendations from '../customize/customizeCollectionRecommendations/customizeCollectionRecommendations';
 
 let filterData = {};

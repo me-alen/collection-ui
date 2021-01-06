@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
+import CustomizeMLDecisionEngine2 from '../mainApp/customize/customizeMLDecisionEngine/customizeMLDecisionEngine2';
 
 class Header extends Component {
   state = {};
@@ -56,7 +57,8 @@ class Header extends Component {
             </div>
 
             <div className="filter-sec cp">
-              <span className="icon-window-plus"></span>
+              {/* <span className="icon-window-plus"></span> */}
+              <CustomizeMLDecisionEngine2 />
             </div>
           </div>
         </div>

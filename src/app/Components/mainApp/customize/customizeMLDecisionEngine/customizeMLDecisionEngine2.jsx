@@ -20,7 +20,8 @@ const CustomizeMLDecisionEngine2 = () => {
                 aria-haspopup="true"
                 type="button"
                 onClick={handleShow}>
-                <img id="customization-icon"  src={customizationIcon} alt="custom"></img>
+                {/* <img id="customization-icon"  src={customizationIcon} alt="custom"></img> */}
+                <span className="icon-window-plus"></span>
                 </Button>
                 <Modal
                 className="modal-dialog modal-content"

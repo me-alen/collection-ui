@@ -92,7 +92,7 @@ class DisplayPieChart extends Component {
               ))}
             </Pie>
             {/* <Legend wrapperStyle={legStyle} height={80} /> */}
-            <Legend />
+            {/* <Legend /> */}
           </PieChart>
         </div>
       </div>
