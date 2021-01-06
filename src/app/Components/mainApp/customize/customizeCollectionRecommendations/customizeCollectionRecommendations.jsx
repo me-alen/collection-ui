@@ -9,6 +9,8 @@ import CustomizeCollectionRecommendationsList from './customizeCollectionRecomme
 import pic from "../../../../Images/Icon2.svg";
 import MLDecisionEngine from '../../mlDecisionEngine/mlDecisionEngine';
 import DisplayVerticalGraph from '../../Common/graphs/verticalGraph';
+import DisplaySelectedGraph from './displaySelectedGraph';
+import TrialFn from './trialfn';
 
 const CustomizeCollectionRecommendations = () => {
     const [show, setShow] = useState(false);
@@ -72,14 +74,16 @@ const CustomizeCollectionRecommendations = () => {
               <div className="box2">
                     {/* <img src={pic}></img> */}
                     <DisplayVerticalGraph />
+                    {/* {<CustomizeCollectionRecommendationsList />} */}
+                    {/* {<TrialFn />} */}
               </div>
             </div>
             <div>
               <h5>Select Dashboard Layout</h5><br />
               <Button variant="light" onClick={handleSubmitLayout1}>3 in a row</Button>
-              <Button variant="light" onClick={handleSubmitLayout1}>2 up 1 down</Button>
-              <Button variant="light" onClick={handleSubmitLayout1}>1 up 2 down</Button>
-              <Button variant="light" onClick={handleSubmitLayout1}>1 left 2 right</Button>
+              <Button variant="light" onClick={handleSubmitLayout2}>2 up 1 down</Button>
+              <Button variant="light" onClick={handleSubmitLayout3}>1 up 2 down</Button>
+              <Button variant="light" onClick={handleSubmitLayout4}>1 left 2 right</Button>
             </div>
             </div>
           </Modal.Body>

@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { CheckBox } from '../../Common/checkBox';
+import DisplayPieChart from '../../Common/graphs/pieChart';
+import DisplayVerticalGraph from '../../Common/graphs/verticalGraph';
 import "./customizeCollectionRecommendationsList.css";
+import DisplayDonutChart from '../../Common/graphs/donutChart';
+import CustomizeCollectionRecommendations from './customizeCollectionRecommendations';
+import DisplaySelectedGraph from './displaySelectedGraph';
+import TrialFn from './trialfn';
 
 class CustomizeCollectionRecommendationsList extends Component {
     state = {  }
@@ -9,15 +15,15 @@ class CustomizeCollectionRecommendationsList extends Component {
         super(props)
         this.state = {
           items: [
-            {id: 1, value: "Probability to Default", isChecked: true},
-            {id: 2, value: "Recommended Action Count", isChecked: false},
-            {id: 3, value: "Branch Distribution", isChecked: false},
-            {id: 4, value: "Collection Status by LANs", isChecked: false},
-            {id: 5, value: "Collection Status by Amount Collectable", isChecked: false},
-            {id: 6, value: "Payment Behaviour Distribution", isChecked: true},
-            {id: 7, value: "Customer Type Distribution", isChecked: true},
-            {id: 8, value: "Finance Category Distribution", isChecked: false},
-            {id: 9, value: "Employment Sector Distribution", isChecked: false}
+            {key: 1, id: 1, value: "Probability to Default", isChecked: true},
+            {key: 2, id: 2, value: "Recommended Action Count", isChecked: false},
+            {key: 3, id: 3, value: "Branch Distribution", isChecked: false},
+            {key: 4, id: 4, value: "Collection Status by LANs", isChecked: false},
+            {key: 5, id: 5, value: "Collection Status by Amount Collectable", isChecked: false},
+            {key: 6, id: 6, value: "Payment Behaviour Distribution", isChecked: true},
+            {key: 7, id: 7, value: "Customer Type Distribution", isChecked: true},
+            {key: 8, id: 8, value: "Finance Category Distribution", isChecked: false},
+            {key: 9, id: 9, value: "Employment Sector Distribution", isChecked: false}
           ]
         }
       }
@@ -33,6 +39,8 @@ class CustomizeCollectionRecommendationsList extends Component {
         items.forEach(item => {
            if (item.value === event.target.value)
               item.isChecked =  event.target.checked
+              // {<DisplaySelectedGraph value={item.id} />}
+              {<TrialFn value1={item.id} />}
         })
         this.setState({items: items})
       }

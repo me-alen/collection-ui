@@ -40,7 +40,7 @@ const CustomizeMLDecisionEngine2 = () => {
                         <div>Navbar</div>
                         <div className="flex-container2">
                             <div>
-                                <h4>Customize ML ecision Engine (header here)</h4>
+                                <h4>Customize ML Decision Engine (header here)</h4>
                                 <Button variant="secondary" onClick={handleClose}>Close</Button>
                                 <Button variant="primary">Understood</Button>
                             </div>

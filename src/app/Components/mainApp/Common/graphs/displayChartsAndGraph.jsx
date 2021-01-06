@@ -16,7 +16,7 @@ class DisplayChartsAndGraphs extends Component {
     return (
 
 
-      <div className='wrapper ${this.props.csstext}'>
+      <div className={`wrapper ${this.props.csstext}`}>
         <div className="item item1">
           <DisplayVerticalGraph />
         </div>
