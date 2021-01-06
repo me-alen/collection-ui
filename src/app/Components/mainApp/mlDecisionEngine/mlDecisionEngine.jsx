@@ -13,16 +13,17 @@ class MLDecisionEngine extends Component {
   getButtonFilterData = () => {
     filterService.buttonFilterData().then((resolve) => {
       let data = { ...this.state.collectionRiskFilter };
-      data.data = Object.entries(resolve).map((e) => ({
-        btnLabel: e[0],
-        value: e[1],
-        active: "list-item",
-      }));
+      data.data = resolve.data.map((e) => {
+        let mapValue = Object.assign({}, e);
+        mapValue.active = "list-item";
+        return mapValue;
+      });
       data.data.unshift({
-        btnLabel: "All",
-        value: data.data
+        name: "All",
+        value: null,
+        amt: data.data
           .map((val) => {
-            return val.value;
+            return parseInt(val.amt);
           })
           .reduce((accumulator, currentValue) => {
             return accumulator + currentValue;
