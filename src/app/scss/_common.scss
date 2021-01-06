@@ -12,6 +12,7 @@ a,a:hover{
   /* width */
       ::-webkit-scrollbar {
         width: 5px;
+        height: 5px;
       }
       /* Track */
       ::-webkit-scrollbar-track {
@@ -86,7 +87,7 @@ a,a:hover{
   }
 
   .content-container {
-    width: 100%;
+    width: calc(100% - 265px);
     background: var(--body-bg);
 
     // header section css goes here
@@ -362,6 +363,7 @@ a,a:hover{
       align-items: center;
       padding: 0 20px;
       margin-bottom: 10px;
+      overflow-x: auto;
       .list-item{
         padding: 10px 20px;
         border-right: 1px solid var(--light-border);
@@ -688,4 +690,8 @@ a,a:hover{
       }
     }
   }
+}
+
+.recharts-legend-wrapper{
+  width: 100% !important;
 }
