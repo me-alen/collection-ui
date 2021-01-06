@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from "react-bootstrap/DropdownButton";
+import Dropdown from "react-bootstrap/Dropdown";
 
 class Header extends Component {
   state = {};
@@ -56,7 +56,7 @@ class Header extends Component {
             </div>
 
             <div className="filter-sec cp">
-              <span class="icon-window-plus"></span>
+              <span className="icon-window-plus"></span>
             </div>
           </div>
         </div>

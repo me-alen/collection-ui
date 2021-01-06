@@ -6,26 +6,43 @@ import DisplayChartsAndGraphs from "../Common/graphs/displayChartsAndGraph";
 
 import filterService from "../../../Services/filterServices";
 
+let filterData = {};
 class MLDecisionEngine extends Component {
   //Button-Filter
+
   getButtonFilterData = () => {
     filterService.buttonFilterData().then((resolve) => {
       let data = { ...this.state.collectionRiskFilter };
       data.data = Object.entries(resolve).map((e) => ({
-        ["btnLabel"]: e[0],
-        ["value"]: e[1],
+        btnLabel: e[0],
+        value: e[1],
+        active: "list-item",
       }));
-      // const total=(data.data.map((val) => {return val.value
-      // })).reduce(accumulator, currentValue) => accumulator + currentValue;
-      // console.log(total);
+      data.data.unshift({
+        btnLabel: "All",
+        value: data.data
+          .map((val) => {
+            return val.value;
+          })
+          .reduce((accumulator, currentValue) => {
+            return accumulator + currentValue;
+          }),
+        active: "list-item active",
+      });
       this.setState({ collectionRiskFilter: data });
     });
   };
 
+  //ML-Filterr
+  setFilterData = (param, value) => {
+    filterData[param] = value;
+    this.getMLDataTableFilterData(filterData);
+  };
+
   // Data-Table
 
-  getMLDataTableFilterData = () => {
-    filterService.mlFilteringDataTable().then((resolve) => {
+  getMLDataTableFilterData = (filterData) => {
+    filterService.mlFilteringDataTable(filterData).then((resolve) => {
       let data = { ...this.state.dataTable };
       data.data = resolve.content;
       data.totalElements = resolve.totalElements;
@@ -34,7 +51,7 @@ class MLDecisionEngine extends Component {
   };
 
   componentDidMount() {
-    this.getMLDataTableFilterData();
+    this.getMLDataTableFilterData(null);
     this.getButtonFilterData();
   }
 
@@ -57,6 +74,11 @@ class MLDecisionEngine extends Component {
           sortable: true,
         },
         {
+          name: "Deliquency",
+          selector: "bucket",
+          sortable: true,
+        },
+        {
           name: "Collection Category",
           selector: "collectionCategory",
           sortable: true,
@@ -66,17 +88,78 @@ class MLDecisionEngine extends Component {
           selector: "branch",
           sortable: true,
         },
+        {
+          name: "Action",
+          selector: "action",
+          sortable: true,
+        },
       ],
       data: [],
       totalElements: 0,
+      pageCount: 10,
       title: "Recommended Actions",
     },
-    collectionRiskFilter: { data: [] },
+    collectionRiskFilter: {
+      id: "collectionCategory",
+      title: "Collection Risk Categories",
+      data: [],
+    },
+    MLFilter: {
+      data: [
+        {
+          id: "bucket",
+          label: "Deliquency",
+          value: [
+            { optLbl: "All", value: "null" },
+            { optLbl: "Bucket One", value: 1 },
+            { optLbl: "Bucket Two", value: 2 },
+            { optLbl: "Bucket Three", value: 3 },
+          ],
+        },
+        {
+          id: "cycle",
+          label: "Cycle",
+          value: [
+            { optLbl: "All", value: null },
+            { optLbl: "Cycle One", value: 2 },
+            { optLbl: "Cycle Two", value: 10 },
+            { optLbl: "Cycle Three", value: 20 },
+          ],
+        },
+        {
+          id: "customerType",
+          label: "Customer Type",
+          value: [
+            { optLbl: "All", value: null },
+            { optLbl: "Retail", value: "RETAIL" },
+            { optLbl: "FTU", value: "FTU" },
+          ],
+        },
+        {
+          id: "branch",
+          label: "Branch",
+          value: [
+            { optLbl: "All", value: null },
+            { optLbl: "Agra", value: "AGRA" },
+            { optLbl: "Ahmedabad", value: "AHMEDABAD" },
+            { optLbl: "Ahmednagar", value: "AHMEDNAGAR" },
+            { optLbl: "Ajmer", value: "AJMER" },
+            { optLbl: "Ambala", value: "AMBALA" },
+            { optLbl: "Amritsar", value: "AMRITSAR" },
+            { optLbl: "Aurangabad", value: "AURANGABAD" },
+            { optLbl: "Mumbai", value: "MUMBAI" },
+          ],
+        },
+      ],
+    },
   };
   render() {
     return (
       <React.Fragment>
-        <DropDownFilter />
+        <DropDownFilter
+          data={this.state.MLFilter}
+          onClickButton={this.setFilterData}
+        />
         <div className="graph-wrapper">
           <div className="heading-wrapper d-flex align-items-center justify-content-between">
             <h2 className="sub-heading">Collection Recommendations</h2>
@@ -84,9 +167,15 @@ class MLDecisionEngine extends Component {
           </div>
           <DisplayChartsAndGraphs />
         </div>
-        <ButtonFilter data={this.state.collectionRiskFilter} />
+        <ButtonFilter
+          data={this.state.collectionRiskFilter}
+          onClickButton={this.setFilterData}
+        />
         <div className="table-wrapper">
-          <DisplayDataTable data={this.state.dataTable} />
+          <DisplayDataTable
+            data={this.state.dataTable}
+            onPageChange={this.setFilterData}
+          />
         </div>
       </React.Fragment>
     );

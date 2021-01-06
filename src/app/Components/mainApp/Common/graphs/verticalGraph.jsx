@@ -1,55 +1,58 @@
 import React, { Component } from "react";
 import {
-  ComposedChart,
   BarChart,
   Bar,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
   Legend,
   Cell,
   LabelList,
 } from "recharts";
-import "./verticalGraph.css";
 import services from "../../../../Services/apiService";
 
 const data = [
   {
-    name: "Extremely High",
-    uv: 261,
-    pv: 800,
-    amt: 1400,
+    name: "",
+    uv: "",
+    pv: "",
+    amt: "",
+    id: 1,
   },
   {
-    name: "Very High",
-    uv: 59,
-    pv: 967,
-    amt: 1506,
+    name: "",
+    uv: "",
+    pv: "",
+    amt: "",
+    id: 2,
   },
   {
-    name: "High",
-    uv: 107,
-    pv: 1098,
-    amt: 989,
+    name: "",
+    uv: "",
+    pv: "",
+    amt: "",
+    id: 3,
   },
   {
-    name: "Medium",
-    uv: 303,
-    pv: 1200,
-    amt: 1228,
+    name: "",
+    uv: "",
+    pv: "",
+    amt: "",
+    id: 4,
   },
   {
-    name: "Low",
-    uv: 2721,
-    pv: 1108,
-    amt: 1100,
+    name: "",
+    uv: "",
+    pv: "",
+    amt: "",
+    id: 5,
   },
   {
-    name: "Very Low",
-    uv: 4691,
-    pv: 680,
-    amt: 1700,
+    name: "",
+    uv: "",
+    pv: "",
+    amt: "",
+    id: 6,
   },
 ];
 
@@ -67,57 +70,55 @@ class DisplayVerticalGraph extends Component {
     dataPoints: [],
   };
 
-  componentDidMount() {
-    this.Chart();
+  async componentDidMount() {
+    await this.VerticalChart();
   }
 
-  Chart() {
-    services
-      .getProbToDefault()
-      .then((response) => {
-        const info = Object.entries(response).map((e) => ({
-          ["name"]: e[0],
-          ["amt"]: e[1],
-        }));
-        this.setState({ dataPoints: info });
-        console.log("checking", this.state.dataPoints);
-        // const info = response.data.items[0].data_points;
-        // this.setState({ dataPoints: info });
-        // console.log('column datapoints', this.state.dataPoints)
-        // const chartType = response.data.items[0].graph_type;
-        // this.setState({ chartType });
-        // console.log(this.state.chartType);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  async VerticalChart() {
+    try {
+      const { data } = await services.getProbToDefault();
+      const info = Object.entries(data).map((e) => ({
+        name: this.RewritingNames(e[0]),
+        amt: e[1],
+      }));
+      this.setState({ dataPoints: info });
+    } catch (ex) {
+      if (ex.response && ex.response.status === 404)
+        console.log("oops. error.");
+    }
   }
+
+  RewritingNames = (item) => {
+    switch (item) {
+      case "ehp_to_Pay":
+        item = "Extremely High";
+        break;
+      case "mp_to_Pay":
+        item = "Medium";
+        break;
+      case "vlp_to_Pay":
+        item = "Very Low";
+        break;
+      case "vhp_to_Pay":
+        item = "Very High";
+        break;
+      case "hp_to_Pay":
+        item = "High";
+        break;
+      case "lp_to_Pay":
+        item = "Low";
+        break;
+
+      default:
+        break;
+    }
+    return item;
+  };
 
   render() {
     return (
-      <div className="vertical-graph graph">
+      <div className="graph">
         <h3 className="graph-title">Probability to Default</h3>
-        {/* <ComposedChart
-                    layout="vertical"
-                    width={287}
-                    height={279}
-                    data={data}
-                >
-                    <XAxis type="number" hide />
-                    <YAxis dataKey="name" type="category" style={{
-                        fontSize: '3px',
-                        fontFamily: 'SFProText',
-                        color: '#322b5e'
-                    }} />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey="uv" barSize={17}>
-                        {
-                            data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
-                        }
-                        <LabelList dataKey="uv" position="right" />
-                    </Bar>
-                </ComposedChart> */}
 
         <BarChart
           layout="vertical"
@@ -132,10 +133,12 @@ class DisplayVerticalGraph extends Component {
             type="category"
             style={{
               fontSize: "11px",
-              // fontFamily: 'SFProText',
-              color: "#322b5e",
+              fontFamily: "Roboto",
+              color: "#322B5E",
             }}
           />
+          {/* <Legend />
+          <Tooltip /> */}
           <Bar dataKey="amt" barSize={17}>
             <LabelList dataKey="amt" position="right" />
             {data.map((entry, index) => (
