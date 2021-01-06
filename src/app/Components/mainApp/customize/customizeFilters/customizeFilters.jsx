@@ -3,7 +3,7 @@ import customizeIcon from "../../../../Images/Icon2.svg";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import CustomizeFiltersList from './customizeFiltersList';
-import "./customizeFilters.css";
+import "./customizeFilters.scss";
 import SearchBar from '../../Common/searchBar/searchBar';
 
 const CustomizeFilters = () => {

@@ -4,10 +4,11 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import StaticModalWithoutAnimation from '../../Common/modals/staticModalNoAnimation';
-import "./customizeCollectionRecommendations.css";
+import "./customizeCollectionRecommendations.scss";
 import CustomizeCollectionRecommendationsList from './customizeCollectionRecommendationsList';
 import pic from "../../../../Images/Icon2.svg";
 import MLDecisionEngine from '../../mlDecisionEngine/mlDecisionEngine';
+import DisplayVerticalGraph from '../../Common/graphs/verticalGraph';
 
 const CustomizeCollectionRecommendations = () => {
     const [show, setShow] = useState(false);
@@ -69,7 +70,8 @@ const CustomizeCollectionRecommendations = () => {
                 </div>
               </div>
               <div className="box2">
-                    <img src={pic}></img>
+                    {/* <img src={pic}></img> */}
+                    <DisplayVerticalGraph />
               </div>
             </div>
             <div>

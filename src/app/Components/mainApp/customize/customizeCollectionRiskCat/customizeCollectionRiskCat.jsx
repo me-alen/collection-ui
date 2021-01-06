@@ -5,7 +5,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import CustomizeCollectionRiskCategoryList from './customizeCollectionRiskCatList';
 import StaticModalWithoutAnimation from '../../Common/modals/staticModalNoAnimation';
-import "./customizeCollectionRiskCat.css";
+import "./customizeCollectionRiskCat.scss";
+import SearchBar from '../../Common/searchBar/searchBar';
 
 // class CustomizeFilter extends Component {
 //     state = {  }
@@ -55,6 +56,9 @@ const CustomizeCollectionRiskCategory = () => {
               <div>
               <h3>Customize Filter</h3>
               <h5>Select collection risk category filters</h5>
+              </div>
+              <div>
+                <SearchBar />
               </div>
               <div>
               <CustomizeCollectionRiskCategoryList />

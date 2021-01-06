@@ -2,8 +2,9 @@ import React, { Component, useState } from 'react';
 import customizeIcon from "../../../../Images/Icon2.svg";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import "./customizeGrid.css";
+import "./customizeGrid.scss";
 import CustomizeGridList from './customizeGridList';
+import SearchBar from '../../Common/searchBar/searchBar';
 
 const CustomizeGrid = () => {
     const [show, setShow] = useState(false);
@@ -38,6 +39,9 @@ const CustomizeGrid = () => {
               <div>
                 <h4>Columns</h4>
                 <h5>Select any 6 Columns you want to display in the grid</h5>
+                <div>
+                  <SearchBar />
+                </div>
                 <div>
                 <CustomizeGridList />
                 </div>
