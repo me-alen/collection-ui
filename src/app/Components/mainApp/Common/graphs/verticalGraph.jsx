@@ -14,43 +14,37 @@ import services from "../../../../Services/apiService";
 const data = [
   {
     name: "",
-    uv: "",
-    pv: "",
+    value: "",
     amt: "",
     id: 1,
   },
   {
     name: "",
-    uv: "",
-    pv: "",
+    value: "",
     amt: "",
     id: 2,
   },
   {
     name: "",
-    uv: "",
-    pv: "",
+    value: "",
     amt: "",
     id: 3,
   },
   {
     name: "",
-    uv: "",
-    pv: "",
+    value: "",
     amt: "",
     id: 4,
   },
   {
     name: "",
-    uv: "",
-    pv: "",
+    value: "",
     amt: "",
     id: 5,
   },
   {
     name: "",
-    uv: "",
-    pv: "",
+    value: "",
     amt: "",
     id: 6,
   },
@@ -91,51 +85,12 @@ class DisplayVerticalGraph extends Component {
   async VerticalChart() {
     try {
       const { data } = await services.getProbToDefault();
-      const info = Object.entries(data).map((e) => ({
-        ["name"]: e[0],
-        ["amt"]: e[1],
-      }));
-      // console.log('array from bar', info);
-      // const newInfo = [...info];
-      // console.log('copied array', newInfo);
-      // const newInfo2 = newInfo.map((obj, index) => {
-      //   return this.RewritingNames(obj.name);
-      // });
-      // console.log("just checking", newInfo[0].name);
-      // console.log('modified array hopefully', newInfo2);
-      this.setState({ dataPoints: info });
+      this.setState({ dataPoints: data.data });
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
         console.log("oops. error.");
     }
   }
-
-  RewritingNames = (item) => {
-    switch (item) {
-      case "ehp_to_Pay":
-        item = "Extremely High";
-        break;
-      case "mp_to_Pay":
-        item = "Medium";
-        break;
-      case "vlp_to_Pay":
-        item = "Very Low";
-        break;
-      case "vhp_to_Pay":
-        item = "Very High";
-        break;
-      case "hp_to_Pay":
-        item = "High";
-        break;
-      case "lp_to_Pay":
-        item = "Low";
-        break;
-
-      default:
-        break;
-    }
-    return item;
-  };
 
   render() {
     return (
