@@ -172,11 +172,10 @@ class MLDecisionEngine extends Component {
           onClickButton={this.setFilterData}
         />
 
-        <div className="filter-wrapper">
+        {/* <div className="filter-wrapper">
           <h2 className="sub-heading">Filters</h2>
           <CustomizeFilters />
-          {/* <DisplayFilters /> */}
-        </div>
+        </div> */}
 
         <div className="graph-wrapper">
           <div className="heading-wrapper d-flex align-items-center justify-content-between">

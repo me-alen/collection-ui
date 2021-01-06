@@ -1,5 +1,6 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
+import CustomizeFilters from '../../Components/mainApp/customize/customizeFilters/customizeFilters';
 
 const DropDownFilter = ({ data, onClickButton }) => {
   return (
@@ -11,6 +12,7 @@ const DropDownFilter = ({ data, onClickButton }) => {
         </div>
         <div className="icon-area">
           <span className="icon-layout-switch cp"></span>
+          <CustomizeFilters />
         </div>
       </div>
       <Form>
