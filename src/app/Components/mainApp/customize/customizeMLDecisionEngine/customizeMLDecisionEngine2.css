@@ -1,0 +1,39 @@
+.flex-container1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-container2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-container3 {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-container4 {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-container5 {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-container6 {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-container7 {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-container8 {
+    display: flex;
+    flex-direction: row;
+}

@@ -3,6 +3,18 @@ import ButtonFilter from "../../../core/common/buttonFilter";
 import DropDownFilter from "../../../core/common/dropDownFilter";
 import DisplayDataTable from "../Common/dataTable/dataTable";
 import DisplayChartsAndGraphs from "../Common/graphs/displayChartsAndGraph";
+import Button from "react-bootstrap/Button";
+import customizationIcon from "../../../Images/Icon1.svg";
+import StaticModalWithoutAnimation from "../Common/modals/staticModalNoAnimation";
+import CustomizeMLDecisionEngine from "../customize/customizeMLDecisionEngine/customizeMLDecisionEngine";
+import CustomizeCollectionRiskCategory from "../customize/customizeCollectionRiskCat/customizeCollectionRiskCat";
+import CustomizeCollectionRiskCategoryList from "../customize/customizeCollectionRiskCat/customizeCollectionRiskCatList";
+import MainCustomization from "../customize/mainCustomization";
+import CustomizeGrid from "../customize/customizeGrid/customizeGrid";
+import CustomizeFilters from "../customize/customizeFilters/customizeFilters";
+import CustomizeCollectionRecommendations from "../customize/customizeCollectionRecommendations/customizeCollectionRecommendations";
+import CustomizeMLDecisionEngine2 from "../customize/customizeMLDecisionEngine/customizeMLDecisionEngine2";
+import DisplayFilters from "../Common/filters/filters";
 
 import filterService from "../../../Services/filterServices";
 

@@ -11,13 +11,11 @@ class DisplayChartsAndGraphs extends Component {
 
   render() {
     return (
-
-
       <div className="wrapper">
         <div className="item item1">
           <DisplayVerticalGraph />
         </div>
-        
+
         <div className="item item2">
           <DisplayPieChart />
         </div>
