@@ -6,17 +6,14 @@ class DataTableHeader extends Component {
     let data = this.state;
     data.fromCount = (pageNo - 1) * 10 + 1;
     data.toCount = pageNo * 10;
-    console.log(this.state);
     this.setState({ count: data });
     this.props.onPageChange("page", pageNo - 1);
   };
 
   searchQuery = "";
   handleSearch = (e) => {
-    console.log(e);
     this.searchQuery = e.target.value;
     if (e.code === "Enter" || e.type === "click") {
-      console.log(this.searchQuery);
       this.props.onPageChange("customerNameOrAccountNumber", this.searchQuery);
     }
   };

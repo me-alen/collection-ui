@@ -36,7 +36,6 @@ class MLDecisionEngine extends Component {
   //ML-Filterr
   setFilterData = (param, value) => {
     filterData[param] = value;
-    console.log(filterData);
     this.getMLDataTableFilterData(filterData);
   };
 
