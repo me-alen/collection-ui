@@ -24,7 +24,11 @@ const ButtonFilter = ({ id, data, onClickButton }) => {
                 handleBtnClick(btn);
               }}
             >
-              <span className="btn-text-wrapper">
+                <div className ="checkbox">
+                  <input type="checkbox" name="round-checkbox" id="chk-box"/>
+                  <label for="chk-box"></label>
+                </div>
+                <span className="btn-text-wrapper">
                 <span className="list-link">{btn.name}</span>
                 <span className="badge">{btn.amt}</span>
               </span>

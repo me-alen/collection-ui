@@ -66,7 +66,7 @@ class DisplayPieChart extends Component {
     //   fontFamily: 'Roboto',
     // }
     return (
-      <div className="graph">
+      <div className="graph pie-chart">
         <h3 className="graph-title">Case Action</h3>
         <div>
           <PieChart width={363} height={279}>

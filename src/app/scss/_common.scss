@@ -94,7 +94,7 @@ a,a:hover{
     .header-section {
       box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.04);
       background: var(--primary-color);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       // height: 108px;
       .header-primary {
         padding: 24px 15px 12px 22px;
@@ -134,7 +134,7 @@ a,a:hover{
         }
       }
       .header-secondary {
-        padding: 13px 22px 8px 28px;
+        padding: 5px 22px 5px 28px;
         .title-text {
           font-family: $poppins;
           font-size: 16px;
@@ -154,7 +154,7 @@ a,a:hover{
                 border-radius: 50px;
                 border: 1px solid var(--border);
                 position: relative;
-                padding: 8px 40px 8px 40px;
+                padding: 5px 40px 5px 40px;
                 &::before,&::after{
                    position: absolute;
                   top: 50%;
@@ -222,6 +222,9 @@ a,a:hover{
             .recharts-surface {
               width: 100%;
             }
+          }
+          &.piechart{
+            
           }
         }
       }
@@ -320,7 +323,7 @@ a,a:hover{
   font-weight: $font-semibold;
   font-family: $poppins;
   color: var(--panel-bg-color);
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
 }
 .sub-heading {
   font-size: 13px;
@@ -364,6 +367,8 @@ a,a:hover{
         border-right: 1px solid var(--light-border);
         position: relative;
         cursor: pointer;
+        display: flex;
+        align-items: center;
         &::before{
           content: '';
           position: absolute;
@@ -375,10 +380,13 @@ a,a:hover{
           border-radius: 2px;
           transition: all 0.3s ease-in;
         }
+        .btn-text-wrapper{
+          margin-left: 10px;
+        }
         .list-link{
           font-size: 12px;
           font-family: $roboto;
-          font-weight: 500;
+          font-weight: $font-medium;
           color: var(--gray-text);
           margin-right: 5px;
           text-decoration: none;
@@ -400,7 +408,7 @@ a,a:hover{
           }
           .list-link{
             color: var(--panel-bg-color);
-            font-weight: $font-bold;
+            font-weight: $font-medium;
           }
           .badge{
             background: var(--bg-blue);
@@ -427,7 +435,7 @@ a,a:hover{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     .text-area{
       display: flex;
       align-items: center;
@@ -450,7 +458,7 @@ a,a:hover{
     .filter-col{
           flex: 0 0 20%;
           max-width: 20%;
-          
+
           padding: 0 8px;
           .filter-item{
             .form-group{
@@ -491,6 +499,7 @@ a,a:hover{
   box-shadow: 0 4px 4px var(--tile-shadow);
   margin-bottom: 10px;
   background: var(--primary-color);
+  position: relative;
   .table-header-container{
     margin-bottom: 20px;
     .left-section{
@@ -578,4 +587,105 @@ a,a:hover{
 .rdt_TableHeader{
   display: none;
 }
+}
+
+
+
+
+// component-loader
+.loader-comp-wrapper{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+.loader-comp {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+  &::after,&::before{
+      content: '';  
+  box-sizing: border-box;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--panel-bg-color);
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: animloader 2s linear infinite;
+  }
+  &::after{
+  animation-delay: 1s;
+  }
+}
+}
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+    
+
+
+.checkbox {
+  position: relative;
+  font-size: 14px;
+  width: 16px;
+  
+  label {
+   &:before {
+    background: var(--primary-color);
+    border: 1px solid var(--check-border);
+    cursor: pointer;
+    border-radius:3px;
+    content: '';
+    height: 16px;
+    width: 16px;
+    left: 0px;
+    position: absolute;
+    top: 3px;
+    }
+   
+    &:after {
+    border: 2px solid #FFF;
+    border-top: none;
+    border-right: none;
+    cursor: pointer;
+    content: '';
+    height: 5px;
+    left: 3px;
+    opacity: 0;
+    position: absolute;
+    top: 7px;
+    transform: rotate(-45deg);
+    width: 10px;
+    transition: all 0.3s linear;
+    }
+  }
+  
+  input[type="checkbox"] {
+    visibility: hidden;
+    
+    &:checked {
+     & + label:before {
+        background: var(--bg-blue);
+        border: var(--bg-blue);
+      }
+      
+     & + label:after {
+       opacity: 1;
+      }
+    }
+  }
 }
