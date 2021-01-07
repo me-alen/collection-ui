@@ -68,6 +68,20 @@ class DisplayVerticalGraph extends Component {
     await this.VerticalChart();
   }
 
+  // async VerticalChart() {
+  //   try {
+  //     const { data } = await services.getProbToDefault();
+  //     const info = Object.entries(data).map((e) => ({
+  //       name: this.RewritingNames(e[0]),
+  //       amt: e[1],
+  //     }));
+  //     this.setState({ dataPoints: info });
+  //   } catch (ex) {
+  //     if (ex.response && ex.response.status === 404)
+  //       console.log("oops. error.");
+  //   }
+  // }
+
   async VerticalChart() {
     try {
       const { data } = await services.getProbToDefault();

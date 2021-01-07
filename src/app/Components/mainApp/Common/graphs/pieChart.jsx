@@ -81,6 +81,8 @@ class DisplayPieChart extends Component {
               labelLine={false}
             //label={renderCustomizedLabel}
               outerRadius={80}
+              minAngle={7}
+              // paddingAngle={7}
               fill="#8884d8"
               dataKey="amt"
             >

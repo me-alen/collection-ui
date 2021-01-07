@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Pagination from "@material-ui/lab/Pagination";
+import CustomizeGrid from '../../customize/customizeGrid/customizeGrid';
 
 class DataTableHeader extends Component {
   handlePageClick = (e, pageNo) => {
@@ -54,7 +55,8 @@ class DataTableHeader extends Component {
               onChange={this.handlePageClick}
             />
           </div>
-          <span className="icon-layout-switch cp"></span>
+          {/* <span className="icon-layout-switch cp"></span> */}
+          <CustomizeGrid />
         </div>
       </div>
     );

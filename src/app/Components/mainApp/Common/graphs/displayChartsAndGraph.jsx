@@ -3,17 +3,20 @@ import DisplayVerticalGraph from "./verticalGraph";
 import DisplayPieChart from "./pieChart";
 import DisplayDonutChart from "./donutChart";
 import "./displayChartsAndGraph.css";
-import DisplayBarGraph from "./barGraph";
 // import Button from 'react-bootstrap/Button'
 
 class DisplayChartsAndGraphs extends Component {
   state = {};
 
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
 
 
-      <div className="wrapper">
+      <div className={`wrapper ${this.props.csstext}`}>
         <div className="item item1">
           <DisplayVerticalGraph />
         </div>
