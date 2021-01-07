@@ -1,8 +1,9 @@
 import React from "react";
 import DataTable from "react-data-table-component";
+import Loader from "../Loader/loader";
 import DataTableHeader from "./dataTableHeader";
 
-const DisplayDataTable = ({ data, onPageChange }) => {
+const DisplayDataTable = ({ data, onPageChange, showHideLoader }) => {
   const paginationData = {
     title: data.title,
     totalElements: data.totalElements,
@@ -22,9 +23,7 @@ const DisplayDataTable = ({ data, onPageChange }) => {
           defaultSortField="title"
           selectableRows
         />
-        <div className="loader-comp-wrapper">
-          <span class="loader-comp"></span>
-        </div>
+        <Loader showHideLoader={showHideLoader} />
       </div>
     </React.Fragment>
   );

@@ -22,7 +22,9 @@ const DropDownFilter = ({ data, onClickButton }) => {
                   <Form.Label>{select.label}</Form.Label>
                   <Form.Control
                     as="select"
-                    onChange={(e) => onClickButton(e.target.id, e.target.value)}
+                    onChange={(e) =>
+                      onClickButton(e.target.id, e.target.value, false)
+                    }
                   >
                     {select.value.map((value) => (
                       <option key={value.value} value={value.value}>

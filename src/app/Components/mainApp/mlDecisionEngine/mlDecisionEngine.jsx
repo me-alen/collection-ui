@@ -16,19 +16,8 @@ class MLDecisionEngine extends Component {
       data.data = resolve.data.map((e) => {
         let mapValue = Object.assign({}, e);
         mapValue.active = "list-item";
+        mapValue.isChecked = false;
         return mapValue;
-      });
-      data.data.unshift({
-        name: "All",
-        value: null,
-        amt: data.data
-          .map((val) => {
-            return parseInt(val.amt);
-          })
-          .reduce((accumulator, currentValue) => {
-            return accumulator + currentValue;
-          }),
-        active: "list-item active",
       });
       this.setState({ collectionRiskFilter: data });
     });
@@ -37,7 +26,9 @@ class MLDecisionEngine extends Component {
   //ML-Filterr
   setFilterData = (param, value) => {
     filterData[param] = value;
+    console.log(filterData);
     this.getMLDataTableFilterData(filterData);
+    this.setState({ loader: true });
   };
 
   // Data-Table
@@ -48,6 +39,7 @@ class MLDecisionEngine extends Component {
       data.data = resolve.content;
       data.totalElements = resolve.totalElements;
       this.setState({ dataTable: data });
+      this.setState({ loader: false });
     });
   };
 
@@ -57,6 +49,7 @@ class MLDecisionEngine extends Component {
   }
 
   state = {
+    loader: true,
     dataTable: {
       columns: [
         {
@@ -176,6 +169,7 @@ class MLDecisionEngine extends Component {
           <DisplayDataTable
             data={this.state.dataTable}
             onPageChange={this.setFilterData}
+            showHideLoader={this.state.loader}
           />
         </div>
       </React.Fragment>

@@ -5,9 +5,23 @@ const ButtonFilter = ({ id, data, onClickButton }) => {
     data.data.map((element) => {
       element.active =
         element.name !== btn.name ? "list-item" : "list-item active";
+      if (btn.value === element.value) {
+        element.isChecked = !element.isChecked;
+      }
     });
-    onClickButton(data.id, btn.value);
+    getSelectedParams();
   };
+  const getSelectedParams = () => {
+    let paramData = data.data.filter((element) => {
+      return element.isChecked === true;
+    });
+    let p = paramData.map((e) => {
+      return e.value;
+    });
+    console.log(p);
+    // onClickButton(data.id, btn.value,true);
+  };
+  const handleCheckboxClick = () => {};
   return (
     <div className="filter-btn-section">
       <div className="heading-wrapper d-flex align-items-center justify-content-between">
@@ -24,11 +38,17 @@ const ButtonFilter = ({ id, data, onClickButton }) => {
                 handleBtnClick(btn);
               }}
             >
-                <div className ="checkbox">
-                  <input type="checkbox" name="round-checkbox" id="chk-box"/>
-                  <label for="chk-box"></label>
-                </div>
-                <span className="btn-text-wrapper">
+              <div>
+                <input
+                  checked={btn.isChecked}
+                  type="checkbox"
+                  name="round-checkbox"
+                  id={btn.value}
+                  onChange={handleCheckboxClick}
+                />
+                <label htmlFor="chk-box"></label>
+              </div>
+              <span className="btn-text-wrapper">
                 <span className="list-link">{btn.name}</span>
                 <span className="badge">{btn.amt}</span>
               </span>
