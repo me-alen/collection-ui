@@ -7,29 +7,38 @@ import SearchBar from "../../Common/searchBar/searchBar";
 import CommonCustomizedBox from "../commonCustomizedBox/commonCustomizedBox";
 
 const CustomizeFilters = () => {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  return (
-    <div>
-      <Button
-        variant="light"
-        id="customization-button"
-        aria-expanded="false"
-        aria-haspopup="true"
-        type="button"
-        onClick={handleShow}
-      >
-        <span className="icon-layout-switch cp"></span>
-      </Button>
-      <Modal
-        show={show}
-        onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
-        animation={false}
-      >
-        <Modal.Body>
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    var input1 = null;
+    const child = element => {
+      input1 = element;
+    };
+
+    const onClick = () => {
+      console.log(input1.getChecked())
+    };
+
+      return (  
+          <div>
+          <Button 
+          variant="light"
+          id="customization-button"
+          aria-expanded="false"
+          aria-haspopup="true" 
+          type="button" 
+          onClick={handleShow}>
+          <span className="icon-layout-switch cp"></span>
+          </Button>
+          <Modal
+          show={show}
+          onHide={handleClose}
+          backdrop="static"
+          keyboard={false}
+          animation={false}
+          >
+          <Modal.Body>
           <div className="filter-flex-container">
             <div className="heading-wrapper">
               <h3 className="heading">Customize Filters</h3>
@@ -50,8 +59,9 @@ const CustomizeFilters = () => {
               <Button variant="primary apply-btn">Apply</Button>
             </div>
           </div>
-        </Modal.Body>
-      </Modal>
+          </Modal.Body>
+          </Modal>
+
     </div>
   );
 };

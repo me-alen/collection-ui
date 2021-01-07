@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { CheckBox } from '../../Common/checkBox';
 import DisplayPieChart from '../../Common/graphs/pieChart';
 import DisplayVerticalGraph from '../../Common/graphs/verticalGraph';
-import "./customizeCollectionRecommendationsList.css";
+import "./customizeCollectionRecommendationsList.scss";
 import DisplayDonutChart from '../../Common/graphs/donutChart';
 import CustomizeCollectionRecommendations from './customizeCollectionRecommendations';
 import DisplaySelectedGraph from './displaySelectedGraph';

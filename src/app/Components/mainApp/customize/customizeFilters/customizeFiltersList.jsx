@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { CheckBox } from '../../Common/checkBox';
-import "./customizeFiltersList.css";
+import "./customizeFiltersList.scss";
 
 class CustomizeFiltersList extends Component {
     state = {  }
@@ -9,16 +9,23 @@ class CustomizeFiltersList extends Component {
         super(props)
         this.state = {
           items: [
-            {id: "Filter1", value: "Filter option 1", isChecked: true},
-            {id: "Filter2", value: "Deliquency", isChecked: true},
-            {id: "Filter3", value: "Cycle", isChecked: true},
-            {id: "Filter4", value: "Branch", isChecked: false},
-            {id: "Filter5", value: "Customer Type", isChecked: true},
-            {id: "Filter6", value: "Region", isChecked: true},
-            {id: "Filter7", value: "Filter option 7", isChecked: false},
-            {id: "Filter8", value: "Filter option 8", isChecked: false}
+            {id: "Filter1", value: "Delinquency", isChecked: true},
+            {id: "Filter2", value: "Cycle", isChecked: true},
+            {id: "Filter3", value: "Customer Type", isChecked: true},
+            {id: "Filter4", value: "Region", isChecked: false},
+            {id: "Filter5", value: "Branch", isChecked: false},
+            {id: "Filter6", value: "City", isChecked: true},
+            {id: "Filter7", value: "Collection Category", isChecked: false},
+            {id: "Filter8", value: "Employment Sector", isChecked: false},
+            {id: "Filter9", value: "Payment Flag", isChecked: false},
+            {id: "Filter10", value: "Product", isChecked: false},
+            {id: "Filter11", value: "States", isChecked: false}
           ]
         }
+      }
+
+      getChecked() {
+        return this.state.items;
       }
 
       handleAllChecked = (event) => {
