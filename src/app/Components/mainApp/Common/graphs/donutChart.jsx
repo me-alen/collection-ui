@@ -4,12 +4,12 @@ import { PieChart, Pie, Cell, LabelList, Label, Legend } from "recharts";
 import services from "../../../../Services/apiService";
 
 const data = [
-    { name: "", value: "" },
-    { name: "", value: "" },
-    { name: "", value: "" },
-    { name: "", value: "" },
-    { name: "", value: "" },
-  ];
+  { name: "", value: "" },
+  { name: "", value: "" },
+  { name: "", value: "" },
+  { name: "", value: "" },
+  { name: "", value: "" },
+];
 
 const COLORS = ["#12EB83", "#523AE3", "#EB5454", "#FACD77", "#FFD541"];
 
@@ -39,7 +39,7 @@ class DisplayDonutChart extends Component {
 
   async componentDidMount() {
     await this.getFlagTypes();
-  }  
+  }
 
   async getFlagTypes() {
     try {
@@ -65,14 +65,14 @@ class DisplayDonutChart extends Component {
       <div className="graph">
         <h3 className="graph-title">Payment Flag Type</h3>
         <div>
-            <PieChart width={363} height={279}>
+          <PieChart width={363} height={279}>
             {/* <PieChart width={363} height={270}> */}
-              <Pie
+            <Pie
               data={this.state.dataPoints}
               // cx={120}
               // cy={105}
               cx={177}
-              cy={177}
+              cy={100}
               label
               labelLine={false}
               // label={renderCustomizedLabel}
@@ -82,16 +82,15 @@ class DisplayDonutChart extends Component {
               dataKey="amt"
               nameKey="name"
             >
-              
               {data.map((entry, index) => (
                 <Cell
                   key={`cell-${index}`}
                   fill={COLORS[index % COLORS.length]}
                 />
               ))}
-                {/* <Label width={80} fontFamily="Roboto" fontSize={14} color="#C2C2C2" position="center" value="Total LANs" /> */}
-                <Label position="center" value="Total LANs" />
-                <LabelList nameKey="name" position="outside" />
+              {/* <Label width={80} fontFamily="Roboto" fontSize={14} color="#C2C2C2" position="center" value="Total LANs" /> */}
+              <Label position="center" value="Total LANs" />
+              <LabelList nameKey="name" position="outside" />
             </Pie>
             {/* <Legend wrapperStyle={legStyle} height={80} /> */}
             <Legend />
@@ -100,7 +99,6 @@ class DisplayDonutChart extends Component {
       </div>
     );
   }
-
 }
 
 export default DisplayDonutChart;

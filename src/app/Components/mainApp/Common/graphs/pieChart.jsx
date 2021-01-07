@@ -76,7 +76,7 @@ class DisplayPieChart extends Component {
               // cx={130}
               // cy={100}
               cx={177}
-              cy={177}
+              cy={100}
               label
               labelLine={false}
               //label={renderCustomizedLabel}
