@@ -5,11 +5,13 @@ import Home from "./Components/mainApp/homePortal";
 import "./App.scss";
 import DisplayChartsAndGraphs from "./Components/mainApp/Common/graphs/displayChartsAndGraph";
 import CheckboxContainer from './Components/mainApp/Common/checkboxContainer';
+import CustomizeFilters from './Components/mainApp/customize/customizeFilters/customizeFilters';
 
 function App() {
   return (
     <React.Fragment>
       <Switch>
+        <Route path="/filter" component={CustomizeFilters} />
         <Route path="/checkbox" component={CheckboxContainer} />
         <Route path="/graphs" component={DisplayChartsAndGraphs}></Route>
         <Route path="/login" component={LoginForm} />

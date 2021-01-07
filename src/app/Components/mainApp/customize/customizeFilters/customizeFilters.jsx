@@ -10,6 +10,16 @@ const CustomizeFilters = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    var input1 = null;
+    const child = element => {
+      input1 = element;
+    };
+
+    const onClick = () => {
+      console.log(input1.getChecked())
+    };
+
       return (  
           <div>
           <Button 
@@ -38,11 +48,13 @@ const CustomizeFilters = () => {
             <SearchBar />
           </div>
           <div>
-          <CustomizeFiltersList />
+          {/* <CustomizeFiltersList /> */}
+          <CustomizeFiltersList ref={child} />
           </div>
           <div>
           <Button variant="secondary" onClick={handleClose}>Cancel</Button>
-          <Button variant="primary">Apply</Button>
+          {/* <Button variant="primary">Apply</Button> */}
+          <Button variant="primary" onClick={onClick} >Apply</Button>
           </div>
           </div>
           </Modal.Body>

@@ -89,17 +89,11 @@ class MLDecisionEngine extends Component {
   async Delinquency() {
     try {
       const { data } = await services.getDelinquency();
-      console.log('Delinquency data', data);
-      // const place = this.state.dataPoints[0].value
+      // console.log('Delinquency data', data);
       const data1 = {name:"Name", id:"Key2", value:"2"};
-      console.log("data1/data from api", data1);
       var arr = [...this.state.MLFilterData1];
-      console.log("arr/copied array in state", arr);
       var arr1 =arr.push(data1);
-      console.log("arr1/maybe length of array? not sure", arr1);
       this.setState({ MLFilterData1: arr });
-      console.log("updated state value", this.state.MLFilterData1);
-      console.log("array that was pushed", arr)
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
         console.log("oops. error.");
@@ -109,17 +103,11 @@ class MLDecisionEngine extends Component {
   async Cycle() {
     try {
       const { data } = await services.getCycle();
-      console.log('Cycle data', data);
-      // const place = this.state.dataPoints[0].value
+      // console.log('Cycle data', data);
       const data1 = {name:"Name", id:"Key2", value:"2"};
-      console.log("data1/data from api", data1);
       var arr = [...this.state.MLFilterData1];
-      console.log("arr/copied array in state", arr);
       var arr1 =arr.push(data1);
-      console.log("arr1/maybe length of array? not sure", arr1);
       this.setState({ MLFilterData1: arr });
-      console.log("updated state value", this.state.MLFilterData1);
-      console.log("array that was pushed", arr)
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
         console.log("oops. error.");
@@ -129,17 +117,11 @@ class MLDecisionEngine extends Component {
   async CustomerType() {
     try {
       const { data } = await services.getCustomerType();
-      console.log('Customer Type data', data);
-      // const place = this.state.dataPoints[0].value
+      // console.log('Customer Type data', data);
       const data1 = {name:"Name", id:"Key2", value:"2"};
-      console.log("data1/data from api", data1);
       var arr = [...this.state.MLFilterData1];
-      console.log("arr/copied array in state", arr);
       var arr1 =arr.push(data1);
-      console.log("arr1/maybe length of array? not sure", arr1);
       this.setState({ MLFilterData1: arr });
-      console.log("updated state value", this.state.MLFilterData1);
-      console.log("array that was pushed", arr)
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
         console.log("oops. error.");
@@ -149,17 +131,11 @@ class MLDecisionEngine extends Component {
   async Region() {
     try {
       const { data } = await services.getRegion();
-      console.log('Region data', data);
-      // const place = this.state.dataPoints[0].value
+      // console.log('Region data', data);
       const data1 = {name:"Name", id:"Key2", value:"2"};
-      console.log("data1/data from api", data1);
       var arr = [...this.state.MLFilterData1];
-      console.log("arr/copied array in state", arr);
       var arr1 =arr.push(data1);
-      console.log("arr1/maybe length of array? not sure", arr1);
       this.setState({ MLFilterData1: arr });
-      console.log("updated state value", this.state.MLFilterData1);
-      console.log("array that was pushed", arr)
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
         console.log("oops. error.");
@@ -169,17 +145,11 @@ class MLDecisionEngine extends Component {
   async Branch() {
     try {
       const { data } = await services.getBranch();
-      console.log('Branch data', data);
-      // const place = this.state.dataPoints[0].value
+      // console.log('Branch data', data);
       const data1 = {name:"Name", id:"Key2", value:"2"};
-      console.log("data1/data from api", data1);
       var arr = [...this.state.MLFilterData1];
-      console.log("arr/copied array in state", arr);
       var arr1 =arr.push(data1);
-      console.log("arr1/maybe length of array? not sure", arr1);
       this.setState({ MLFilterData1: arr });
-      console.log("updated state value", this.state.MLFilterData1);
-      console.log("array that was pushed", arr)
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
         console.log("oops. error.");
@@ -189,17 +159,11 @@ class MLDecisionEngine extends Component {
   async City() {
     try {
       const { data } = await services.getCity();
-      console.log('City data', data);
-      // const place = this.state.dataPoints[0].value
+      // console.log('City data', data);
       const data1 = {name:"Name", id:"Key2", value:"2"};
-      console.log("data1/data from api", data1);
       var arr = [...this.state.MLFilterData1];
-      console.log("arr/copied array in state", arr);
       var arr1 =arr.push(data1);
-      console.log("arr1/maybe length of array? not sure", arr1);
       this.setState({ MLFilterData1: arr });
-      console.log("updated state value", this.state.MLFilterData1);
-      console.log("array that was pushed", arr)
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
         console.log("oops. error.");
@@ -209,17 +173,11 @@ class MLDecisionEngine extends Component {
   async CollectionCategory() {
     try {
       const { data } = await services.getCollectionCategory();
-      console.log('Collection Category data', data);
-      // const place = this.state.dataPoints[0].value
+      // console.log('Collection Category data', data);
       const data1 = {name:"Name", id:"Key2", value:"2"};
-      console.log("data1/data from api", data1);
       var arr = [...this.state.MLFilterData1];
-      console.log("arr/copied array in state", arr);
       var arr1 =arr.push(data1);
-      console.log("arr1/maybe length of array? not sure", arr1);
       this.setState({ MLFilterData1: arr });
-      console.log("updated state value", this.state.MLFilterData1);
-      console.log("array that was pushed", arr)
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
         console.log("oops. error.");
@@ -229,17 +187,11 @@ class MLDecisionEngine extends Component {
   async EmploymentSector() {
     try {
       const { data } = await services.getEmploymentSector();
-      console.log('Employment Sector data', data);
-      // const place = this.state.dataPoints[0].value
+      // console.log('Employment Sector data', data);
       const data1 = {name:"Name", id:"Key2", value:"2"};
-      console.log("data1/data from api", data1);
       var arr = [...this.state.MLFilterData1];
-      console.log("arr/copied array in state", arr);
       var arr1 =arr.push(data1);
-      console.log("arr1/maybe length of array? not sure", arr1);
       this.setState({ MLFilterData1: arr });
-      console.log("updated state value", this.state.MLFilterData1);
-      console.log("array that was pushed", arr)
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
         console.log("oops. error.");
@@ -249,17 +201,11 @@ class MLDecisionEngine extends Component {
   async PaymentFlag() {
     try {
       const { data } = await services.getPaymentFlag();
-      console.log('Payment Flag data', data);
-      // const place = this.state.dataPoints[0].value
+      // console.log('Payment Flag data', data);
       const data1 = {name:"Name", id:"Key2", value:"2"};
-      console.log("data1/data from api", data1);
       var arr = [...this.state.MLFilterData1];
-      console.log("arr/copied array in state", arr);
       var arr1 =arr.push(data1);
-      console.log("arr1/maybe length of array? not sure", arr1);
       this.setState({ MLFilterData1: arr });
-      console.log("updated state value", this.state.MLFilterData1);
-      console.log("array that was pushed", arr)
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
         console.log("oops. error.");
@@ -269,17 +215,11 @@ class MLDecisionEngine extends Component {
   async Product() {
     try {
       const { data } = await services.getProduct();
-      console.log('Product data', data);
-      // const place = this.state.dataPoints[0].value
+      // console.log('Product data', data);
       const data1 = {name:"Name", id:"Key2", value:"2"};
-      console.log("data1/data from api", data1);
       var arr = [...this.state.MLFilterData1];
-      console.log("arr/copied array in state", arr);
       var arr1 =arr.push(data1);
-      console.log("arr1/maybe length of array? not sure", arr1);
       this.setState({ MLFilterData1: arr });
-      console.log("updated state value", this.state.MLFilterData1);
-      console.log("array that was pushed", arr)
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
         console.log("oops. error.");
@@ -289,17 +229,11 @@ class MLDecisionEngine extends Component {
   async States() {
     try {
       const { data } = await services.getStates();
-      console.log('States data', data);
-      // const place = this.state.dataPoints[0].value
+      // console.log('States data', data);
       const data1 = {name:"Name", id:"Key2", value:"2"};
-      console.log("data1/data from api", data1);
       var arr = [...this.state.MLFilterData1];
-      console.log("arr/copied array in state", arr);
       var arr1 =arr.push(data1);
-      console.log("arr1/maybe length of array? not sure", arr1);
       this.setState({ MLFilterData1: arr });
-      console.log("updated state value", this.state.MLFilterData1);
-      console.log("array that was pushed", arr)
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
         console.log("oops. error.");
@@ -403,68 +337,6 @@ class MLDecisionEngine extends Component {
         },
       ],
     },
-    // dataPoints: [
-    //   {
-    //     id: "bucket",
-    //     label: "Delinquency",
-    //     value: []
-    //   },
-    //   {
-    //     id: "cycle",
-    //     label: "Cycle",
-    //     value: []
-    //   },
-    //   {
-    //     id: "customerType",
-    //     label: "Customer Type",
-    //     value: []
-    //   },
-    //   {
-    //     id: "branch",
-    //     label: "Branch",
-    //     value: []
-    //   },
-    //   {
-    //     id: "region",
-    //     label: "Region",
-    //     value: []
-    //   },
-    //   {
-    //     id: "branch",
-    //     label: "Branch",
-    //     value: []
-    //   },
-    //   {
-    //     id: "city",
-    //     label: "City",
-    //     value: []
-    //   },
-    //   {
-    //     id: "collectionCategory",
-    //     label: "CollectionCategory",
-    //     value: []
-    //   },
-    //   {
-    //     id: "employmentSector",
-    //     label: "Employment Sector",
-    //     value: []
-    //   },
-    //   {
-    //     id: "paymentFlag",
-    //     label: "Payment Flag",
-    //     paymentFlagValue: []
-    //   },
-    //   {
-    //     id: "product",
-    //     label: "Product",
-    //     value: []
-    //   },
-    //   {
-    //     id: "states",
-    //     label: "States",
-    //     value: []
-    //   },
-    // ],
     MLFilterData1: [
       {
         name: "Hannah",

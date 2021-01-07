@@ -24,6 +24,10 @@ class CustomizeFiltersList extends Component {
         }
       }
 
+      getChecked() {
+        return this.state.items;
+      }
+
       handleAllChecked = (event) => {
         let items = this.state.items
         items.forEach(item => item.isChecked = event.target.checked) 
