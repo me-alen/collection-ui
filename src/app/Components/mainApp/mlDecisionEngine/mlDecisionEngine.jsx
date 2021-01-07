@@ -403,68 +403,68 @@ class MLDecisionEngine extends Component {
         },
       ],
     },
-    dataPoints: [
-      {
-        id: "bucket",
-        label: "Delinquency",
-        value: []
-      },
-      {
-        id: "cycle",
-        label: "Cycle",
-        value: []
-      },
-      {
-        id: "customerType",
-        label: "Customer Type",
-        value: []
-      },
-      {
-        id: "branch",
-        label: "Branch",
-        value: []
-      },
-      {
-        id: "region",
-        label: "Region",
-        value: []
-      },
-      {
-        id: "branch",
-        label: "Branch",
-        value: []
-      },
-      {
-        id: "city",
-        label: "City",
-        value: []
-      },
-      {
-        id: "collectionCategory",
-        label: "CollectionCategory",
-        value: []
-      },
-      {
-        id: "employmentSector",
-        label: "Employment Sector",
-        value: []
-      },
-      {
-        id: "paymentFlag",
-        label: "Payment Flag",
-        paymentFlagValue: []
-      },
-      {
-        id: "product",
-        label: "Product",
-        value: []
-      },
-      {
-        id: "states",
-        label: "States",
-        value: []
-      },
-    ],
+    // dataPoints: [
+    //   {
+    //     id: "bucket",
+    //     label: "Delinquency",
+    //     value: []
+    //   },
+    //   {
+    //     id: "cycle",
+    //     label: "Cycle",
+    //     value: []
+    //   },
+    //   {
+    //     id: "customerType",
+    //     label: "Customer Type",
+    //     value: []
+    //   },
+    //   {
+    //     id: "branch",
+    //     label: "Branch",
+    //     value: []
+    //   },
+    //   {
+    //     id: "region",
+    //     label: "Region",
+    //     value: []
+    //   },
+    //   {
+    //     id: "branch",
+    //     label: "Branch",
+    //     value: []
+    //   },
+    //   {
+    //     id: "city",
+    //     label: "City",
+    //     value: []
+    //   },
+    //   {
+    //     id: "collectionCategory",
+    //     label: "CollectionCategory",
+    //     value: []
+    //   },
+    //   {
+    //     id: "employmentSector",
+    //     label: "Employment Sector",
+    //     value: []
+    //   },
+    //   {
+    //     id: "paymentFlag",
+    //     label: "Payment Flag",
+    //     paymentFlagValue: []
+    //   },
+    //   {
+    //     id: "product",
+    //     label: "Product",
+    //     value: []
+    //   },
+    //   {
+    //     id: "states",
+    //     label: "States",
+    //     value: []
+    //   },
+    // ],
     MLFilterData1: [
       {
         name: "Hannah",
