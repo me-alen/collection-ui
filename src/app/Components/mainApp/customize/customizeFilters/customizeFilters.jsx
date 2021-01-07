@@ -6,7 +6,7 @@ import "./customizeFilters.scss";
 import SearchBar from "../../Common/searchBar/searchBar";
 import CommonCustomizedBox from "../commonCustomizedBox/commonCustomizedBox";
 
-const CustomizeFilters = () => {
+const CustomizeFilters = ({ dropDownData, handleOnSubmit }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -41,13 +41,18 @@ const CustomizeFilters = () => {
               <SearchBar />
             </div>
             <div>
-              <CustomizeFiltersList />
+              <CustomizeFiltersList
+                dropDownData={dropDownData}
+                handleOnSubmit={handleOnSubmit}
+              />
             </div>
             <div className="filter-footer-btn-wrapper">
               <Button variant="secondary btn-cancel" onClick={handleClose}>
                 Cancel
               </Button>
-              <Button variant="primary apply-btn">Apply</Button>
+              <Button variant="primary apply-btn" onClick={handleClose}>
+                Apply
+              </Button>
             </div>
           </div>
         </Modal.Body>

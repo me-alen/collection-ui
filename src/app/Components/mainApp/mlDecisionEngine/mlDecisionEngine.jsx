@@ -24,6 +24,22 @@ class MLDecisionEngine extends Component {
     });
   };
 
+  //DropDown-Filter
+  getDropDownFilter = () => {
+    filterService.dropDownFilterData().then((resolve) => {
+      let data = { ...this.state.MLFilter };
+      data.data = resolve.data;
+      data.data[2].value = [{ description: "All", value: null }];
+      let formData = { ...data };
+      formData.data = data.data.map((e) => {
+        let mapValue = Object.assign({}, e);
+        mapValue.isChecked = false;
+        return mapValue;
+      });
+      this.setState({ MLFilter: formData });
+    });
+  };
+
   //ML-Filterr
   setFilterData = (param, value, isButtonFilter) => {
     filterData[param] = value;
@@ -51,17 +67,18 @@ class MLDecisionEngine extends Component {
   async componentDidMount() {
     this.getMLDataTableFilterData(null);
     this.getButtonFilterData();
-    await this.Delinquency();
-    await this.Cycle();
-    await this.CustomerType();
-    await this.Region();
-    await this.Branch();
-    await this.City();
-    await this.CollectionCategory();
-    await this.EmploymentSector();
-    await this.PaymentFlag();
-    await this.Product();
-    await this.States();
+    this.getDropDownFilter();
+    // await this.Delinquency();
+    // await this.Cycle();
+    // await this.CustomerType();
+    // await this.Region();
+    // await this.Branch();
+    // await this.City();
+    // await this.CollectionCategory();
+    // await this.EmploymentSector();
+    // await this.PaymentFlag();
+    // await this.Product();
+    // await this.States();
   }
 
   // async Delinquency() {
@@ -77,170 +94,170 @@ class MLDecisionEngine extends Component {
   //   }
   // }
 
-  async Delinquency() {
-    try {
-      const { data } = await services.getDelinquency();
-      // console.log('Delinquency data', data);
-      // const place = this.state.dataPoints[0].value
-      const data1 = { name: "Name", id: "Key2", value: "2" };
-      var arr = [...this.state.MLFilterData1];
-      var arr1 = arr.push(data1);
-      this.setState({ MLFilterData1: arr });
-    } catch (ex) {
-      if (ex.response && ex.response.status === 404)
-        console.log("oops. error.");
-    }
-  }
+  // async Delinquency() {
+  //   try {
+  //     const { data } = await services.getDelinquency();
+  //     // console.log('Delinquency data', data);
+  //     // const place = this.state.dataPoints[0].value
+  //     const data1 = { name: "Name", id: "Key2", value: "2" };
+  //     var arr = [...this.state.MLFilterData1];
+  //     var arr1 = arr.push(data1);
+  //     this.setState({ MLFilterData1: arr });
+  //   } catch (ex) {
+  //     if (ex.response && ex.response.status === 404)
+  //       console.log("oops. error.");
+  //   }
+  // }
 
-  async Cycle() {
-    try {
-      const { data } = await services.getCycle();
-      // console.log('Cycle data', data);
-      // const place = this.state.dataPoints[0].value
-      const data1 = { name: "Name", id: "Key2", value: "2" };
-      var arr = [...this.state.MLFilterData1];
-      var arr1 = arr.push(data1);
-      this.setState({ MLFilterData1: arr });
-    } catch (ex) {
-      if (ex.response && ex.response.status === 404)
-        console.log("oops. error.");
-    }
-  }
+  // async Cycle() {
+  //   try {
+  //     const { data } = await services.getCycle();
+  //     // console.log('Cycle data', data);
+  //     // const place = this.state.dataPoints[0].value
+  //     const data1 = { name: "Name", id: "Key2", value: "2" };
+  //     var arr = [...this.state.MLFilterData1];
+  //     var arr1 = arr.push(data1);
+  //     this.setState({ MLFilterData1: arr });
+  //   } catch (ex) {
+  //     if (ex.response && ex.response.status === 404)
+  //       console.log("oops. error.");
+  //   }
+  // }
 
-  async CustomerType() {
-    try {
-      const { data } = await services.getCustomerType();
-      // console.log('Customer Type data', data);
-      // const place = this.state.dataPoints[0].value
-      const data1 = { name: "Name", id: "Key2", value: "2" };
-      var arr = [...this.state.MLFilterData1];
-      var arr1 = arr.push(data1);
-      this.setState({ MLFilterData1: arr });
-    } catch (ex) {
-      if (ex.response && ex.response.status === 404)
-        console.log("oops. error.");
-    }
-  }
+  // async CustomerType() {
+  //   try {
+  //     const { data } = await services.getCustomerType();
+  //     // console.log('Customer Type data', data);
+  //     // const place = this.state.dataPoints[0].value
+  //     const data1 = { name: "Name", id: "Key2", value: "2" };
+  //     var arr = [...this.state.MLFilterData1];
+  //     var arr1 = arr.push(data1);
+  //     this.setState({ MLFilterData1: arr });
+  //   } catch (ex) {
+  //     if (ex.response && ex.response.status === 404)
+  //       console.log("oops. error.");
+  //   }
+  // }
 
-  async Region() {
-    try {
-      const { data } = await services.getRegion();
-      // console.log('Region data', data);
-      // const place = this.state.dataPoints[0].value
-      const data1 = { name: "Name", id: "Key2", value: "2" };
-      var arr = [...this.state.MLFilterData1];
-      var arr1 = arr.push(data1);
-      this.setState({ MLFilterData1: arr });
-    } catch (ex) {
-      if (ex.response && ex.response.status === 404)
-        console.log("oops. error.");
-    }
-  }
+  // async Region() {
+  //   try {
+  //     const { data } = await services.getRegion();
+  //     // console.log('Region data', data);
+  //     // const place = this.state.dataPoints[0].value
+  //     const data1 = { name: "Name", id: "Key2", value: "2" };
+  //     var arr = [...this.state.MLFilterData1];
+  //     var arr1 = arr.push(data1);
+  //     this.setState({ MLFilterData1: arr });
+  //   } catch (ex) {
+  //     if (ex.response && ex.response.status === 404)
+  //       console.log("oops. error.");
+  //   }
+  // }
 
-  async Branch() {
-    try {
-      const { data } = await services.getBranch();
-      // console.log('Branch data', data);
-      // const place = this.state.dataPoints[0].value
-      const data1 = { name: "Name", id: "Key2", value: "2" };
-      var arr = [...this.state.MLFilterData1];
-      var arr1 = arr.push(data1);
-      this.setState({ MLFilterData1: arr });
-    } catch (ex) {
-      if (ex.response && ex.response.status === 404)
-        console.log("oops. error.");
-    }
-  }
+  // async Branch() {
+  //   try {
+  //     const { data } = await services.getBranch();
+  //     // console.log('Branch data', data);
+  //     // const place = this.state.dataPoints[0].value
+  //     const data1 = { name: "Name", id: "Key2", value: "2" };
+  //     var arr = [...this.state.MLFilterData1];
+  //     var arr1 = arr.push(data1);
+  //     this.setState({ MLFilterData1: arr });
+  //   } catch (ex) {
+  //     if (ex.response && ex.response.status === 404)
+  //       console.log("oops. error.");
+  //   }
+  // }
 
-  async City() {
-    try {
-      const { data } = await services.getCity();
-      // console.log('City data', data);
-      // const place = this.state.dataPoints[0].value
-      const data1 = { name: "Name", id: "Key2", value: "2" };
-      var arr = [...this.state.MLFilterData1];
-      var arr1 = arr.push(data1);
-      this.setState({ MLFilterData1: arr });
-    } catch (ex) {
-      if (ex.response && ex.response.status === 404)
-        console.log("oops. error.");
-    }
-  }
+  // async City() {
+  //   try {
+  //     const { data } = await services.getCity();
+  //     // console.log('City data', data);
+  //     // const place = this.state.dataPoints[0].value
+  //     const data1 = { name: "Name", id: "Key2", value: "2" };
+  //     var arr = [...this.state.MLFilterData1];
+  //     var arr1 = arr.push(data1);
+  //     this.setState({ MLFilterData1: arr });
+  //   } catch (ex) {
+  //     if (ex.response && ex.response.status === 404)
+  //       console.log("oops. error.");
+  //   }
+  // }
 
-  async CollectionCategory() {
-    try {
-      const { data } = await services.getCollectionCategory();
-      // console.log('Collection Category data', data);
-      // const place = this.state.dataPoints[0].value
-      const data1 = { name: "Name", id: "Key2", value: "2" };
-      var arr = [...this.state.MLFilterData1];
-      var arr1 = arr.push(data1);
-      this.setState({ MLFilterData1: arr });
-    } catch (ex) {
-      if (ex.response && ex.response.status === 404)
-        console.log("oops. error.");
-    }
-  }
+  // async CollectionCategory() {
+  //   try {
+  //     const { data } = await services.getCollectionCategory();
+  //     // console.log('Collection Category data', data);
+  //     // const place = this.state.dataPoints[0].value
+  //     const data1 = { name: "Name", id: "Key2", value: "2" };
+  //     var arr = [...this.state.MLFilterData1];
+  //     var arr1 = arr.push(data1);
+  //     this.setState({ MLFilterData1: arr });
+  //   } catch (ex) {
+  //     if (ex.response && ex.response.status === 404)
+  //       console.log("oops. error.");
+  //   }
+  // }
 
-  async EmploymentSector() {
-    try {
-      const { data } = await services.getEmploymentSector();
-      // console.log('Employment Sector data', data);
-      // const place = this.state.dataPoints[0].value
-      const data1 = { name: "Name", id: "Key2", value: "2" };
-      var arr = [...this.state.MLFilterData1];
-      var arr1 = arr.push(data1);
-      this.setState({ MLFilterData1: arr });
-    } catch (ex) {
-      if (ex.response && ex.response.status === 404)
-        console.log("oops. error.");
-    }
-  }
+  // async EmploymentSector() {
+  //   try {
+  //     const { data } = await services.getEmploymentSector();
+  //     // console.log('Employment Sector data', data);
+  //     // const place = this.state.dataPoints[0].value
+  //     const data1 = { name: "Name", id: "Key2", value: "2" };
+  //     var arr = [...this.state.MLFilterData1];
+  //     var arr1 = arr.push(data1);
+  //     this.setState({ MLFilterData1: arr });
+  //   } catch (ex) {
+  //     if (ex.response && ex.response.status === 404)
+  //       console.log("oops. error.");
+  //   }
+  // }
 
-  async PaymentFlag() {
-    try {
-      const { data } = await services.getPaymentFlag();
-      // console.log('Payment Flag data', data);
-      // const place = this.state.dataPoints[0].value
-      const data1 = { name: "Name", id: "Key2", value: "2" };
-      var arr = [...this.state.MLFilterData1];
-      var arr1 = arr.push(data1);
-      this.setState({ MLFilterData1: arr });
-    } catch (ex) {
-      if (ex.response && ex.response.status === 404)
-        console.log("oops. error.");
-    }
-  }
+  // async PaymentFlag() {
+  //   try {
+  //     const { data } = await services.getPaymentFlag();
+  //     // console.log('Payment Flag data', data);
+  //     // const place = this.state.dataPoints[0].value
+  //     const data1 = { name: "Name", id: "Key2", value: "2" };
+  //     var arr = [...this.state.MLFilterData1];
+  //     var arr1 = arr.push(data1);
+  //     this.setState({ MLFilterData1: arr });
+  //   } catch (ex) {
+  //     if (ex.response && ex.response.status === 404)
+  //       console.log("oops. error.");
+  //   }
+  // }
 
-  async Product() {
-    try {
-      const { data } = await services.getProduct();
-      // console.log('Product data', data);
-      // const place = this.state.dataPoints[0].value
-      const data1 = { name: "Name", id: "Key2", value: "2" };
-      var arr = [...this.state.MLFilterData1];
-      var arr1 = arr.push(data1);
-      this.setState({ MLFilterData1: arr });
-    } catch (ex) {
-      if (ex.response && ex.response.status === 404)
-        console.log("oops. error.");
-    }
-  }
+  // async Product() {
+  //   try {
+  //     const { data } = await services.getProduct();
+  //     // console.log('Product data', data);
+  //     // const place = this.state.dataPoints[0].value
+  //     const data1 = { name: "Name", id: "Key2", value: "2" };
+  //     var arr = [...this.state.MLFilterData1];
+  //     var arr1 = arr.push(data1);
+  //     this.setState({ MLFilterData1: arr });
+  //   } catch (ex) {
+  //     if (ex.response && ex.response.status === 404)
+  //       console.log("oops. error.");
+  //   }
+  // }
 
-  async States() {
-    try {
-      const { data } = await services.getStates();
-      // console.log('States data', data);
-      // const place = this.state.dataPoints[0].value
-      const data1 = { name: "Name", id: "Key2", value: "2" };
-      var arr = [...this.state.MLFilterData1];
-      var arr1 = arr.push(data1);
-      this.setState({ MLFilterData1: arr });
-    } catch (ex) {
-      if (ex.response && ex.response.status === 404)
-        console.log("oops. error.");
-    }
-  }
+  // async States() {
+  //   try {
+  //     const { data } = await services.getStates();
+  //     // console.log('States data', data);
+  //     // const place = this.state.dataPoints[0].value
+  //     const data1 = { name: "Name", id: "Key2", value: "2" };
+  //     var arr = [...this.state.MLFilterData1];
+  //     var arr1 = arr.push(data1);
+  //     this.setState({ MLFilterData1: arr });
+  //   } catch (ex) {
+  //     if (ex.response && ex.response.status === 404)
+  //       console.log("oops. error.");
+  //   }
+  // }
 
   state = {
     loader: true,
@@ -296,46 +313,46 @@ class MLDecisionEngine extends Component {
       data: [
         {
           id: "bucket",
-          label: "Deliquency",
+          description: "Deliquency",
           value: [
-            { optLbl: "All", value: "null" },
-            { optLbl: "Bucket One", value: 1 },
-            { optLbl: "Bucket Two", value: 2 },
-            { optLbl: "Bucket Three", value: 3 },
+            { description: "All", value: "null" },
+            { description: "Bucket One", value: 1 },
+            { description: "Bucket Two", value: 2 },
+            { description: "Bucket Three", value: 3 },
           ],
         },
         {
           id: "cycle",
-          label: "Cycle",
+          description: "Cycle",
           value: [
-            { optLbl: "All", value: null },
-            { optLbl: "Cycle One", value: 2 },
-            { optLbl: "Cycle Two", value: 10 },
-            { optLbl: "Cycle Three", value: 20 },
+            { description: "All", value: null },
+            { description: "Cycle One", value: 2 },
+            { description: "Cycle Two", value: 10 },
+            { description: "Cycle Three", value: 20 },
           ],
         },
         {
           id: "customerType",
-          label: "Customer Type",
+          description: "Customer Type",
           value: [
-            { optLbl: "All", value: null },
-            { optLbl: "Retail", value: "RETAIL" },
-            { optLbl: "FTU", value: "FTU" },
+            { description: "All", value: null },
+            { description: "Retail", value: "RETAIL" },
+            { description: "FTU", value: "FTU" },
           ],
         },
         {
           id: "branch",
-          label: "Branch",
+          description: "Branch",
           value: [
-            { optLbl: "All", value: null },
-            { optLbl: "Agra", value: "AGRA" },
-            { optLbl: "Ahmedabad", value: "AHMEDABAD" },
-            { optLbl: "Ahmednagar", value: "AHMEDNAGAR" },
-            { optLbl: "Ajmer", value: "AJMER" },
-            { optLbl: "Ambala", value: "AMBALA" },
-            { optLbl: "Amritsar", value: "AMRITSAR" },
-            { optLbl: "Aurangabad", value: "AURANGABAD" },
-            { optLbl: "Mumbai", value: "MUMBAI" },
+            { description: "All", value: null },
+            { description: "Agra", value: "AGRA" },
+            { description: "Ahmedabad", value: "AHMEDABAD" },
+            { description: "Ahmednagar", value: "AHMEDNAGAR" },
+            { description: "Ajmer", value: "AJMER" },
+            { description: "Ambala", value: "AMBALA" },
+            { description: "Amritsar", value: "AMRITSAR" },
+            { description: "Aurangabad", value: "AURANGABAD" },
+            { description: "Mumbai", value: "MUMBAI" },
           ],
         },
       ],

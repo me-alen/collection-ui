@@ -16,4 +16,10 @@ async function buttonFilterData() {
   return data.data;
 }
 
-export default { mlFilteringDataTable, buttonFilterData };
+async function dropDownFilterData() {
+  const endpoint = environment.baseUrl + Endpoints.DROP_DOWN_FILTER;
+  const data = await httpService.get(endpoint);
+  return data.data;
+}
+
+export default { mlFilteringDataTable, buttonFilterData, dropDownFilterData };

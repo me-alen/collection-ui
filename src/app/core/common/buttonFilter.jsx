@@ -34,7 +34,7 @@ class ButtonFilter extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ data: this.props.data.data });
-    }, 1000);
+    }, 2000);
   }
 
   render() {
