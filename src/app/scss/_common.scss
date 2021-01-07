@@ -558,14 +558,14 @@ a,a:hover{
     }
     .right-section{
       .current-result{
-        margin-right: 17px;
+        margin-right: 5px;
         font-size: 12px;
         font-weight: $font-regular;
         color: var(--gray-text);
         font-family: $poppins;
       }
       .pagination-wrapper{
-        margin-right: 35px;
+        margin-right: 20px;
         .MuiPagination-ul{
           li{
             button{
@@ -574,6 +574,7 @@ a,a:hover{
               font-family: $poppins;
               color: var( --icon-shade);
               transition: all 0.3s linear;
+              margin: 0;
               &:focus{
                 outline: none;
               }
@@ -611,7 +612,7 @@ a,a:hover{
   display: inline-block;
   position: relative;
   &::after,&::before{
-      content: '';  
+  content: '';  
   box-sizing: border-box;
   width: 60px;
   height: 60px;
