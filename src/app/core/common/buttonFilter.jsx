@@ -1,66 +1,79 @@
-import React from "react";
+import React, { Component } from "react";
 import CommonCustomizedBox from "../../Components/mainApp/customize/commonCustomizedBox/commonCustomizedBox";
 import CustomizeCollectionRiskCategory from "../../Components/mainApp/customize/customizeCollectionRiskCat/customizeCollectionRiskCat";
 
-const ButtonFilter = ({ id, data, onClickButton }) => {
-  const handleBtnClick = (btn) => {
-    data.data.map((element) => {
+// const ButtonFilter = ({ id, data, onClickButton }) => {
+class ButtonFilter extends Component {
+  state = {};
+  handleBtnClick = (btn) => {
+    this.props.data.data.map((element) => {
       element.active =
         element.name !== btn.name ? "list-item" : "list-item active";
       if (btn.value === element.value) {
         element.isChecked = !element.isChecked;
       }
     });
-    getSelectedParams();
+    this.getSelectedParams();
   };
-  const getSelectedParams = () => {
-    let paramDataObject = data.data.filter((element) => {
+
+  getSelectedParams = () => {
+    let paramDataObject = this.props.data.data.filter((element) => {
       return element.isChecked === true;
     });
     let paramData = paramDataObject.map((e) => {
       return e.value;
     });
-    onClickButton(data.id, paramData[0], true);
+    this.props.onClickButton(this.props.data.id, paramData[0], true);
   };
-  const handleCheckboxClick = () => {};
-  return (
-    <div className="filter-btn-section">
-      <div className="heading-wrapper d-flex align-items-center justify-content-between">
-        <h2 className="sub-heading">{data.title}</h2>
-        {/* <span className="icon-layout-switch cp"></span> */}
-        <CustomizeCollectionRiskCategory />
-        {/* <CommonCustomizedBox /> */}
+
+  handleCheckboxClick = () => {};
+  handleOnSubmit = (data) => {
+    console.log(data);
+  };
+
+  render() {
+    return (
+      <div className="filter-btn-section">
+        <div className="heading-wrapper d-flex align-items-center justify-content-between">
+          <h2 className="sub-heading">{this.props.data.title}</h2>
+          {/* <span className="icon-layout-switch cp"></span> */}
+          <CustomizeCollectionRiskCategory
+            collectionCategory={this.props.data}
+            handleOnSubmit={this.handleOnSubmit}
+          />
+          {/* <CommonCustomizedBox /> */}
+        </div>
+        <div className="btn-container">
+          <ul className="btn-list-wrapper">
+            {this.props.data.data.map((btn) => (
+              <li
+                key={btn.name}
+                className={btn.active}
+                onClick={() => {
+                  this.handleBtnClick(btn);
+                }}
+              >
+                <div>
+                  <input
+                    checked={btn.isChecked}
+                    type="checkbox"
+                    name="round-checkbox"
+                    id={btn.value}
+                    onChange={this.props.handleCheckboxClick}
+                  />
+                  <label htmlFor="chk-box"></label>
+                </div>
+                <span className="btn-text-wrapper">
+                  <span className="list-link">{btn.name}</span>
+                  <span className="badge">{btn.amt}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <div className="btn-container">
-        <ul className="btn-list-wrapper">
-          {data.data.map((btn) => (
-            <li
-              key={btn.name}
-              className={btn.active}
-              onClick={() => {
-                handleBtnClick(btn);
-              }}
-            >
-              <div>
-                <input
-                  checked={btn.isChecked}
-                  type="checkbox"
-                  name="round-checkbox"
-                  id={btn.value}
-                  onChange={handleCheckboxClick}
-                />
-                <label htmlFor="chk-box"></label>
-              </div>
-              <span className="btn-text-wrapper">
-                <span className="list-link">{btn.name}</span>
-                <span className="badge">{btn.amt}</span>
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default ButtonFilter;
