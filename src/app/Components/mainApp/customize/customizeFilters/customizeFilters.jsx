@@ -30,19 +30,19 @@ const CustomizeFilters = () => {
           >
           <Modal.Body>
           <div className="filter-flex-container">
-          <div>
-          <h3>Customize Filters</h3>
-          <h5>Select any 5 filters you want to display</h5>
+          <div className="heading-wrapper">
+          <h3 className="heading">Customize Filters</h3>
+          <h5 className="sub-heading">Select any 5 filters you want to display</h5>
           </div>
-          <div>
+          <div className="custom-filter-search-wrapper">
             <SearchBar />
           </div>
           <div>
           <CustomizeFiltersList />
           </div>
-          <div>
-          <Button variant="secondary" onClick={handleClose}>Cancel</Button>
-          <Button variant="primary">Apply</Button>
+          <div className="filter-footer-btn-wrapper">
+          <Button variant="secondary btn-cancel" onClick={handleClose}>Cancel</Button>
+          <Button variant="primary apply-btn">Apply</Button>
           </div>
           </div>
           </Modal.Body>

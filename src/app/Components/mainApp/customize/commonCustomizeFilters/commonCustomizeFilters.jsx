@@ -42,62 +42,70 @@ const CommonCustomizeFilters = (props) => {
     //     this.setState({items: items})
     //   }
 
-      return (  
-          <div>
-          <Button 
-          variant="light"
-          id="customization-button"
-          aria-expanded="false"
-          aria-haspopup="true" 
-          type="button" 
-          onClick={handleShow}>
-          {/* <img id="customize-icon" src={customizeIcon} alt="custom"></img> */}
-          <span className="icon-layout-switch cp"></span>
+      return (
+        <div>
+          <Button
+            variant="light"
+            id="customization-button"
+            aria-expanded="false"
+            aria-haspopup="true"
+            type="button"
+            onClick={handleShow}
+          >
+            {/* <img id="customize-icon" src={customizeIcon} alt="custom"></img> */}
+            <span className="icon-layout-switch cp"></span>
           </Button>
           <Modal
-          show={show}
-          onHide={handleClose}
-          backdrop="static"
-          keyboard={false}
-          animation={false}
+            show={show}
+            onHide={handleClose}
+            backdrop="static"
+            keyboard={false}
+            animation={false}
           >
-          <Modal.Body>
-          <div className="flex-container">
-          <div>
-          <h3>Customize Filters</h3>
-          <h5>{props.subHeading}</h5>
-          </div>
-          <div>
-            <SearchBar />
-          </div>
-          {/* <div>
+            <Modal.Body>
+              <div>
+                <div>
+                  <h3>Customize Filters</h3>
+                  <h5>{props.subHeading}</h5>
+                </div>
+                <div>
+                  <SearchBar />
+                </div>
+                {/* <div>
           <CustomizeFiltersList />
           {console.log(props.childComp)}
           {props.childComp}
           </div> */}
-          <div className="filterList-css">
-                <ul>
-                {
-                    this.state.items.map((item) => {
-                    return (<div className='listitem'><CheckBox handleCheckChildElement={this.handleCheckChildElement} {...item} /></div>)
-                })
-                }
-            </ul>
-            </div>
-          <div>
-          <Button variant="secondary" onClick={handleClose}>Cancel</Button>
-          <Button variant="primary">Apply</Button>
-          </div>
-          </div>
-          </Modal.Body>
-          <Modal.Footer>
-          {/* <Button variant="secondary" onClick={handleClose}>Cancel</Button>
+                <div className="filterList-css">
+                  <ul>
+                    {this.state.items.map((item) => {
+                      return (
+                        <div className="listitem">
+                          <CheckBox
+                            handleCheckChildElement={
+                              this.handleCheckChildElement
+                            }
+                            {...item}
+                          />
+                        </div>
+                      );
+                    })}
+                  </ul>
+                </div>
+                <div>
+                  <Button variant="secondary" onClick={handleClose}>
+                    Cancel
+                  </Button>
+                  <Button variant="primary">Apply</Button>
+                </div>
+              </div>
+            </Modal.Body>
+            <Modal.Footer>
+              {/* <Button variant="secondary" onClick={handleClose}>Cancel</Button>
           <Button variant="primary">Apply</Button> */}
-          </Modal.Footer>
+            </Modal.Footer>
           </Modal>
-
-    </div>
-  
+        </div>
       );
   }
      
