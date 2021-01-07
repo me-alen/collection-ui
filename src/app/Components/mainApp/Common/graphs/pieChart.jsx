@@ -3,11 +3,11 @@ import { PieChart, Pie, Cell, LabelList, Legend, Tooltip } from "recharts";
 import services from "../../../../Services/apiService";
 
 const data = [
-      { name: "", value: "" },
-      { name: "", value: "" },
-      { name: "", value: "" },
-      { name: "", value: "" },
-    ];
+  { name: "", value: "" },
+  { name: "", value: "" },
+  { name: "", value: "" },
+  { name: "", value: "" },
+];
 
 const COLORS = [
   "#46C27C",
@@ -43,7 +43,7 @@ class DisplayPieChart extends Component {
 
   async componentDidMount() {
     await this.PieChart();
-  }  
+  }
 
   async PieChart() {
     try {
@@ -66,20 +66,20 @@ class DisplayPieChart extends Component {
     //   fontFamily: 'Roboto',
     // }
     return (
-      <div className="graph">
+      <div className="graph pie-chart">
         <h3 className="graph-title">Case Action</h3>
         <div>
           <PieChart width={363} height={279}>
-          {/* <PieChart width={363} height={270}> */}
+            {/* <PieChart width={363} height={270}> */}
             <Pie
               data={this.state.dataPoints}
               // cx={130}
               // cy={100}
               cx={177}
-              cy={177}
+              cy={100}
               label
               labelLine={false}
-            //label={renderCustomizedLabel}
+              //label={renderCustomizedLabel}
               outerRadius={80}
               minAngle={7}
               // paddingAngle={7}

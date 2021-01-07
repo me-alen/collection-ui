@@ -4,7 +4,7 @@ import DropDownFilter from "../../../core/common/dropDownFilter";
 import DisplayDataTable from "../Common/dataTable/dataTable";
 import DisplayChartsAndGraphs from "../Common/graphs/displayChartsAndGraph";
 import filterService from "../../../Services/filterServices";
-import CustomizeCollectionRecommendations from '../customize/customizeCollectionRecommendations/customizeCollectionRecommendations';
+import CustomizeCollectionRecommendations from "../customize/customizeCollectionRecommendations/customizeCollectionRecommendations";
 import services from "../../../Services/apiService";
 
 let filterData = {};
@@ -17,28 +17,18 @@ class MLDecisionEngine extends Component {
       data.data = resolve.data.map((e) => {
         let mapValue = Object.assign({}, e);
         mapValue.active = "list-item";
+        mapValue.isChecked = false;
         return mapValue;
-      });
-      data.data.unshift({
-        name: "All",
-        value: null,
-        amt: data.data
-          .map((val) => {
-            return parseInt(val.amt);
-          })
-          .reduce((accumulator, currentValue) => {
-            return accumulator + currentValue;
-          }),
-        active: "list-item active",
       });
       this.setState({ collectionRiskFilter: data });
     });
   };
 
   //ML-Filterr
-  setFilterData = (param, value) => {
+  setFilterData = (param, value, isButtonFilter) => {
     filterData[param] = value;
     this.getMLDataTableFilterData(filterData);
+    this.setState({ loader: true });
   };
 
   // Data-Table
@@ -49,6 +39,7 @@ class MLDecisionEngine extends Component {
       data.data = resolve.content;
       data.totalElements = resolve.totalElements;
       this.setState({ dataTable: data });
+      this.setState({ loader: false });
     });
   };
 
@@ -241,6 +232,7 @@ class MLDecisionEngine extends Component {
   }
 
   state = {
+    loader: true,
     dataTable: {
       columns: [
         {
@@ -340,9 +332,9 @@ class MLDecisionEngine extends Component {
     MLFilterData1: [
       {
         name: "Hannah",
-        id: "Key1"
-      }
-    ]
+        id: "Key1",
+      },
+    ],
   };
 
   constructor(props) {
@@ -372,6 +364,7 @@ class MLDecisionEngine extends Component {
           <DisplayDataTable
             data={this.state.dataTable}
             onPageChange={this.setFilterData}
+            showHideLoader={this.state.loader}
           />
         </div>
       </React.Fragment>

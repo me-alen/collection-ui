@@ -8,7 +8,7 @@ class DataTableHeader extends Component {
     data.fromCount = (pageNo - 1) * 10 + 1;
     data.toCount = pageNo * 10;
     this.setState({ count: data });
-    this.props.onPageChange("page", pageNo - 1);
+    this.props.onPageChange("page", pageNo - 1, false);
   };
 
   searchQuery = "";
