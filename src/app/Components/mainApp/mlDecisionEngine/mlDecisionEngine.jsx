@@ -4,7 +4,7 @@ import DropDownFilter from "../../../core/common/dropDownFilter";
 import DisplayDataTable from "../Common/dataTable/dataTable";
 import DisplayChartsAndGraphs from "../Common/graphs/displayChartsAndGraph";
 import filterService from "../../../Services/filterServices";
-import CustomizeCollectionRecommendations from '../customize/customizeCollectionRecommendations/customizeCollectionRecommendations';
+import CustomizeCollectionRecommendations from "../customize/customizeCollectionRecommendations/customizeCollectionRecommendations";
 import services from "../../../Services/apiService";
 
 let filterData = {};
@@ -25,9 +25,8 @@ class MLDecisionEngine extends Component {
   };
 
   //ML-Filterr
-  setFilterData = (param, value) => {
+  setFilterData = (param, value, isButtonFilter) => {
     filterData[param] = value;
-    console.log(filterData);
     this.getMLDataTableFilterData(filterData);
     this.setState({ loader: true });
   };
@@ -83,9 +82,9 @@ class MLDecisionEngine extends Component {
       const { data } = await services.getDelinquency();
       // console.log('Delinquency data', data);
       // const place = this.state.dataPoints[0].value
-      const data1 = {name:"Name", id:"Key2", value:"2"};
+      const data1 = { name: "Name", id: "Key2", value: "2" };
       var arr = [...this.state.MLFilterData1];
-      var arr1 =arr.push(data1);
+      var arr1 = arr.push(data1);
       this.setState({ MLFilterData1: arr });
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
@@ -98,9 +97,9 @@ class MLDecisionEngine extends Component {
       const { data } = await services.getCycle();
       // console.log('Cycle data', data);
       // const place = this.state.dataPoints[0].value
-      const data1 = {name:"Name", id:"Key2", value:"2"};
+      const data1 = { name: "Name", id: "Key2", value: "2" };
       var arr = [...this.state.MLFilterData1];
-      var arr1 =arr.push(data1);
+      var arr1 = arr.push(data1);
       this.setState({ MLFilterData1: arr });
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
@@ -113,9 +112,9 @@ class MLDecisionEngine extends Component {
       const { data } = await services.getCustomerType();
       // console.log('Customer Type data', data);
       // const place = this.state.dataPoints[0].value
-      const data1 = {name:"Name", id:"Key2", value:"2"};
+      const data1 = { name: "Name", id: "Key2", value: "2" };
       var arr = [...this.state.MLFilterData1];
-      var arr1 =arr.push(data1);
+      var arr1 = arr.push(data1);
       this.setState({ MLFilterData1: arr });
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
@@ -128,9 +127,9 @@ class MLDecisionEngine extends Component {
       const { data } = await services.getRegion();
       // console.log('Region data', data);
       // const place = this.state.dataPoints[0].value
-      const data1 = {name:"Name", id:"Key2", value:"2"};
+      const data1 = { name: "Name", id: "Key2", value: "2" };
       var arr = [...this.state.MLFilterData1];
-      var arr1 =arr.push(data1);
+      var arr1 = arr.push(data1);
       this.setState({ MLFilterData1: arr });
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
@@ -143,9 +142,9 @@ class MLDecisionEngine extends Component {
       const { data } = await services.getBranch();
       // console.log('Branch data', data);
       // const place = this.state.dataPoints[0].value
-      const data1 = {name:"Name", id:"Key2", value:"2"};
+      const data1 = { name: "Name", id: "Key2", value: "2" };
       var arr = [...this.state.MLFilterData1];
-      var arr1 =arr.push(data1);
+      var arr1 = arr.push(data1);
       this.setState({ MLFilterData1: arr });
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
@@ -158,9 +157,9 @@ class MLDecisionEngine extends Component {
       const { data } = await services.getCity();
       // console.log('City data', data);
       // const place = this.state.dataPoints[0].value
-      const data1 = {name:"Name", id:"Key2", value:"2"};
+      const data1 = { name: "Name", id: "Key2", value: "2" };
       var arr = [...this.state.MLFilterData1];
-      var arr1 =arr.push(data1);
+      var arr1 = arr.push(data1);
       this.setState({ MLFilterData1: arr });
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
@@ -173,9 +172,9 @@ class MLDecisionEngine extends Component {
       const { data } = await services.getCollectionCategory();
       // console.log('Collection Category data', data);
       // const place = this.state.dataPoints[0].value
-      const data1 = {name:"Name", id:"Key2", value:"2"};
+      const data1 = { name: "Name", id: "Key2", value: "2" };
       var arr = [...this.state.MLFilterData1];
-      var arr1 =arr.push(data1);
+      var arr1 = arr.push(data1);
       this.setState({ MLFilterData1: arr });
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
@@ -188,9 +187,9 @@ class MLDecisionEngine extends Component {
       const { data } = await services.getEmploymentSector();
       // console.log('Employment Sector data', data);
       // const place = this.state.dataPoints[0].value
-      const data1 = {name:"Name", id:"Key2", value:"2"};
+      const data1 = { name: "Name", id: "Key2", value: "2" };
       var arr = [...this.state.MLFilterData1];
-      var arr1 =arr.push(data1);
+      var arr1 = arr.push(data1);
       this.setState({ MLFilterData1: arr });
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
@@ -203,9 +202,9 @@ class MLDecisionEngine extends Component {
       const { data } = await services.getPaymentFlag();
       // console.log('Payment Flag data', data);
       // const place = this.state.dataPoints[0].value
-      const data1 = {name:"Name", id:"Key2", value:"2"};
+      const data1 = { name: "Name", id: "Key2", value: "2" };
       var arr = [...this.state.MLFilterData1];
-      var arr1 =arr.push(data1);
+      var arr1 = arr.push(data1);
       this.setState({ MLFilterData1: arr });
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
@@ -218,9 +217,9 @@ class MLDecisionEngine extends Component {
       const { data } = await services.getProduct();
       // console.log('Product data', data);
       // const place = this.state.dataPoints[0].value
-      const data1 = {name:"Name", id:"Key2", value:"2"};
+      const data1 = { name: "Name", id: "Key2", value: "2" };
       var arr = [...this.state.MLFilterData1];
-      var arr1 =arr.push(data1);
+      var arr1 = arr.push(data1);
       this.setState({ MLFilterData1: arr });
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
@@ -233,9 +232,9 @@ class MLDecisionEngine extends Component {
       const { data } = await services.getStates();
       // console.log('States data', data);
       // const place = this.state.dataPoints[0].value
-      const data1 = {name:"Name", id:"Key2", value:"2"};
+      const data1 = { name: "Name", id: "Key2", value: "2" };
       var arr = [...this.state.MLFilterData1];
-      var arr1 =arr.push(data1);
+      var arr1 = arr.push(data1);
       this.setState({ MLFilterData1: arr });
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
@@ -345,70 +344,70 @@ class MLDecisionEngine extends Component {
       {
         id: "bucket",
         label: "Delinquency",
-        value: []
+        value: [],
       },
       {
         id: "cycle",
         label: "Cycle",
-        value: []
+        value: [],
       },
       {
         id: "customerType",
         label: "Customer Type",
-        value: []
+        value: [],
       },
       {
         id: "branch",
         label: "Branch",
-        value: []
+        value: [],
       },
       {
         id: "region",
         label: "Region",
-        value: []
+        value: [],
       },
       {
         id: "branch",
         label: "Branch",
-        value: []
+        value: [],
       },
       {
         id: "city",
         label: "City",
-        value: []
+        value: [],
       },
       {
         id: "collectionCategory",
         label: "CollectionCategory",
-        value: []
+        value: [],
       },
       {
         id: "employmentSector",
         label: "Employment Sector",
-        value: []
+        value: [],
       },
       {
         id: "paymentFlag",
         label: "Payment Flag",
-        paymentFlagValue: []
+        paymentFlagValue: [],
       },
       {
         id: "product",
         label: "Product",
-        value: []
+        value: [],
       },
       {
         id: "states",
         label: "States",
-        value: []
+        value: [],
       },
     ],
     MLFilterData1: [
       {
         name: "Hannah",
-        id: "Key1"
-      }
-    ]
+        id: "Key1",
+      },
+    ],
   };
 
   constructor(props) {

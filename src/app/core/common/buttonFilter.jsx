@@ -1,6 +1,6 @@
 import React from "react";
 import CommonCustomizedBox from "../../Components/mainApp/customize/commonCustomizedBox/commonCustomizedBox";
-import CustomizeCollectionRiskCategory from '../../Components/mainApp/customize/customizeCollectionRiskCat/customizeCollectionRiskCat';
+import CustomizeCollectionRiskCategory from "../../Components/mainApp/customize/customizeCollectionRiskCat/customizeCollectionRiskCat";
 
 const ButtonFilter = ({ id, data, onClickButton }) => {
   const handleBtnClick = (btn) => {
@@ -14,14 +14,13 @@ const ButtonFilter = ({ id, data, onClickButton }) => {
     getSelectedParams();
   };
   const getSelectedParams = () => {
-    let paramData = data.data.filter((element) => {
+    let paramDataObject = data.data.filter((element) => {
       return element.isChecked === true;
     });
-    let p = paramData.map((e) => {
+    let paramData = paramDataObject.map((e) => {
       return e.value;
     });
-    console.log(p);
-    // onClickButton(data.id, btn.value,true);
+    onClickButton(data.id, paramData[0], true);
   };
   const handleCheckboxClick = () => {};
   return (
