@@ -4,9 +4,9 @@ import CustomizeCollectionRiskCategory from "../../Components/mainApp/customize/
 
 // const ButtonFilter = ({ id, data, onClickButton }) => {
 class ButtonFilter extends Component {
-  state = {};
+  state = { data: [] };
   handleBtnClick = (btn) => {
-    this.props.data.data.map((element) => {
+    this.state.data.map((element) => {
       element.active =
         element.name !== btn.name ? "list-item" : "list-item active";
       if (btn.value === element.value) {
@@ -17,7 +17,7 @@ class ButtonFilter extends Component {
   };
 
   getSelectedParams = () => {
-    let paramDataObject = this.props.data.data.filter((element) => {
+    let paramDataObject = this.state.data.filter((element) => {
       return element.isChecked === true;
     });
     let paramData = paramDataObject.map((e) => {
@@ -28,8 +28,14 @@ class ButtonFilter extends Component {
 
   handleCheckboxClick = () => {};
   handleOnSubmit = (data) => {
-    console.log(data);
+    this.setState({ data: data });
   };
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ data: this.props.data.data });
+    }, 1000);
+  }
 
   render() {
     return (
@@ -45,7 +51,7 @@ class ButtonFilter extends Component {
         </div>
         <div className="btn-container">
           <ul className="btn-list-wrapper">
-            {this.props.data.data.map((btn) => (
+            {this.state.data.map((btn) => (
               <li
                 key={btn.name}
                 className={btn.active}
