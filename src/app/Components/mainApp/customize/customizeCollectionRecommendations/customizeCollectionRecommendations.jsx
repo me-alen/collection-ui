@@ -57,7 +57,7 @@ const CustomizeCollectionRecommendations = () => {
           animation={false}
           >
           <Modal.Body>
-            <div className="flex-container2">
+            <div className="rec-flex-container1">
             <div>
             <h3>Customize: Collection Recommendations</h3>
             <h5>Select components to add to this section</h5>
@@ -65,13 +65,13 @@ const CustomizeCollectionRecommendations = () => {
             <Button variant="secondary" onClick={handleClose}>Cancel</Button>
             <Button variant="primary">Apply</Button>
             </div>
-            <div className="flex-container">
+            <div className="rec-flex-container2">
               <div>
-                <div className="box1">
+                <div className="rec-box1">
                     <CustomizeCollectionRecommendationsList />
                 </div>
               </div>
-              <div className="box2">
+              <div className="rec-box2">
                     {/* <img src={pic}></img> */}
                     <DisplayVerticalGraph />
                     {/* {<CustomizeCollectionRecommendationsList />} */}

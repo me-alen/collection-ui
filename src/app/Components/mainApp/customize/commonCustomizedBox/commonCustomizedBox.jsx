@@ -2,12 +2,10 @@ import React, { Component, useState } from 'react';
 import customizeIcon from "../../../../Images/Icon2.svg";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import CustomizeFiltersList from './customizeFiltersList';
-import "./customizeFilters.scss";
+import "./commonCustomizedBox.scss";
 import SearchBar from '../../Common/searchBar/searchBar';
-import CommonCustomizedBox from '../commonCustomizedBox/commonCustomizedBox';
 
-const CustomizeFilters = () => {
+const CommonCustomizedBox = (props) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -31,16 +29,18 @@ const CustomizeFilters = () => {
           animation={false}
           >
           <Modal.Body>
-          <div className="filter-flex-container">
+          <div className="flex-container">
           <div>
           <h3>Customize Filters</h3>
-          <h5>Select any 5 filters you want to display</h5>
+          <h5>{props.subHeading}</h5>
           </div>
           <div>
             <SearchBar />
           </div>
           <div>
-          <CustomizeFiltersList />
+          {/* <CustomizeFiltersList /> */}
+          {console.log(props.childComp)}
+          {props.childComp}
           </div>
           <div>
           <Button variant="secondary" onClick={handleClose}>Cancel</Button>
@@ -48,6 +48,10 @@ const CustomizeFilters = () => {
           </div>
           </div>
           </Modal.Body>
+          <Modal.Footer>
+          {/* <Button variant="secondary" onClick={handleClose}>Cancel</Button>
+          <Button variant="primary">Apply</Button> */}
+          </Modal.Footer>
           </Modal>
 
     </div>
@@ -55,17 +59,4 @@ const CustomizeFilters = () => {
       );
   }
      
-  export default CustomizeFilters;
-
-  // const customizeFilters = () => {
-
-  //   const myComp= <CustomizeFiltersList />
-
-  //   return (
-  //     <div>
-  //       {<CommonCustomizedBox subHeading="Select any 5 filters you want to display" childComp={myComp} />}
-  //     </div>
-  //   );
-  // }
-   
-  // export default customizeFilters;
+  export default CommonCustomizedBox;

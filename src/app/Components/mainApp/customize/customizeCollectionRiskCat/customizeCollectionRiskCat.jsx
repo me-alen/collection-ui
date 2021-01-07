@@ -7,26 +7,7 @@ import CustomizeCollectionRiskCategoryList from './customizeCollectionRiskCatLis
 import StaticModalWithoutAnimation from '../../Common/modals/staticModalNoAnimation';
 import "./customizeCollectionRiskCat.scss";
 import SearchBar from '../../Common/searchBar/searchBar';
-
-// class CustomizeFilter extends Component {
-//     state = {  }
-//     render() { 
-//         return (
-//             <StaticModalWithoutAnimation
-//             btnVariant="light" 
-//             btnId="customization-button"
-//             btnAriaExpanded="false"
-//             btnAriaHaspopup="true"
-//             btnType="button"
-//             imgId="customize-icon" 
-//             imgSrc={customizeIcon} 
-//             imgAlt="custom" />
-//         );
-//     }
-// }
- 
-// export default CustomizeFilter;
-
+import CommonCustomizedBox from '../commonCustomizedBox/commonCustomizedBox';
 
 const CustomizeCollectionRiskCategory = () => {
     const [show, setShow] = useState(false);
@@ -52,7 +33,7 @@ const CustomizeCollectionRiskCategory = () => {
           animation={false}
           >
           <Modal.Body>
-            <div className="flex-container">
+            <div className="risk-flex-container">
               <div>
               <h3>Customize Filter</h3>
               <h5>Select collection risk category filters</h5>
@@ -81,3 +62,13 @@ const CustomizeCollectionRiskCategory = () => {
   }
      
   export default CustomizeCollectionRiskCategory;
+
+  // const CustomizeCollectionRiskCategory = () => {
+  //   return (
+  //     <div>
+  //       <CommonCustomizedBox subHeading="Select collection risk category filters" comp={<CustomizeCollectionRiskCategoryList />} />
+  //     </div>
+  //   );
+  // }
+   
+  // export default CustomizeCollectionRiskCategory;

@@ -1,4 +1,5 @@
 import React from "react";
+import CommonCustomizedBox from "../../Components/mainApp/customize/commonCustomizedBox/commonCustomizedBox";
 import CustomizeCollectionRiskCategory from '../../Components/mainApp/customize/customizeCollectionRiskCat/customizeCollectionRiskCat';
 
 const ButtonFilter = ({ id, data, onClickButton }) => {
@@ -15,6 +16,7 @@ const ButtonFilter = ({ id, data, onClickButton }) => {
         <h2 className="sub-heading">{data.title}</h2>
         {/* <span className="icon-layout-switch cp"></span> */}
         <CustomizeCollectionRiskCategory />
+        {/* <CommonCustomizedBox /> */}
       </div>
       <div className="btn-container">
         <ul className="btn-list-wrapper">

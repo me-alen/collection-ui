@@ -31,11 +31,11 @@ const CustomizeGrid = () => {
           animation={false}
           >
           <Modal.Body>
-            <div className="flex-container2">
+            <div className="grid-flex-container2">
             <div>
             <h3>Customize Grid</h3>
             </div>
-            <div className="flex-container">
+            <div className="grid-flex-container">
               <div>
                 <h4>Columns</h4>
                 <h5>Select any 6 Columns you want to display in the grid</h5>
