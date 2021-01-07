@@ -22,6 +22,9 @@ const DisplayDataTable = ({ data, onPageChange }) => {
           defaultSortField="title"
           selectableRows
         />
+        <div className="loader-comp-wrapper">
+          <span class="loader-comp"></span>
+        </div>
       </div>
     </React.Fragment>
   );

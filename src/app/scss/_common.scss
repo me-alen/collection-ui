@@ -12,6 +12,7 @@ a,a:hover{
   /* width */
       ::-webkit-scrollbar {
         width: 5px;
+        height: 5px;
       }
       /* Track */
       ::-webkit-scrollbar-track {
@@ -86,7 +87,7 @@ a,a:hover{
   }
 
   .content-container {
-    width: 100%;
+    width: calc(100% - 265px);
     background: var(--body-bg);
 
     // header section css goes here
@@ -94,7 +95,7 @@ a,a:hover{
     .header-section {
       box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.04);
       background: var(--primary-color);
-      margin-bottom: 12px;
+      // margin-bottom: 10px;
       // height: 108px;
       .header-primary {
         padding: 24px 15px 12px 22px;
@@ -134,7 +135,7 @@ a,a:hover{
         }
       }
       .header-secondary {
-        padding: 13px 22px 8px 28px;
+        padding: 5px 22px 5px 28px;
         .title-text {
           font-family: $poppins;
           font-size: 16px;
@@ -154,7 +155,7 @@ a,a:hover{
                 border-radius: 50px;
                 border: 1px solid var(--border);
                 position: relative;
-                padding: 8px 40px 8px 40px;
+                padding: 5px 40px 5px 40px;
                 &::before,&::after{
                    position: absolute;
                   top: 50%;
@@ -222,6 +223,9 @@ a,a:hover{
             .recharts-surface {
               width: 100%;
             }
+          }
+          &.piechart{
+
           }
         }
       }
@@ -320,7 +324,7 @@ a,a:hover{
   font-weight: $font-semibold;
   font-family: $poppins;
   color: var(--panel-bg-color);
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
 }
 .sub-heading {
   font-size: 13px;
@@ -359,11 +363,14 @@ a,a:hover{
       align-items: center;
       padding: 0 20px;
       margin-bottom: 10px;
+      overflow-x: auto;
       .list-item{
         padding: 10px 20px;
         border-right: 1px solid var(--light-border);
         position: relative;
         cursor: pointer;
+        display: flex;
+        align-items: center;
         &::before{
           content: '';
           position: absolute;
@@ -375,10 +382,13 @@ a,a:hover{
           border-radius: 2px;
           transition: all 0.3s ease-in;
         }
+        .btn-text-wrapper{
+          margin-left: 10px;
+        }
         .list-link{
           font-size: 12px;
           font-family: $roboto;
-          font-weight: 500;
+          font-weight: $font-medium;
           color: var(--gray-text);
           margin-right: 5px;
           text-decoration: none;
@@ -400,7 +410,7 @@ a,a:hover{
           }
           .list-link{
             color: var(--panel-bg-color);
-            font-weight: $font-bold;
+            font-weight: $font-medium;
           }
           .badge{
             background: var(--bg-blue);
@@ -427,7 +437,7 @@ a,a:hover{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     .text-area{
       display: flex;
       align-items: center;
@@ -450,7 +460,7 @@ a,a:hover{
     .filter-col{
           flex: 0 0 20%;
           max-width: 20%;
-          
+
           padding: 0 8px;
           .filter-item{
             .form-group{
@@ -491,6 +501,8 @@ a,a:hover{
   box-shadow: 0 4px 4px var(--tile-shadow);
   margin-bottom: 10px;
   background: var(--primary-color);
+  position: relative;
+  min-height: 500px;
   .table-header-container{
     margin-bottom: 20px;
     .left-section{
@@ -546,14 +558,14 @@ a,a:hover{
     }
     .right-section{
       .current-result{
-        margin-right: 17px;
+        margin-right: 5px;
         font-size: 12px;
         font-weight: $font-regular;
         color: var(--gray-text);
         font-family: $poppins;
       }
       .pagination-wrapper{
-        margin-right: 35px;
+        margin-right: 20px;
         .MuiPagination-ul{
           li{
             button{
@@ -562,6 +574,7 @@ a,a:hover{
               font-family: $poppins;
               color: var( --icon-shade);
               transition: all 0.3s linear;
+              margin: 0;
               &:focus{
                 outline: none;
               }
@@ -578,4 +591,108 @@ a,a:hover{
 .rdt_TableHeader{
   display: none;
 }
+}
+
+
+
+
+// component-loader
+.loader-comp-wrapper{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+
+.loader-comp {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+  &::after,&::before{
+  content: '';  
+  box-sizing: border-box;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--bg-blue);
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: animloader 2s linear infinite;
+  }
+  &::after{
+  animation-delay: 1s;
+  }
+}
+}
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+    
+
+
+.checkbox {
+  position: relative;
+  font-size: 14px;
+  width: 16px;
+  
+  label {
+   &:before {
+    background: var(--primary-color);
+    border: 1px solid var(--check-border);
+    cursor: pointer;
+    border-radius:3px;
+    content: '';
+    height: 16px;
+    width: 16px;
+    left: 0px;
+    position: absolute;
+    top: 3px;
+    }
+   
+    &:after {
+    border: 2px solid #FFF;
+    border-top: none;
+    border-right: none;
+    cursor: pointer;
+    content: '';
+    height: 5px;
+    left: 3px;
+    opacity: 0;
+    position: absolute;
+    top: 7px;
+    transform: rotate(-45deg);
+    width: 10px;
+    transition: all 0.3s linear;
+    }
+  }
+  
+  input[type="checkbox"] {
+    visibility: hidden;
+    
+    &:checked {
+     & + label:before {
+        background: var(--bg-blue);
+        border: var(--bg-blue);
+      }
+      
+     & + label:after {
+       opacity: 1;
+      }
+    }
+  }
+}
+
+.recharts-legend-wrapper{
+  width: 100% !important;
 }
