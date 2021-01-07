@@ -1,5 +1,4 @@
 import React, { Component, useState } from 'react';
-import customizeIcon from "../../../../Images/Icon2.svg";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import CustomizeFiltersList from './customizeFiltersList';
@@ -20,7 +19,6 @@ const CustomizeFilters = () => {
           aria-haspopup="true" 
           type="button" 
           onClick={handleShow}>
-          {/* <img id="customize-icon" src={customizeIcon} alt="custom"></img> */}
           <span className="icon-layout-switch cp"></span>
           </Button>
           <Modal

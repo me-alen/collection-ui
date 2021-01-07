@@ -15,15 +15,15 @@ class CustomizeCollectionRecommendationsList extends Component {
         super(props)
         this.state = {
           items: [
-            {key: 1, id: 1, value: "Probability to Default", isChecked: true},
-            {key: 2, id: 2, value: "Recommended Action Count", isChecked: false},
-            {key: 3, id: 3, value: "Branch Distribution", isChecked: false},
-            {key: 4, id: 4, value: "Collection Status by LANs", isChecked: false},
-            {key: 5, id: 5, value: "Collection Status by Amount Collectable", isChecked: false},
-            {key: 6, id: 6, value: "Payment Behaviour Distribution", isChecked: true},
-            {key: 7, id: 7, value: "Customer Type Distribution", isChecked: true},
-            {key: 8, id: 8, value: "Finance Category Distribution", isChecked: false},
-            {key: 9, id: 9, value: "Employment Sector Distribution", isChecked: false}
+            {id: "CR1", value: "Probability to Default", isChecked: true},
+            {id: "CR2", value: "Recommended Action Count", isChecked: false},
+            {id: "CR3", value: "Branch Distribution", isChecked: false},
+            {id: "CR4", value: "Collection Status by LANs", isChecked: false},
+            {id: "CR5", value: "Collection Status by Amount Collectable", isChecked: false},
+            {id: "CR6", value: "Payment Behaviour Distribution", isChecked: true},
+            {id: "CR7", value: "Customer Type Distribution", isChecked: true},
+            {id: "CR8", value: "Finance Category Distribution", isChecked: false},
+            {id: "CR9", value: "Employment Sector Distribution", isChecked: false}
           ]
         }
       }
@@ -53,7 +53,7 @@ class CustomizeCollectionRecommendationsList extends Component {
                 <ul>
                 {
                     this.state.items.map((item) => {
-                    return (<div className='listitem'><CheckBox handleCheckChildElement={this.handleCheckChildElement} {...item} /></div>)
+                    return (<div key={item.id} className='listitem'><CheckBox handleCheckChildElement={this.handleCheckChildElement} {...item} /></div>)
                 })
                 }
         </ul>
