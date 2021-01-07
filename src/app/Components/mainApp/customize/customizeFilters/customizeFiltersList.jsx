@@ -9,14 +9,14 @@ class CustomizeFiltersList extends Component {
         super(props)
         this.state = {
           items: [
-            {id: 1, value: "Filter option 1", isChecked: true},
-            {id: 2, value: "Deliquency", isChecked: true},
-            {id: 3, value: "Cycle", isChecked: true},
-            {id: 4, value: "Branch", isChecked: false},
-            {id: 5, value: "Customer Type", isChecked: true},
-            {id: 6, value: "Region", isChecked: true},
-            {id: 7, value: "Filter option 7", isChecked: false},
-            {id: 8, value: "Filter option 8", isChecked: false}
+            {id: "Filter1", value: "Filter option 1", isChecked: true},
+            {id: "Filter2", value: "Deliquency", isChecked: true},
+            {id: "Filter3", value: "Cycle", isChecked: true},
+            {id: "Filter4", value: "Branch", isChecked: false},
+            {id: "Filter5", value: "Customer Type", isChecked: true},
+            {id: "Filter6", value: "Region", isChecked: true},
+            {id: "Filter7", value: "Filter option 7", isChecked: false},
+            {id: "Filter8", value: "Filter option 8", isChecked: false}
           ]
         }
       }
@@ -44,7 +44,7 @@ class CustomizeFiltersList extends Component {
                 <ul>
                 {
                     this.state.items.map((item) => {
-                    return (<div className='listitem'><CheckBox handleCheckChildElement={this.handleCheckChildElement} {...item} /></div>)
+                    return (<div key={item.id} className='listitem'><CheckBox handleCheckChildElement={this.handleCheckChildElement} {...item} /></div>)
                 })
                 }
         </ul>
