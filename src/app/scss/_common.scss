@@ -817,3 +817,13 @@ a,a:hover{
       }
     }
 }
+
+#customization-button{
+  padding: 0;
+  background: transparent;
+  border:none;
+  &:focus{
+    outline: none;
+    box-shadow: none;
+  }
+}

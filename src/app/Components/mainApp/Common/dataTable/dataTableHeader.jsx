@@ -55,8 +55,8 @@ class DataTableHeader extends Component {
               onChange={this.handlePageClick}
             />
           </div>
-          {/* <span className="icon-layout-switch cp"></span> */}
-          <CustomizeGrid />
+          <span className="icon-layout-switch cp"></span>
+          {/* <CustomizeGrid /> */}
         </div>
       </div>
     );

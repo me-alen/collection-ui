@@ -57,8 +57,8 @@ class Header extends Component {
             </div>
 
             <div className="filter-sec cp">
-              {/* <span className="icon-window-plus"></span> */}
-              <CustomizeMLDecisionEngine2 />
+              <span className="icon-window-plus"></span>
+              {/* <CustomizeMLDecisionEngine2 /> */}
             </div>
           </div>
         </div>

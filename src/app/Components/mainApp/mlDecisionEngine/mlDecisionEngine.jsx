@@ -441,8 +441,8 @@ class MLDecisionEngine extends Component {
         <div className="graph-wrapper">
           <div className="heading-wrapper d-flex align-items-center justify-content-between">
             <h2 className="sub-heading">Collection Recommendations</h2>
-            {/* <span className="icon-layout-switch cp"></span> */}
-            <CustomizeCollectionRecommendations />
+            <span className="icon-layout-switch cp"></span>
+            {/* <CustomizeCollectionRecommendations /> */}
           </div>
           <DisplayChartsAndGraphs csstext={this.props.text} />
         </div>
